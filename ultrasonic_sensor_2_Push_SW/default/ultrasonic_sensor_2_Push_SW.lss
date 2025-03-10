@@ -1,0 +1,1649 @@
+
+ultrasonic_sensor_2_Push_SW.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000020  00800100  000008ba  0000094e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000008ba  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000026  00800120  00800120  0000096e  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  0000096e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000012c  00000000  00000000  000009ae  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000e8f  00000000  00000000  00000ada  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000003cc  00000000  00000000  00001969  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000a3b  00000000  00000000  00001d35  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000150  00000000  00000000  00002770  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000002e8  00000000  00000000  000028c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000053a  00000000  00000000  00002ba8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000060  00000000  00000000  000030e2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 f5 01 	jmp	0x3ea	; 0x3ea <__vector_5>
+  18:	0c 94 60 02 	jmp	0x4c0	; 0x4c0 <__vector_6>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 10 01 	jmp	0x220	; 0x220 <__vector_16>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ea eb       	ldi	r30, 0xBA	; 186
+  a0:	f8 e0       	ldi	r31, 0x08	; 8
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a0 32       	cpi	r26, 0x20	; 32
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a0 e2       	ldi	r26, 0x20	; 32
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a6 34       	cpi	r26, 0x46	; 70
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 aa 03 	call	0x754	; 0x754 <main>
+  c6:	0c 94 5b 04 	jmp	0x8b6	; 0x8b6 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <LcdPutchar>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+  ce:	95 e3       	ldi	r25, 0x35	; 53
+  d0:	29 2f       	mov	r18, r25
+  d2:	2a 95       	dec	r18
+  d4:	f1 f7       	brne	.-4      	; 0xd2 <LcdPutchar+0x4>
+
+static void write_data(char ch)
+{
+	unsigned char temp;
+
+	temp = (ch & 0xF0) | 0x05;
+  d6:	29 2f       	mov	r18, r25
+  d8:	2a 95       	dec	r18
+  da:	f1 f7       	brne	.-4      	; 0xd8 <LcdPutchar+0xa>
+  dc:	29 2f       	mov	r18, r25
+  de:	2a 95       	dec	r18
+  e0:	f1 f7       	brne	.-4      	; 0xde <LcdPutchar+0x10>
+  e2:	29 2f       	mov	r18, r25
+  e4:	2a 95       	dec	r18
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <LcdPutchar+0x16>
+  e8:	9a 95       	dec	r25
+  ea:	f1 f7       	brne	.-4      	; 0xe8 <LcdPutchar+0x1a>
+  ec:	98 2f       	mov	r25, r24
+  ee:	90 7f       	andi	r25, 0xF0	; 240
+  f0:	95 60       	ori	r25, 0x05	; 5
+
+	LCD_PORT = temp;
+  f2:	95 bb       	out	0x15, r25	; 21
+	LCD_PORT = temp & ~0x04;
+  f4:	9b 7f       	andi	r25, 0xFB	; 251
+  f6:	95 bb       	out	0x15, r25	; 21
+
+	temp = (ch<<4) | 0x05;
+  f8:	82 95       	swap	r24
+  fa:	80 7f       	andi	r24, 0xF0	; 240
+  fc:	85 60       	ori	r24, 0x05	; 5
+
+	LCD_PORT = temp;
+  fe:	85 bb       	out	0x15, r24	; 21
+	LCD_PORT = temp & ~0x04;
+ 100:	8b 7f       	andi	r24, 0xFB	; 251
+ 102:	85 bb       	out	0x15, r24	; 21
+
+void LcdPutchar(char ch)
+{
+	checkbusy();
+	write_data(ch);
+}
+ 104:	08 95       	ret
+
+00000106 <LcdPuts>:
+
+void LcdPuts(char* str)
+{
+ 106:	cf 93       	push	r28
+ 108:	df 93       	push	r29
+ 10a:	ec 01       	movw	r28, r24
+ 10c:	03 c0       	rjmp	.+6      	; 0x114 <LcdPuts+0xe>
+   while(*str)
+  {
+   LcdPutchar(*str);
+ 10e:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+   str++;
+ 112:	21 96       	adiw	r28, 0x01	; 1
+	write_data(ch);
+}
+
+void LcdPuts(char* str)
+{
+   while(*str)
+ 114:	88 81       	ld	r24, Y
+ 116:	88 23       	and	r24, r24
+ 118:	d1 f7       	brne	.-12     	; 0x10e <LcdPuts+0x8>
+  {
+   LcdPutchar(*str);
+   str++;
+  }
+}
+ 11a:	df 91       	pop	r29
+ 11c:	cf 91       	pop	r28
+ 11e:	08 95       	ret
+
+00000120 <write_command>:
+
+static void write_command(char command)
+
+{
+  char temp;
+  temp = (command & 0xF0)|0x04;
+ 120:	98 2f       	mov	r25, r24
+ 122:	90 7f       	andi	r25, 0xF0	; 240
+ 124:	94 60       	ori	r25, 0x04	; 4
+
+LCD_PORT = temp;
+ 126:	95 bb       	out	0x15, r25	; 21
+LCD_PORT = temp & ~0x04;
+ 128:	9b 7f       	andi	r25, 0xFB	; 251
+ 12a:	95 bb       	out	0x15, r25	; 21
+
+temp = (command << 4) | 0x04;
+ 12c:	82 95       	swap	r24
+ 12e:	80 7f       	andi	r24, 0xF0	; 240
+ 130:	84 60       	ori	r24, 0x04	; 4
+
+LCD_PORT = temp;
+ 132:	85 bb       	out	0x15, r24	; 21
+LCD_PORT = temp & ~0x04;
+ 134:	8b 7f       	andi	r24, 0xFB	; 251
+ 136:	85 bb       	out	0x15, r24	; 21
+ 138:	85 e0       	ldi	r24, 0x05	; 5
+ 13a:	8a 95       	dec	r24
+ 13c:	f1 f7       	brne	.-4      	; 0x13a <write_command+0x1a>
+_delay_us(1);
+}
+ 13e:	08 95       	ret
+
+00000140 <LcdCommand>:
+	LcdCommand(ENTMOD);
+
+	LcdCommand(DISP_ON);
+}
+void LcdCommand(char command)
+{
+ 140:	1f 93       	push	r17
+ 142:	18 2f       	mov	r17, r24
+ 144:	85 e3       	ldi	r24, 0x35	; 53
+ 146:	98 2f       	mov	r25, r24
+ 148:	9a 95       	dec	r25
+ 14a:	f1 f7       	brne	.-4      	; 0x148 <LcdCommand+0x8>
+	checkbusy();
+	write_command(command);
+ 14c:	98 2f       	mov	r25, r24
+ 14e:	9a 95       	dec	r25
+ 150:	f1 f7       	brne	.-4      	; 0x14e <LcdCommand+0xe>
+ 152:	98 2f       	mov	r25, r24
+ 154:	9a 95       	dec	r25
+ 156:	f1 f7       	brne	.-4      	; 0x154 <LcdCommand+0x14>
+ 158:	98 2f       	mov	r25, r24
+ 15a:	9a 95       	dec	r25
+ 15c:	f1 f7       	brne	.-4      	; 0x15a <LcdCommand+0x1a>
+ 15e:	8a 95       	dec	r24
+ 160:	f1 f7       	brne	.-4      	; 0x15e <LcdCommand+0x1e>
+ 162:	81 2f       	mov	r24, r17
+ 164:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+	if(command==ALLCLR || command==HOME)
+ 168:	11 50       	subi	r17, 0x01	; 1
+ 16a:	12 30       	cpi	r17, 0x02	; 2
+ 16c:	20 f4       	brcc	.+8      	; 0x176 <LcdCommand+0x36>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 16e:	80 e4       	ldi	r24, 0x40	; 64
+ 170:	9f e1       	ldi	r25, 0x1F	; 31
+ 172:	01 97       	sbiw	r24, 0x01	; 1
+ 174:	f1 f7       	brne	.-4      	; 0x172 <LcdCommand+0x32>
+		_delay_ms(2);
+}
+ 176:	1f 91       	pop	r17
+ 178:	08 95       	ret
+
+0000017a <LcdNewchar>:
+  LcdCommand(pos);
+}
+
+
+void LcdNewchar(char ch, char font[])
+{
+ 17a:	0f 93       	push	r16
+ 17c:	1f 93       	push	r17
+ 17e:	cf 93       	push	r28
+ 180:	df 93       	push	r29
+ 182:	8b 01       	movw	r16, r22
+ int i;
+
+ ch <<=3;
+ 184:	88 0f       	add	r24, r24
+ 186:	88 0f       	add	r24, r24
+ 188:	88 0f       	add	r24, r24
+ ch|= 0x40;
+
+ LcdCommand(ch);
+ 18a:	80 64       	ori	r24, 0x40	; 64
+ 18c:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+ 190:	c0 e0       	ldi	r28, 0x00	; 0
+ 192:	d0 e0       	ldi	r29, 0x00	; 0
+
+ for(i=0;i<8;i++)
+    LcdPutchar(font[i]);
+ 194:	f8 01       	movw	r30, r16
+ 196:	ec 0f       	add	r30, r28
+ 198:	fd 1f       	adc	r31, r29
+ 19a:	80 81       	ld	r24, Z
+ 19c:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+ ch <<=3;
+ ch|= 0x40;
+
+ LcdCommand(ch);
+
+ for(i=0;i<8;i++)
+ 1a0:	21 96       	adiw	r28, 0x01	; 1
+ 1a2:	c8 30       	cpi	r28, 0x08	; 8
+ 1a4:	d1 05       	cpc	r29, r1
+ 1a6:	b1 f7       	brne	.-20     	; 0x194 <LcdNewchar+0x1a>
+    LcdPutchar(font[i]);
+}
+ 1a8:	df 91       	pop	r29
+ 1aa:	cf 91       	pop	r28
+ 1ac:	1f 91       	pop	r17
+ 1ae:	0f 91       	pop	r16
+ 1b0:	08 95       	ret
+
+000001b2 <LcdMove>:
+
+{ 
+
+//  pos = (line << 6) + pos; 
+
+	if(line == 0 )       pos = 0x00 + pos ;
+ 1b2:	88 23       	and	r24, r24
+ 1b4:	49 f0       	breq	.+18     	; 0x1c8 <LcdMove+0x16>
+	else if( line == 1 ) pos = 0x40 + pos ;
+ 1b6:	81 30       	cpi	r24, 0x01	; 1
+ 1b8:	11 f4       	brne	.+4      	; 0x1be <LcdMove+0xc>
+ 1ba:	60 5c       	subi	r22, 0xC0	; 192
+ 1bc:	05 c0       	rjmp	.+10     	; 0x1c8 <LcdMove+0x16>
+	else if( line == 2 ) pos = 0x10 + pos ;
+ 1be:	82 30       	cpi	r24, 0x02	; 2
+ 1c0:	11 f4       	brne	.+4      	; 0x1c6 <LcdMove+0x14>
+ 1c2:	60 5f       	subi	r22, 0xF0	; 240
+ 1c4:	01 c0       	rjmp	.+2      	; 0x1c8 <LcdMove+0x16>
+	else                 pos = 0x50 + pos ;
+ 1c6:	60 5b       	subi	r22, 0xB0	; 176
+
+  pos |= 0x80;
+ 
+  LcdCommand(pos);
+ 1c8:	86 2f       	mov	r24, r22
+ 1ca:	80 68       	ori	r24, 0x80	; 128
+ 1cc:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 1d0:	08 95       	ret
+
+000001d2 <LcdInit>:
+static void write_command(char command);
+static void write_data(char ch);
+
+void LcdInit(void)
+{
+	LCD_DDR = 0xff;
+ 1d2:	8f ef       	ldi	r24, 0xFF	; 255
+ 1d4:	84 bb       	out	0x14, r24	; 20
+ 1d6:	80 e6       	ldi	r24, 0x60	; 96
+ 1d8:	9a ee       	ldi	r25, 0xEA	; 234
+ 1da:	01 97       	sbiw	r24, 0x01	; 1
+ 1dc:	f1 f7       	brne	.-4      	; 0x1da <LcdInit+0x8>
+	_delay_ms(15);
+	write_command(0x30);
+ 1de:	80 e3       	ldi	r24, 0x30	; 48
+ 1e0:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1e4:	80 e2       	ldi	r24, 0x20	; 32
+ 1e6:	9e e4       	ldi	r25, 0x4E	; 78
+ 1e8:	01 97       	sbiw	r24, 0x01	; 1
+ 1ea:	f1 f7       	brne	.-4      	; 0x1e8 <LcdInit+0x16>
+	_delay_ms(5);
+	write_command(0x30);
+ 1ec:	80 e3       	ldi	r24, 0x30	; 48
+ 1ee:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1f2:	80 ea       	ldi	r24, 0xA0	; 160
+ 1f4:	9f e0       	ldi	r25, 0x0F	; 15
+ 1f6:	01 97       	sbiw	r24, 0x01	; 1
+ 1f8:	f1 f7       	brne	.-4      	; 0x1f6 <LcdInit+0x24>
+	_delay_ms(1);
+	write_command(0x32);
+ 1fa:	82 e3       	ldi	r24, 0x32	; 50
+ 1fc:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+
+	LcdCommand(FUNSET);
+ 200:	88 e2       	ldi	r24, 0x28	; 40
+ 202:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(DISP_OFF);
+ 206:	88 e0       	ldi	r24, 0x08	; 8
+ 208:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ALLCLR);
+ 20c:	81 e0       	ldi	r24, 0x01	; 1
+ 20e:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ENTMOD);
+ 212:	86 e0       	ldi	r24, 0x06	; 6
+ 214:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+
+	LcdCommand(DISP_ON);
+ 218:	8c e0       	ldi	r24, 0x0C	; 12
+ 21a:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 21e:	08 95       	ret
+
+00000220 <__vector_16>:
+
+
+
+
+ISR( TIMER0_OVF_vect )     //  10 msec 주기의 타이머0 오버플로 인터럽트 서비스프로그램
+{                          //  50msec 마다 초음파신호 발사 요청신호(Trigger 신호1, Trigger 신호2) 출력
+ 220:	1f 92       	push	r1
+ 222:	0f 92       	push	r0
+ 224:	0f b6       	in	r0, 0x3f	; 63
+ 226:	0f 92       	push	r0
+ 228:	11 24       	eor	r1, r1
+ 22a:	2f 93       	push	r18
+ 22c:	3f 93       	push	r19
+ 22e:	5f 93       	push	r21
+ 230:	6f 93       	push	r22
+ 232:	7f 93       	push	r23
+ 234:	8f 93       	push	r24
+ 236:	9f 93       	push	r25
+ 238:	af 93       	push	r26
+ 23a:	bf 93       	push	r27
+                           //  전방 장애물의 거리가 가까우면 경고 버저음(단속음) 발생 , LED 깜박임.
+
+    static unsigned short  time_index = 0 ; 
+
+
+    TCNT0 = 256 - 156;     //  내부클럭주기 = 1024/ (16x10^6) = 64 usec,  
+ 23c:	84 e6       	ldi	r24, 0x64	; 100
+ 23e:	82 bf       	out	0x32, r24	; 50
+                           //  오버플로인터럽트 주기 = 10msec
+                           //  156 = 10msec/ 64usec,  TCNT0 = 256 - 156
+
+    time_index++ ; 
+ 240:	80 91 42 01 	lds	r24, 0x0142
+ 244:	90 91 43 01 	lds	r25, 0x0143
+ 248:	01 96       	adiw	r24, 0x01	; 1
+ 24a:	90 93 43 01 	sts	0x0143, r25
+ 24e:	80 93 42 01 	sts	0x0142, r24
+
+    if( time_index == 5 )   // 50 msec (=10msec * 5) 마다 
+ 252:	05 97       	sbiw	r24, 0x05	; 5
+ 254:	09 f0       	breq	.+2      	; 0x258 <__vector_16+0x38>
+ 256:	bb c0       	rjmp	.+374    	; 0x3ce <__vector_16+0x1ae>
+    {
+
+       time_index = 0;      // 초기화
+ 258:	10 92 43 01 	sts	0x0143, r1
+ 25c:	10 92 42 01 	sts	0x0142, r1
+
+       sensor_count++;          // 초음파 센서 카운터 값 증가        
+ 260:	80 91 3e 01 	lds	r24, 0x013E
+ 264:	8f 5f       	subi	r24, 0xFF	; 255
+ 266:	80 93 3e 01 	sts	0x013E, r24
+	   if( sensor_count == 3 )  sensor_count = 1; 
+ 26a:	80 91 3e 01 	lds	r24, 0x013E
+ 26e:	83 30       	cpi	r24, 0x03	; 3
+ 270:	19 f4       	brne	.+6      	; 0x278 <__vector_16+0x58>
+ 272:	81 e0       	ldi	r24, 0x01	; 1
+ 274:	80 93 3e 01 	sts	0x013E, r24
+
+       if ( sensor_count == 1 )        //  초음파센서 트리거 신호1 발생(초음파 1 발사) 
+ 278:	80 91 3e 01 	lds	r24, 0x013E
+ 27c:	81 30       	cpi	r24, 0x01	; 1
+ 27e:	61 f4       	brne	.+24     	; 0x298 <__vector_16+0x78>
+	   {
+
+	      PORTA |= 0x01;       // PA0 : High
+ 280:	d8 9a       	sbi	0x1b, 0	; 27
+ 282:	84 e1       	ldi	r24, 0x14	; 20
+ 284:	90 e0       	ldi	r25, 0x00	; 0
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 286:	35 e0       	ldi	r19, 0x05	; 5
+ 288:	23 2f       	mov	r18, r19
+ 28a:	2a 95       	dec	r18
+ 28c:	f1 f7       	brne	.-4      	; 0x28a <__vector_16+0x6a>
+	for(; n>0; n--)  _delay_ms(1);	 // 1msec 시간 지연을 n회 반복
+}
+
+void usec_delay(int n)               // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)   _delay_us(1);	 // 1usec 시간 지연을 n회 반복
+ 28e:	01 97       	sbiw	r24, 0x01	; 1
+ 290:	d9 f7       	brne	.-10     	; 0x288 <__vector_16+0x68>
+       if ( sensor_count == 1 )        //  초음파센서 트리거 신호1 발생(초음파 1 발사) 
+	   {
+
+	      PORTA |= 0x01;       // PA0 : High
+	      usec_delay(20);      // 20usec 동안 High 유지 
+	      PORTA &= ~0x01;      // PA0 : Low   
+ 292:	d8 98       	cbi	0x1b, 0	; 27
+     
+	      active_sensor_flag = 1; 
+ 294:	81 e0       	ldi	r24, 0x01	; 1
+ 296:	0f c0       	rjmp	.+30     	; 0x2b6 <__vector_16+0x96>
+		  flag = 0;
+
+	   }
+       else if ( sensor_count == 2 )   //  초음파센서 트리거 신호2 발생(초음파 2 발사)
+ 298:	80 91 3e 01 	lds	r24, 0x013E
+ 29c:	82 30       	cpi	r24, 0x02	; 2
+ 29e:	79 f4       	brne	.+30     	; 0x2be <__vector_16+0x9e>
+	   {
+
+	      PORTA |= 0x02;       // PA1 : High
+ 2a0:	d9 9a       	sbi	0x1b, 1	; 27
+ 2a2:	84 e1       	ldi	r24, 0x14	; 20
+ 2a4:	90 e0       	ldi	r25, 0x00	; 0
+ 2a6:	35 e0       	ldi	r19, 0x05	; 5
+ 2a8:	23 2f       	mov	r18, r19
+ 2aa:	2a 95       	dec	r18
+ 2ac:	f1 f7       	brne	.-4      	; 0x2aa <__vector_16+0x8a>
+	for(; n>0; n--)  _delay_ms(1);	 // 1msec 시간 지연을 n회 반복
+}
+
+void usec_delay(int n)               // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)   _delay_us(1);	 // 1usec 시간 지연을 n회 반복
+ 2ae:	01 97       	sbiw	r24, 0x01	; 1
+ 2b0:	d9 f7       	brne	.-10     	; 0x2a8 <__vector_16+0x88>
+       else if ( sensor_count == 2 )   //  초음파센서 트리거 신호2 발생(초음파 2 발사)
+	   {
+
+	      PORTA |= 0x02;       // PA1 : High
+	      usec_delay(20) ;     // 20usec 동안 High 유지 
+	      PORTA &= ~0x02;      // PA1 : Low 
+ 2b2:	d9 98       	cbi	0x1b, 1	; 27
+
+	      active_sensor_flag = 2;
+ 2b4:	82 e0       	ldi	r24, 0x02	; 2
+ 2b6:	80 93 28 01 	sts	0x0128, r24
+		  flag = 0;
+ 2ba:	10 92 29 01 	sts	0x0129, r1
+	   }
+
+       ////////  경고음 발생   ///////////// 
+
+       // 초음파센서모듈 1과 2가 측정한 거리 중 최솟값 저장 
+       if( distance_1 <= distance_2  && distance_1 != 0 )       distance_min = distance_1;
+ 2be:	20 91 34 01 	lds	r18, 0x0134
+ 2c2:	30 91 35 01 	lds	r19, 0x0135
+ 2c6:	80 91 2a 01 	lds	r24, 0x012A
+ 2ca:	90 91 2b 01 	lds	r25, 0x012B
+ 2ce:	82 17       	cp	r24, r18
+ 2d0:	93 07       	cpc	r25, r19
+ 2d2:	58 f0       	brcs	.+22     	; 0x2ea <__vector_16+0xca>
+ 2d4:	80 91 34 01 	lds	r24, 0x0134
+ 2d8:	90 91 35 01 	lds	r25, 0x0135
+ 2dc:	89 2b       	or	r24, r25
+ 2de:	29 f0       	breq	.+10     	; 0x2ea <__vector_16+0xca>
+ 2e0:	80 91 34 01 	lds	r24, 0x0134
+ 2e4:	90 91 35 01 	lds	r25, 0x0135
+ 2e8:	15 c0       	rjmp	.+42     	; 0x314 <__vector_16+0xf4>
+       else if( distance_2 < distance_1  && distance_2 != 0 )   distance_min = distance_2;
+ 2ea:	20 91 2a 01 	lds	r18, 0x012A
+ 2ee:	30 91 2b 01 	lds	r19, 0x012B
+ 2f2:	80 91 34 01 	lds	r24, 0x0134
+ 2f6:	90 91 35 01 	lds	r25, 0x0135
+ 2fa:	28 17       	cp	r18, r24
+ 2fc:	39 07       	cpc	r19, r25
+ 2fe:	70 f4       	brcc	.+28     	; 0x31c <__vector_16+0xfc>
+ 300:	80 91 2a 01 	lds	r24, 0x012A
+ 304:	90 91 2b 01 	lds	r25, 0x012B
+ 308:	89 2b       	or	r24, r25
+ 30a:	41 f0       	breq	.+16     	; 0x31c <__vector_16+0xfc>
+ 30c:	80 91 2a 01 	lds	r24, 0x012A
+ 310:	90 91 2b 01 	lds	r25, 0x012B
+ 314:	90 93 1f 01 	sts	0x011F, r25
+ 318:	80 93 1e 01 	sts	0x011E, r24
+
+       if( distance_min <=  40 ) Warning_Flag = 1 ;  // 측정된 거리가 40 cm 이하이면 경고음 발생 플래그 set
+ 31c:	80 91 1e 01 	lds	r24, 0x011E
+ 320:	90 91 1f 01 	lds	r25, 0x011F
+ 324:	89 97       	sbiw	r24, 0x29	; 41
+ 326:	20 f4       	brcc	.+8      	; 0x330 <__vector_16+0x110>
+ 328:	81 e0       	ldi	r24, 0x01	; 1
+ 32a:	80 93 3f 01 	sts	0x013F, r24
+ 32e:	02 c0       	rjmp	.+4      	; 0x334 <__vector_16+0x114>
+       else                      Warning_Flag = 0 ;    
+ 330:	10 92 3f 01 	sts	0x013F, r1
+		
+       Delay_Time = distance_min /10 + 1;  //거리에 비례하는 주기(=Delay_Time*50 msec )를 갖는 경고음 발생
+ 334:	80 91 1e 01 	lds	r24, 0x011E
+ 338:	90 91 1f 01 	lds	r25, 0x011F
+ 33c:	6a e0       	ldi	r22, 0x0A	; 10
+ 33e:	70 e0       	ldi	r23, 0x00	; 0
+ 340:	0e 94 47 04 	call	0x88e	; 0x88e <__udivmodhi4>
+ 344:	6f 5f       	subi	r22, 0xFF	; 255
+ 346:	7f 4f       	sbci	r23, 0xFF	; 255
+ 348:	70 93 41 01 	sts	0x0141, r23
+ 34c:	60 93 40 01 	sts	0x0140, r22
+
+	   if( Delay_Time <= 1)   Delay_Time = 1 ;   // 경고음주기 하한 : 0.1초
+ 350:	80 91 40 01 	lds	r24, 0x0140
+ 354:	90 91 41 01 	lds	r25, 0x0141
+ 358:	02 97       	sbiw	r24, 0x02	; 2
+ 35a:	30 f4       	brcc	.+12     	; 0x368 <__vector_16+0x148>
+ 35c:	81 e0       	ldi	r24, 0x01	; 1
+ 35e:	90 e0       	ldi	r25, 0x00	; 0
+ 360:	90 93 41 01 	sts	0x0141, r25
+ 364:	80 93 40 01 	sts	0x0140, r24
+	   if( Delay_Time >= 4)   Delay_Time = 4 ;   // 경고음주기 상한 : 0.4초 
+ 368:	80 91 40 01 	lds	r24, 0x0140
+ 36c:	90 91 41 01 	lds	r25, 0x0141
+ 370:	04 97       	sbiw	r24, 0x04	; 4
+ 372:	30 f0       	brcs	.+12     	; 0x380 <__vector_16+0x160>
+ 374:	84 e0       	ldi	r24, 0x04	; 4
+ 376:	90 e0       	ldi	r25, 0x00	; 0
+ 378:	90 93 41 01 	sts	0x0141, r25
+ 37c:	80 93 40 01 	sts	0x0140, r24
+ 
+       if( Warning_Flag == 1 )      // 전방 장애물의 거리가 가까우면 경고 버저음(단속음) 발생 , LED 깜박임. 
+ 380:	80 91 3f 01 	lds	r24, 0x013F
+ 384:	81 30       	cpi	r24, 0x01	; 1
+ 386:	e9 f4       	brne	.+58     	; 0x3c2 <__vector_16+0x1a2>
+	   {
+           if( Time_Delay_Polling( Delay_Time ) == 1 )     // 50msec * Delay_Time 경과 후 
+ 388:	20 91 40 01 	lds	r18, 0x0140
+ 38c:	30 91 41 01 	lds	r19, 0x0141
+unsigned char Time_Delay_Polling( unsigned short d_time )
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 390:	80 91 20 01 	lds	r24, 0x0120
+ 394:	90 91 21 01 	lds	r25, 0x0121
+ 398:	01 96       	adiw	r24, 0x01	; 1
+ 39a:	90 93 21 01 	sts	0x0121, r25
+ 39e:	80 93 20 01 	sts	0x0120, r24
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 3a2:	82 17       	cp	r24, r18
+ 3a4:	93 07       	cpc	r25, r19
+ 3a6:	98 f0       	brcs	.+38     	; 0x3ce <__vector_16+0x1ae>
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 3a8:	10 92 21 01 	sts	0x0121, r1
+ 3ac:	10 92 20 01 	sts	0x0120, r1
+ 
+       if( Warning_Flag == 1 )      // 전방 장애물의 거리가 가까우면 경고 버저음(단속음) 발생 , LED 깜박임. 
+	   {
+           if( Time_Delay_Polling( Delay_Time ) == 1 )     // 50msec * Delay_Time 경과 후 
+	       {
+                 PORTA ^= 0x08;    // PA3(버저) toggle :  버저 단속음 
+ 3b0:	8b b3       	in	r24, 0x1b	; 27
+ 3b2:	98 e0       	ldi	r25, 0x08	; 8
+ 3b4:	89 27       	eor	r24, r25
+ 3b6:	8b bb       	out	0x1b, r24	; 27
+		         PORTA ^= 0x10;    // PA4(LED) toggle :  LED ON, OFF 반복 
+ 3b8:	8b b3       	in	r24, 0x1b	; 27
+ 3ba:	90 e1       	ldi	r25, 0x10	; 16
+ 3bc:	89 27       	eor	r24, r25
+ 3be:	8b bb       	out	0x1b, r24	; 27
+ 3c0:	06 c0       	rjmp	.+12     	; 0x3ce <__vector_16+0x1ae>
+	       }
+	   }
+       else if( Warning_Flag == 0 )  // 전방 장애물의 거리가 가깝지 않으면 버저 OFF , LED OFF. 
+ 3c2:	80 91 3f 01 	lds	r24, 0x013F
+ 3c6:	88 23       	and	r24, r24
+ 3c8:	11 f4       	brne	.+4      	; 0x3ce <__vector_16+0x1ae>
+	   {
+            PORTA &= ~0x08;     // PA3(버저) OFF : 버저 OFF 
+ 3ca:	db 98       	cbi	0x1b, 3	; 27
+		    PORTA |= 0x10;      // PA4(LED) OFF :  LED  OFF 
+ 3cc:	dc 9a       	sbi	0x1b, 4	; 27
+	   }
+      
+   }
+
+}
+ 3ce:	bf 91       	pop	r27
+ 3d0:	af 91       	pop	r26
+ 3d2:	9f 91       	pop	r25
+ 3d4:	8f 91       	pop	r24
+ 3d6:	7f 91       	pop	r23
+ 3d8:	6f 91       	pop	r22
+ 3da:	5f 91       	pop	r21
+ 3dc:	3f 91       	pop	r19
+ 3de:	2f 91       	pop	r18
+ 3e0:	0f 90       	pop	r0
+ 3e2:	0f be       	out	0x3f, r0	; 63
+ 3e4:	0f 90       	pop	r0
+ 3e6:	1f 90       	pop	r1
+ 3e8:	18 95       	reti
+
+000003ea <__vector_5>:
+//////////////////////////////////////////////////////////////////
+
+
+
+ISR( INT4_vect )     // 외부인터럽트 4(INT4) 서비스 프로그램
+{                    // Echo 신호1 펄스폭의 시간 측정 및 전방 장애물까지의 거리 계산 
+ 3ea:	1f 92       	push	r1
+ 3ec:	0f 92       	push	r0
+ 3ee:	0f b6       	in	r0, 0x3f	; 63
+ 3f0:	0f 92       	push	r0
+ 3f2:	11 24       	eor	r1, r1
+ 3f4:	2f 93       	push	r18
+ 3f6:	3f 93       	push	r19
+ 3f8:	5f 93       	push	r21
+ 3fa:	6f 93       	push	r22
+ 3fc:	7f 93       	push	r23
+ 3fe:	8f 93       	push	r24
+ 400:	9f 93       	push	r25
+ 402:	af 93       	push	r26
+ 404:	bf 93       	push	r27
+
+    static unsigned short  count1 = 0, count2 = 0, del_T = 0 ;
+
+    if ( active_sensor_flag == 1 )
+ 406:	20 91 28 01 	lds	r18, 0x0128
+ 40a:	21 30       	cpi	r18, 0x01	; 1
+ 40c:	09 f0       	breq	.+2      	; 0x410 <__vector_5+0x26>
+ 40e:	4a c0       	rjmp	.+148    	; 0x4a4 <__vector_5+0xba>
+    {
+
+	  if( flag == 0 )          // Echo 신호1의 상승에지에서 인터럽트 걸릴 때 
+ 410:	80 91 29 01 	lds	r24, 0x0129
+ 414:	88 23       	and	r24, r24
+ 416:	59 f4       	brne	.+22     	; 0x42e <__vector_5+0x44>
+	  {
+		  count1 = TCNT3;      // 상승에지에서의 카운터레지스터값(TCNT3) 저장 
+ 418:	80 91 88 00 	lds	r24, 0x0088
+ 41c:	90 91 89 00 	lds	r25, 0x0089
+ 420:	90 93 3d 01 	sts	0x013D, r25
+ 424:	80 93 3c 01 	sts	0x013C, r24
+		  flag = 1;            // flag 변수 1로 설정
+ 428:	20 93 29 01 	sts	0x0129, r18
+ 42c:	3b c0       	rjmp	.+118    	; 0x4a4 <__vector_5+0xba>
+	  } 
+	  else if( flag == 1 )     // Echo 신호1의 하강에지에서 인터럽트 걸릴 때
+ 42e:	80 91 29 01 	lds	r24, 0x0129
+ 432:	81 30       	cpi	r24, 0x01	; 1
+ 434:	b9 f5       	brne	.+110    	; 0x4a4 <__vector_5+0xba>
+	  { 
+		  count2 = TCNT3;                    // 하강에지에서의 카운터레지스터값(TCNT3) 저장 
+ 436:	80 91 88 00 	lds	r24, 0x0088
+ 43a:	90 91 89 00 	lds	r25, 0x0089
+ 43e:	90 93 3b 01 	sts	0x013B, r25
+ 442:	80 93 3a 01 	sts	0x013A, r24
+		  del_T = ( count2 - count1 ) / 2 ;  // Echo 신호1 펄스폭의 시간 측정(usec 단위)
+ 446:	20 91 3c 01 	lds	r18, 0x013C
+ 44a:	30 91 3d 01 	lds	r19, 0x013D
+ 44e:	82 1b       	sub	r24, r18
+ 450:	93 0b       	sbc	r25, r19
+ 452:	96 95       	lsr	r25
+ 454:	87 95       	ror	r24
+ 456:	90 93 39 01 	sts	0x0139, r25
+ 45a:	80 93 38 01 	sts	0x0138, r24
+    	  distance_1 = del_T / 58;           // 초음파센서모듈1이 측정한 전방 장애물까지의 거리계산(cm 단위)
+ 45e:	6a e3       	ldi	r22, 0x3A	; 58
+ 460:	70 e0       	ldi	r23, 0x00	; 0
+ 462:	0e 94 47 04 	call	0x88e	; 0x88e <__udivmodhi4>
+ 466:	70 93 35 01 	sts	0x0135, r23
+ 46a:	60 93 34 01 	sts	0x0134, r22
+
+          if( distance_1 > 380 )  distance_1 = distance_1_prev ;   // 반사되는 초음파가 검출되지 않을때 
+ 46e:	80 91 34 01 	lds	r24, 0x0134
+ 472:	90 91 35 01 	lds	r25, 0x0135
+ 476:	8d 57       	subi	r24, 0x7D	; 125
+ 478:	91 40       	sbci	r25, 0x01	; 1
+ 47a:	40 f0       	brcs	.+16     	; 0x48c <__vector_5+0xa2>
+ 47c:	80 91 36 01 	lds	r24, 0x0136
+ 480:	90 91 37 01 	lds	r25, 0x0137
+ 484:	90 93 35 01 	sts	0x0135, r25
+ 488:	80 93 34 01 	sts	0x0134, r24
+		                                                           // 직전 거리측정값 사용 
+          distance_1_prev = distance_1;       // 직전 거리측정값 저장 변수 업데이트  
+ 48c:	80 91 34 01 	lds	r24, 0x0134
+ 490:	90 91 35 01 	lds	r25, 0x0135
+ 494:	90 93 37 01 	sts	0x0137, r25
+ 498:	80 93 36 01 	sts	0x0136, r24
+		  flag = 0;                           // flag 변수 0으로 설정 
+ 49c:	10 92 29 01 	sts	0x0129, r1
+          active_sensor_flag = 0;             // active_sensor_flag 변수 리셋
+ 4a0:	10 92 28 01 	sts	0x0128, r1
+	   } 
+
+    }
+} 
+ 4a4:	bf 91       	pop	r27
+ 4a6:	af 91       	pop	r26
+ 4a8:	9f 91       	pop	r25
+ 4aa:	8f 91       	pop	r24
+ 4ac:	7f 91       	pop	r23
+ 4ae:	6f 91       	pop	r22
+ 4b0:	5f 91       	pop	r21
+ 4b2:	3f 91       	pop	r19
+ 4b4:	2f 91       	pop	r18
+ 4b6:	0f 90       	pop	r0
+ 4b8:	0f be       	out	0x3f, r0	; 63
+ 4ba:	0f 90       	pop	r0
+ 4bc:	1f 90       	pop	r1
+ 4be:	18 95       	reti
+
+000004c0 <__vector_6>:
+
+
+ISR( INT5_vect )     // 외부인터럽트 5(INT5) 서비스 프로그램
+{                    // Echo 신호2 펄스폭의 시간 측정 및 전방 장애물까지의 거리 계산 
+ 4c0:	1f 92       	push	r1
+ 4c2:	0f 92       	push	r0
+ 4c4:	0f b6       	in	r0, 0x3f	; 63
+ 4c6:	0f 92       	push	r0
+ 4c8:	11 24       	eor	r1, r1
+ 4ca:	2f 93       	push	r18
+ 4cc:	3f 93       	push	r19
+ 4ce:	5f 93       	push	r21
+ 4d0:	6f 93       	push	r22
+ 4d2:	7f 93       	push	r23
+ 4d4:	8f 93       	push	r24
+ 4d6:	9f 93       	push	r25
+ 4d8:	af 93       	push	r26
+ 4da:	bf 93       	push	r27
+
+    static unsigned short  count1 = 0, count2 = 0, del_T = 0 ;
+
+    if ( active_sensor_flag == 2 )
+ 4dc:	80 91 28 01 	lds	r24, 0x0128
+ 4e0:	82 30       	cpi	r24, 0x02	; 2
+ 4e2:	09 f0       	breq	.+2      	; 0x4e6 <__vector_6+0x26>
+ 4e4:	4b c0       	rjmp	.+150    	; 0x57c <__vector_6+0xbc>
+    {
+
+	  if( flag == 0 )          // Echo신호2의 상승에지에서 인터럽트 걸릴 때 
+ 4e6:	80 91 29 01 	lds	r24, 0x0129
+ 4ea:	88 23       	and	r24, r24
+ 4ec:	61 f4       	brne	.+24     	; 0x506 <__vector_6+0x46>
+	  {
+		  count1 = TCNT3;      // 상승에지에서의 카운터레지스터값(TCNT3) 저장 
+ 4ee:	80 91 88 00 	lds	r24, 0x0088
+ 4f2:	90 91 89 00 	lds	r25, 0x0089
+ 4f6:	90 93 33 01 	sts	0x0133, r25
+ 4fa:	80 93 32 01 	sts	0x0132, r24
+		  flag = 1;            // flag 변수 1로 설정
+ 4fe:	81 e0       	ldi	r24, 0x01	; 1
+ 500:	80 93 29 01 	sts	0x0129, r24
+ 504:	3b c0       	rjmp	.+118    	; 0x57c <__vector_6+0xbc>
+	  } 
+	  else if( flag == 1 )     // Echo신호2의 하강에지에서 인터럽트 걸릴 때
+ 506:	80 91 29 01 	lds	r24, 0x0129
+ 50a:	81 30       	cpi	r24, 0x01	; 1
+ 50c:	b9 f5       	brne	.+110    	; 0x57c <__vector_6+0xbc>
+	  { 
+		  count2 = TCNT3;                    // 하강에지에서의 카운터레지스터값(TCNT3) 저장 
+ 50e:	80 91 88 00 	lds	r24, 0x0088
+ 512:	90 91 89 00 	lds	r25, 0x0089
+ 516:	90 93 31 01 	sts	0x0131, r25
+ 51a:	80 93 30 01 	sts	0x0130, r24
+		  del_T = ( count2 - count1 ) / 2 ;  // Echo 신호2 펄스폭의 시간 측정(usec 단위)
+ 51e:	20 91 32 01 	lds	r18, 0x0132
+ 522:	30 91 33 01 	lds	r19, 0x0133
+ 526:	82 1b       	sub	r24, r18
+ 528:	93 0b       	sbc	r25, r19
+ 52a:	96 95       	lsr	r25
+ 52c:	87 95       	ror	r24
+ 52e:	90 93 2f 01 	sts	0x012F, r25
+ 532:	80 93 2e 01 	sts	0x012E, r24
+    	  distance_2 = del_T / 58;           // 초음파센서모듈2가 측정한 전방 장애물까지의 거리계산(cm 단위)
+ 536:	6a e3       	ldi	r22, 0x3A	; 58
+ 538:	70 e0       	ldi	r23, 0x00	; 0
+ 53a:	0e 94 47 04 	call	0x88e	; 0x88e <__udivmodhi4>
+ 53e:	70 93 2b 01 	sts	0x012B, r23
+ 542:	60 93 2a 01 	sts	0x012A, r22
+
+          if( distance_2 > 380 )  distance_2 = distance_2_prev ;   // 반사되는 초음파가 검출되지 않을때 
+ 546:	80 91 2a 01 	lds	r24, 0x012A
+ 54a:	90 91 2b 01 	lds	r25, 0x012B
+ 54e:	8d 57       	subi	r24, 0x7D	; 125
+ 550:	91 40       	sbci	r25, 0x01	; 1
+ 552:	40 f0       	brcs	.+16     	; 0x564 <__vector_6+0xa4>
+ 554:	80 91 2c 01 	lds	r24, 0x012C
+ 558:	90 91 2d 01 	lds	r25, 0x012D
+ 55c:	90 93 2b 01 	sts	0x012B, r25
+ 560:	80 93 2a 01 	sts	0x012A, r24
+		                                                           // 직전 거리측정값 사용 
+          distance_2_prev = distance_2;       // 직전 거리측정값 저장 변수 업데이트  
+ 564:	80 91 2a 01 	lds	r24, 0x012A
+ 568:	90 91 2b 01 	lds	r25, 0x012B
+ 56c:	90 93 2d 01 	sts	0x012D, r25
+ 570:	80 93 2c 01 	sts	0x012C, r24
+		  flag = 0;                           // flag 변수 0으로 설정 
+ 574:	10 92 29 01 	sts	0x0129, r1
+          active_sensor_flag = 0;             // active_sensor_flag 변수 리셋
+ 578:	10 92 28 01 	sts	0x0128, r1
+	  } 
+
+    }
+}
+ 57c:	bf 91       	pop	r27
+ 57e:	af 91       	pop	r26
+ 580:	9f 91       	pop	r25
+ 582:	8f 91       	pop	r24
+ 584:	7f 91       	pop	r23
+ 586:	6f 91       	pop	r22
+ 588:	5f 91       	pop	r21
+ 58a:	3f 91       	pop	r19
+ 58c:	2f 91       	pop	r18
+ 58e:	0f 90       	pop	r0
+ 590:	0f be       	out	0x3f, r0	; 63
+ 592:	0f 90       	pop	r0
+ 594:	1f 90       	pop	r1
+ 596:	18 95       	reti
+
+00000598 <key_scan>:
+unsigned char key_scan(void)
+{
+  
+    unsigned char   in = 0 ;
+    
+    if (       ! ( PINB  & 0x01  )  )        in = KEY1 ; 	  //   PB0 key scan 	
+ 598:	b0 99       	sbic	0x16, 0	; 22
+ 59a:	02 c0       	rjmp	.+4      	; 0x5a0 <key_scan+0x8>
+ 59c:	81 e0       	ldi	r24, 0x01	; 1
+ 59e:	08 95       	ret
+    else if (  ! ( PINB  & 0x02  )  )        in = KEY2 ; 	  //   PB1 key scan  		
+ 5a0:	b1 99       	sbic	0x16, 1	; 22
+ 5a2:	02 c0       	rjmp	.+4      	; 0x5a8 <key_scan+0x10>
+ 5a4:	82 e0       	ldi	r24, 0x02	; 2
+ 5a6:	08 95       	ret
+    else if (  ! ( PINB  & 0x04  )  )        in = KEY3 ; 	  //   PB2 key scan  	
+ 5a8:	b2 9b       	sbis	0x16, 2	; 22
+ 5aa:	02 c0       	rjmp	.+4      	; 0x5b0 <key_scan+0x18>
+ 5ac:	80 e0       	ldi	r24, 0x00	; 0
+ 5ae:	08 95       	ret
+ 5b0:	83 e0       	ldi	r24, 0x03	; 3
+
+    else                                     in = NO_KEY ; 	
+    
+    return in ;
+    
+}
+ 5b2:	08 95       	ret
+
+000005b4 <KeyInput>:
+//
+// 리턴 값 : 0이 아닐 때 : 스캔 코드값
+//           0일 때      : 입력값이 없음
+//==============================================
+unsigned char KeyInput(void)
+{
+ 5b4:	1f 93       	push	r17
+ 5b6:	cf 93       	push	r28
+ 5b8:	df 93       	push	r29
+    unsigned char in, in1;
+
+    static unsigned char pin = NO_KEY;
+
+    
+    in = key_scan();            // key 입력 읽기 
+ 5ba:	0e 94 cc 02 	call	0x598	; 0x598 <key_scan>
+ 5be:	18 2f       	mov	r17, r24
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 5c0:	c0 ea       	ldi	r28, 0xA0	; 160
+ 5c2:	df e0       	ldi	r29, 0x0F	; 15
+ 5c4:	8a e0       	ldi	r24, 0x0A	; 10
+ 5c6:	90 e0       	ldi	r25, 0x00	; 0
+ 5c8:	fe 01       	movw	r30, r28
+ 5ca:	31 97       	sbiw	r30, 0x01	; 1
+ 5cc:	f1 f7       	brne	.-4      	; 0x5ca <KeyInput+0x16>
+
+////////////////////////////////////////////////////
+
+void msec_delay(int n)               // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)  _delay_ms(1);	 // 1msec 시간 지연을 n회 반복
+ 5ce:	01 97       	sbiw	r24, 0x01	; 1
+ 5d0:	d9 f7       	brne	.-10     	; 0x5c8 <KeyInput+0x14>
+ 5d2:	8a e0       	ldi	r24, 0x0A	; 10
+ 5d4:	90 e0       	ldi	r25, 0x00	; 0
+ 5d6:	fe 01       	movw	r30, r28
+ 5d8:	31 97       	sbiw	r30, 0x01	; 1
+ 5da:	f1 f7       	brne	.-4      	; 0x5d8 <KeyInput+0x24>
+ 5dc:	01 97       	sbiw	r24, 0x01	; 1
+ 5de:	d9 f7       	brne	.-10     	; 0x5d6 <KeyInput+0x22>
+ 5e0:	8a e0       	ldi	r24, 0x0A	; 10
+ 5e2:	90 e0       	ldi	r25, 0x00	; 0
+ 5e4:	fe 01       	movw	r30, r28
+ 5e6:	31 97       	sbiw	r30, 0x01	; 1
+ 5e8:	f1 f7       	brne	.-4      	; 0x5e6 <KeyInput+0x32>
+ 5ea:	01 97       	sbiw	r24, 0x01	; 1
+ 5ec:	d9 f7       	brne	.-10     	; 0x5e4 <KeyInput+0x30>
+    while(1)               // key 입력이 안정화될때까지 기다림
+    {
+        //디바운싱 시간 지연
+        msec_delay(10); msec_delay(10);  msec_delay(10);
+        
+        in1 = key_scan();         // key 입력 읽기    
+ 5ee:	0e 94 cc 02 	call	0x598	; 0x598 <key_scan>
+        
+        if(in==in1) break;
+ 5f2:	18 17       	cp	r17, r24
+ 5f4:	11 f0       	breq	.+4      	; 0x5fa <KeyInput+0x46>
+ 5f6:	18 2f       	mov	r17, r24
+ 5f8:	e5 cf       	rjmp	.-54     	; 0x5c4 <KeyInput+0x10>
+        in = in1;
+    }
+    
+    if(!(in & 0xFF))    // key를 누르지 않고 있으면  0 ( NO_KEY) 리턴
+ 5fa:	11 23       	and	r17, r17
+ 5fc:	19 f4       	brne	.+6      	; 0x604 <KeyInput+0x50>
+    {
+        pin= 0;			
+ 5fe:	10 92 27 01 	sts	0x0127, r1
+ 602:	08 c0       	rjmp	.+16     	; 0x614 <KeyInput+0x60>
+        return 0;
+    }
+    
+    if(pin == in)     // 동일한 key를 계속 누르고 있으면  0 ( NO_KEY) 리턴
+ 604:	80 91 27 01 	lds	r24, 0x0127
+ 608:	81 17       	cp	r24, r17
+ 60a:	11 f4       	brne	.+4      	; 0x610 <KeyInput+0x5c>
+ 60c:	10 e0       	ldi	r17, 0x00	; 0
+ 60e:	02 c0       	rjmp	.+4      	; 0x614 <KeyInput+0x60>
+    {
+        return 0;  
+    }
+    
+    pin = in;
+ 610:	10 93 27 01 	sts	0x0127, r17
+    
+    return in;
+}
+ 614:	81 2f       	mov	r24, r17
+ 616:	df 91       	pop	r29
+ 618:	cf 91       	pop	r28
+ 61a:	1f 91       	pop	r17
+ 61c:	08 95       	ret
+
+0000061e <HexToDec>:
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+}
+
+void HexToDec( unsigned short num, unsigned short radix)   // num으로 넘어온 16진수 형태의 데이터를 10진수로 
+{                                                          //  변환하여 각각의 자릿수를 전역변수 배열 cnumber[0](1자리) - cnumber[4](10000자리)에 저장하는 함수. 
+ 61e:	0f 93       	push	r16
+ 620:	1f 93       	push	r17
+ 622:	cf 93       	push	r28
+ 624:	df 93       	push	r29
+ 626:	9c 01       	movw	r18, r24
+ 628:	8b 01       	movw	r16, r22
+
+	int j ;
+
+	for(j=0; j<5 ; j++) cnumber[j] = 0 ;
+ 62a:	10 92 22 01 	sts	0x0122, r1
+ 62e:	10 92 23 01 	sts	0x0123, r1
+ 632:	10 92 24 01 	sts	0x0124, r1
+ 636:	10 92 25 01 	sts	0x0125, r1
+ 63a:	10 92 26 01 	sts	0x0126, r1
+ 63e:	c0 e0       	ldi	r28, 0x00	; 0
+ 640:	d0 e0       	ldi	r29, 0x00	; 0
+	j=0;
+	do
+	{
+		cnumber[j++] = num % radix ; 
+ 642:	c9 01       	movw	r24, r18
+ 644:	b8 01       	movw	r22, r16
+ 646:	0e 94 47 04 	call	0x88e	; 0x88e <__udivmodhi4>
+ 64a:	fe 01       	movw	r30, r28
+ 64c:	ee 5d       	subi	r30, 0xDE	; 222
+ 64e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 650:	80 83       	st	Z, r24
+ 652:	21 96       	adiw	r28, 0x01	; 1
+		num /= radix; 
+ 654:	c9 01       	movw	r24, r18
+ 656:	b8 01       	movw	r22, r16
+ 658:	0e 94 47 04 	call	0x88e	; 0x88e <__udivmodhi4>
+ 65c:	9b 01       	movw	r18, r22
+	} while(num);
+ 65e:	61 15       	cp	r22, r1
+ 660:	71 05       	cpc	r23, r1
+ 662:	79 f7       	brne	.-34     	; 0x642 <HexToDec+0x24>
+} 
+ 664:	df 91       	pop	r29
+ 666:	cf 91       	pop	r28
+ 668:	1f 91       	pop	r17
+ 66a:	0f 91       	pop	r16
+ 66c:	08 95       	ret
+
+0000066e <NumToAsc>:
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 66e:	8a 30       	cpi	r24, 0x0A	; 10
+ 670:	10 f4       	brcc	.+4      	; 0x676 <NumToAsc+0x8>
+ 672:	80 5d       	subi	r24, 0xD0	; 208
+ 674:	08 95       	ret
+	else          Num += 0x37; 
+ 676:	89 5c       	subi	r24, 0xC9	; 201
+	return Num ;
+}
+ 678:	08 95       	ret
+
+0000067a <Time_Delay_Polling>:
+unsigned char Time_Delay_Polling( unsigned short d_time )
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 67a:	20 91 20 01 	lds	r18, 0x0120
+ 67e:	30 91 21 01 	lds	r19, 0x0121
+ 682:	2f 5f       	subi	r18, 0xFF	; 255
+ 684:	3f 4f       	sbci	r19, 0xFF	; 255
+ 686:	30 93 21 01 	sts	0x0121, r19
+ 68a:	20 93 20 01 	sts	0x0120, r18
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 68e:	28 17       	cp	r18, r24
+ 690:	39 07       	cpc	r19, r25
+ 692:	10 f4       	brcc	.+4      	; 0x698 <Time_Delay_Polling+0x1e>
+ 694:	80 e0       	ldi	r24, 0x00	; 0
+ 696:	08 95       	ret
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 698:	10 92 21 01 	sts	0x0121, r1
+ 69c:	10 92 20 01 	sts	0x0120, r1
+ 6a0:	81 e0       	ldi	r24, 0x01	; 1
+    } 
+    return  ret_val ;
+}
+ 6a2:	08 95       	ret
+
+000006a4 <msec_delay>:
+ 6a4:	20 ea       	ldi	r18, 0xA0	; 160
+ 6a6:	3f e0       	ldi	r19, 0x0F	; 15
+ 6a8:	04 c0       	rjmp	.+8      	; 0x6b2 <msec_delay+0xe>
+ 6aa:	f9 01       	movw	r30, r18
+ 6ac:	31 97       	sbiw	r30, 0x01	; 1
+ 6ae:	f1 f7       	brne	.-4      	; 0x6ac <msec_delay+0x8>
+
+////////////////////////////////////////////////////
+
+void msec_delay(int n)               // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)  _delay_ms(1);	 // 1msec 시간 지연을 n회 반복
+ 6b0:	01 97       	sbiw	r24, 0x01	; 1
+ 6b2:	18 16       	cp	r1, r24
+ 6b4:	19 06       	cpc	r1, r25
+ 6b6:	cc f3       	brlt	.-14     	; 0x6aa <msec_delay+0x6>
+}
+ 6b8:	08 95       	ret
+
+000006ba <usec_delay>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 6ba:	35 e0       	ldi	r19, 0x05	; 5
+ 6bc:	04 c0       	rjmp	.+8      	; 0x6c6 <usec_delay+0xc>
+ 6be:	23 2f       	mov	r18, r19
+ 6c0:	2a 95       	dec	r18
+ 6c2:	f1 f7       	brne	.-4      	; 0x6c0 <usec_delay+0x6>
+
+void usec_delay(int n)               // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)   _delay_us(1);	 // 1usec 시간 지연을 n회 반복
+ 6c4:	01 97       	sbiw	r24, 0x01	; 1
+ 6c6:	18 16       	cp	r1, r24
+ 6c8:	19 06       	cpc	r1, r25
+ 6ca:	cc f3       	brlt	.-14     	; 0x6be <usec_delay+0x4>
+}
+ 6cc:	08 95       	ret
+
+000006ce <Display_Number_LCD>:
+}
+
+///////////////////////////////////////////////////////////////////
+
+void Display_Number_LCD( unsigned int num, unsigned char digit )   //부호없는 정수형변수(num)을 10진수 형태로 
+{                                                                  // 정해진 자릿수(digit) 만큼 LCD 에 디스플레이 하는 함수 
+ 6ce:	1f 93       	push	r17
+ 6d0:	16 2f       	mov	r17, r22
+      HexToDec( num, 10); //10진수로 변환
+ 6d2:	6a e0       	ldi	r22, 0x0A	; 10
+ 6d4:	70 e0       	ldi	r23, 0x00	; 0
+ 6d6:	0e 94 0f 03 	call	0x61e	; 0x61e <HexToDec>
+
+      if( digit < 1 )     digit = 1 ;
+ 6da:	11 23       	and	r17, r17
+ 6dc:	81 f1       	breq	.+96     	; 0x73e <Display_Number_LCD+0x70>
+      if( digit > 5 )     digit = 5 ;
+ 6de:	16 30       	cpi	r17, 0x06	; 6
+ 6e0:	10 f0       	brcs	.+4      	; 0x6e6 <Display_Number_LCD+0x18>
+ 6e2:	15 e0       	ldi	r17, 0x05	; 5
+ 6e4:	02 c0       	rjmp	.+4      	; 0x6ea <Display_Number_LCD+0x1c>
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 6e6:	15 30       	cpi	r17, 0x05	; 5
+ 6e8:	49 f4       	brne	.+18     	; 0x6fc <Display_Number_LCD+0x2e>
+ 6ea:	80 91 26 01 	lds	r24, 0x0126
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 6ee:	8a 30       	cpi	r24, 0x0A	; 10
+ 6f0:	10 f4       	brcc	.+4      	; 0x6f6 <Display_Number_LCD+0x28>
+ 6f2:	80 5d       	subi	r24, 0xD0	; 208
+ 6f4:	01 c0       	rjmp	.+2      	; 0x6f8 <Display_Number_LCD+0x2a>
+	else          Num += 0x37; 
+ 6f6:	89 5c       	subi	r24, 0xC9	; 201
+      HexToDec( num, 10); //10진수로 변환
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 6f8:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+ 6fc:	14 30       	cpi	r17, 0x04	; 4
+ 6fe:	48 f0       	brcs	.+18     	; 0x712 <Display_Number_LCD+0x44>
+ 700:	80 91 25 01 	lds	r24, 0x0125
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 704:	8a 30       	cpi	r24, 0x0A	; 10
+ 706:	10 f4       	brcc	.+4      	; 0x70c <Display_Number_LCD+0x3e>
+ 708:	80 5d       	subi	r24, 0xD0	; 208
+ 70a:	01 c0       	rjmp	.+2      	; 0x70e <Display_Number_LCD+0x40>
+	else          Num += 0x37; 
+ 70c:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+ 70e:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 712:	13 30       	cpi	r17, 0x03	; 3
+ 714:	48 f0       	brcs	.+18     	; 0x728 <Display_Number_LCD+0x5a>
+ 716:	80 91 24 01 	lds	r24, 0x0124
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 71a:	8a 30       	cpi	r24, 0x0A	; 10
+ 71c:	10 f4       	brcc	.+4      	; 0x722 <Display_Number_LCD+0x54>
+ 71e:	80 5d       	subi	r24, 0xD0	; 208
+ 720:	01 c0       	rjmp	.+2      	; 0x724 <Display_Number_LCD+0x56>
+	else          Num += 0x37; 
+ 722:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 724:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 728:	11 30       	cpi	r17, 0x01	; 1
+ 72a:	49 f0       	breq	.+18     	; 0x73e <Display_Number_LCD+0x70>
+ 72c:	80 91 23 01 	lds	r24, 0x0123
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 730:	8a 30       	cpi	r24, 0x0A	; 10
+ 732:	10 f4       	brcc	.+4      	; 0x738 <Display_Number_LCD+0x6a>
+ 734:	80 5d       	subi	r24, 0xD0	; 208
+ 736:	01 c0       	rjmp	.+2      	; 0x73a <Display_Number_LCD+0x6c>
+	else          Num += 0x37; 
+ 738:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 73a:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 73e:	80 91 22 01 	lds	r24, 0x0122
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 742:	8a 30       	cpi	r24, 0x0A	; 10
+ 744:	10 f4       	brcc	.+4      	; 0x74a <Display_Number_LCD+0x7c>
+ 746:	80 5d       	subi	r24, 0xD0	; 208
+ 748:	01 c0       	rjmp	.+2      	; 0x74c <Display_Number_LCD+0x7e>
+	else          Num += 0x37; 
+ 74a:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 74c:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+}
+ 750:	1f 91       	pop	r17
+ 752:	08 95       	ret
+
+00000754 <main>:
+static volatile  unsigned char    Warning_Flag = 0, flag = 0 ;
+static volatile  unsigned short   Delay_Time = 0, curr_delay = 0;
+
+
+int main() 
+{   
+ 754:	df 92       	push	r13
+ 756:	ef 92       	push	r14
+ 758:	ff 92       	push	r15
+ 75a:	0f 93       	push	r16
+ 75c:	1f 93       	push	r17
+ 75e:	cf 93       	push	r28
+ 760:	df 93       	push	r29
+
+    unsigned short  dist_1 = 0,  dist_2 = 0, pressed_key = 0, cnt = 0;
+
+
+    LcdInit();                     // LCd 초기화 함수 호출
+ 762:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <LcdInit>
+
+    LcdMove(0,0);                  // LCD에 쓸 데이터 초기 위치 설정( 0행 0열)
+ 766:	80 e0       	ldi	r24, 0x00	; 0
+ 768:	60 e0       	ldi	r22, 0x00	; 0
+ 76a:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+    LcdPuts("Dist_1 =    cm");     // LCD에 문자열 디스플레이 
+ 76e:	80 e0       	ldi	r24, 0x00	; 0
+ 770:	91 e0       	ldi	r25, 0x01	; 1
+ 772:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+
+    LcdMove(1,0);                  // LCD에 쓸 데이터 초기 위치 설정( 1행 0열)  
+ 776:	81 e0       	ldi	r24, 0x01	; 1
+ 778:	60 e0       	ldi	r22, 0x00	; 0
+ 77a:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+    LcdPuts("Dist_2 =    cm");     // LCD에 문자열 디스플레이 
+ 77e:	8f e0       	ldi	r24, 0x0F	; 15
+ 780:	91 e0       	ldi	r25, 0x01	; 1
+ 782:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+
+   //// 2개의 초음파센서모듈(HC-SR04) 구동을 위한 HW 관련 레지스터 설정  ////////////
+
+  //  입력/출력 포트 설정 	   (교재 pp75-76 레지스터그림, 표6.1 참조)
+
+    DDRA |= 0x03;        // 2개의 초음파센서 Trigger 신호( Trigger신호1 : PA0, Trigger신호2 : PA1 )출력포트 설정. 
+ 786:	8a b3       	in	r24, 0x1a	; 26
+ 788:	83 60       	ori	r24, 0x03	; 3
+ 78a:	8a bb       	out	0x1a, r24	; 26
+                         // DDRA = 0b******11, DDRA = DDRA | 0b00000011(0x03)   
+    PORTA &= ~0x03;      // PA0 : Low,  PA1 : Low  ( Trigger 신호 OFF )  
+ 78c:	8b b3       	in	r24, 0x1b	; 27
+ 78e:	8c 7f       	andi	r24, 0xFC	; 252
+ 790:	8b bb       	out	0x1b, r24	; 27
+                         // PORTA = 0b******00, PORTA = PORTA & ~0b00000011(~0x03)  
+
+    DDRE &= ~0x30;       // 2개의 초음파센서 Echo 신호( 외부인터럽트4(INT4/PE4), 외부인터럽트5(INT5/PE5) 
+ 792:	82 b1       	in	r24, 0x02	; 2
+ 794:	8f 7c       	andi	r24, 0xCF	; 207
+ 796:	82 b9       	out	0x02, r24	; 2
+                         // 입력포트 설정.  DDRE = 0b**00****, DDRE = DDRE & ~0b00110000(~0x30) 
+						   
+    DDRA |= 0x08;        // 버저(Buzzer) ( PA3 : 출력포트 설정 )
+ 798:	d3 9a       	sbi	0x1a, 3	; 26
+                         // DDRA = 0b****1***, DDRA = DDRA | 0b00001000(0x08)   
+    PORTA &= ~0x08;      // PA3  : Low  ( 버저 OFF )  
+ 79a:	db 98       	cbi	0x1b, 3	; 27
+                         // PORTA = 0b****0***, PORTA = PORTA | ~0b00001000(~0x08) 
+						  
+    DDRA |= 0x10;        // LED ( PA4 : 출력포트 설정 )
+ 79c:	d4 9a       	sbi	0x1a, 4	; 26
+                         // DDRA = 0b***1****, DDRA = DDRA | 0b00010000(0x10)   
+    PORTA |= 0x10;       // PA4  : High ( LED OFF)    
+ 79e:	dc 9a       	sbi	0x1b, 4	; 27
+                         // PORTA = 0b***1****, PORTA = PORTA | 0b00010000(0x10)  
+	
+	DDRB &= ~0x01;        // Push SW ( PB0 : 입력포트 설정 )
+ 7a0:	b8 98       	cbi	0x17, 0	; 23
+                          // DDRB = 0b*******0, DDRA = DDRA & 0b00000001(~0x01)   
+    PORTB |= 0x01;        // PORTB : 0b*******1	:	High 내부풀압저항 사용모드로 설정    
+ 7a2:	c0 9a       	sbi	0x18, 0	; 24
+                          // PORTB = PORTB | 0b00010000(0x10)
+
+    ////////////  Timer 0 설정  ( 10 msec 주기의 타이머0 오버플로 인터럽트 설정 )  ///////////////
+    // 교재 P133-137(레지스터 그림과 표8.1-표8.5) 참조  
+	  
+    TCCR0 &= ~0x48;         // Normal mode(타이머모드), 타이머 0 시작(1024분주 사용)
+ 7a4:	83 b7       	in	r24, 0x33	; 51
+ 7a6:	87 7b       	andi	r24, 0xB7	; 183
+ 7a8:	83 bf       	out	0x33, r24	; 51
+                            // TCCR0 = 0b*0**0111 
+                            // TCCR0 =TCCR0 & ~0b01001000(~0x48 )  
+    TCCR0 |= 0x07;          // TCCR0 =TCCR0 | 0b00000111( 0x07 ) 
+ 7aa:	83 b7       	in	r24, 0x33	; 51
+ 7ac:	87 60       	ori	r24, 0x07	; 7
+ 7ae:	83 bf       	out	0x33, r24	; 51
+	 
+    TCNT0 = 256 - 156;      // 내부클럭주기 = 1024/ (16x10^6) = 64 usec,  
+ 7b0:	84 e6       	ldi	r24, 0x64	; 100
+ 7b2:	82 bf       	out	0x32, r24	; 50
+                            // 오버플로인터럽트 주기 = 10msec
+                            // 156 = 10msec/ 64usec,  TCNT0 = 256 - 156
+
+    TIMSK |= 0x01;          // 타이머0 오버플로 인터럽트 허용
+ 7b4:	87 b7       	in	r24, 0x37	; 55
+ 7b6:	81 60       	ori	r24, 0x01	; 1
+ 7b8:	87 bf       	out	0x37, r24	; 55
+
+    ////////////////////////////////////////////////////////////////////////////     
+    // Echo 신호 펄스폭 시간 측정을 위한 Timer 3 설정
+   // 교재 PP238-244(레지스터 그림과 표12.4 - 표12.5 참조) 
+
+    TCCR3A &= ~0x03;      // Normal mode(타이머모드), 타이머 3 시작(분주비 8) 
+ 7ba:	80 91 8b 00 	lds	r24, 0x008B
+ 7be:	8c 7f       	andi	r24, 0xFC	; 252
+ 7c0:	80 93 8b 00 	sts	0x008B, r24
+                          // 내부클럭주기 = 8/ (16x10^6) = 0.5 usec (0.5usec 단위로 측정) 
+                          // TCCR3A = 0b******00,  TCCR3B = 0b***00010 
+                          // TCCR3A = TCCR3A & ~0b00000011(~0x03)  
+						   
+    TCCR3B &= ~0x1D;      // TCCR3B = TCCR3B & ~0b00011101(~0x1D)                               
+ 7c4:	80 91 8a 00 	lds	r24, 0x008A
+ 7c8:	82 7e       	andi	r24, 0xE2	; 226
+ 7ca:	80 93 8a 00 	sts	0x008A, r24
+    TCCR3B |=  0x02;      // TCCR3B = TCCR3B | 0b00000010( 0x02 )  
+ 7ce:	80 91 8a 00 	lds	r24, 0x008A
+ 7d2:	82 60       	ori	r24, 0x02	; 2
+ 7d4:	80 93 8a 00 	sts	0x008A, r24
+
+   // 외부인터럽트 4( pin: INT4/PE4 ) 설정 :  초음파센서모듈 Echo 신호1가 입력됨.    
+   // 외부인터럽트 5( pin: INT5/PE5 ) 설정 :  초음파센서모듈 Echo 신호2가 입력됨.  
+   // 교재 pp108-109 (레지스터 그림, 표 7.4-표7.5 참조 )
+
+    EICRB &= ~0x0A;       // INT4, INT5 : 하강에지(falling edge) 상승에지(rising edge) 모두에서 인터럽트 요구
+ 7d8:	8a b7       	in	r24, 0x3a	; 58
+ 7da:	85 7f       	andi	r24, 0xF5	; 245
+ 7dc:	8a bf       	out	0x3a, r24	; 58
+                          // EICRB = 0b****0101 
+                          // EICRB = EICRB & ~0b00001010(~0x0A ) 
+    EICRB |=   0x05;      // EICRB = EICRB | 0b00000101( 0x05 ) 
+ 7de:	8a b7       	in	r24, 0x3a	; 58
+ 7e0:	85 60       	ori	r24, 0x05	; 5
+ 7e2:	8a bf       	out	0x3a, r24	; 58
+
+    EIMSK |= 0x30;        // INT4, INT5 Enable(허용) 
+ 7e4:	89 b7       	in	r24, 0x39	; 57
+ 7e6:	80 63       	ori	r24, 0x30	; 48
+ 7e8:	89 bf       	out	0x39, r24	; 57
+                          // EIMSK = 0b**11****,  EIMSK = EIMSK | 0b00110000( 0x30 ) 
+    sei();                // 전역 인터럽트 허용
+ 7ea:	78 94       	sei
+ 7ec:	c0 e0       	ldi	r28, 0x00	; 0
+ 7ee:	d0 e0       	ldi	r29, 0x00	; 0
+			if( cnt == 1 )		//Key1 이  홀수번 눌러지면
+			{
+				//TIMSK |= 0x01;		    // 타이머0 오버플로 인터럽트 허용
+				sei();
+				
+				TCNT0 = 256 - 156;      // 내부클럭주기 = 1024/ (16x10^6) = 64 usec,
+ 7f0:	44 e6       	ldi	r20, 0x64	; 100
+ 7f2:	d4 2e       	mov	r13, r20
+    sei();                // 전역 인터럽트 허용
+ 
+	 
+    while (1) 
+    {
+	   pressed_key = KeyInput();
+ 7f4:	0e 94 da 02 	call	0x5b4	; 0x5b4 <KeyInput>
+ 7f8:	90 e0       	ldi	r25, 0x00	; 0
+	   
+	   if(	pressed_key == KEY1 )
+ 7fa:	81 30       	cpi	r24, 0x01	; 1
+ 7fc:	91 05       	cpc	r25, r1
+ 7fe:	21 f5       	brne	.+72     	; 0x848 <main+0xf4>
+	   {
+	   		cnt++;
+ 800:	21 96       	adiw	r28, 0x01	; 1
+			if( cnt == 2 ) cnt = 0;
+ 802:	c2 30       	cpi	r28, 0x02	; 2
+ 804:	d1 05       	cpc	r29, r1
+ 806:	e1 f0       	breq	.+56     	; 0x840 <main+0xec>
+
+			if( cnt == 1 )		//Key1 이  홀수번 눌러지면
+ 808:	c1 30       	cpi	r28, 0x01	; 1
+ 80a:	d1 05       	cpc	r29, r1
+ 80c:	b9 f4       	brne	.+46     	; 0x83c <main+0xe8>
+			{
+				//TIMSK |= 0x01;		    // 타이머0 오버플로 인터럽트 허용
+				sei();
+ 80e:	78 94       	sei
+				
+				TCNT0 = 256 - 156;      // 내부클럭주기 = 1024/ (16x10^6) = 64 usec,
+ 810:	d2 be       	out	0x32, r13	; 50
+										// 오버플로인터럽트 주기 = 10msec
+                              
+				EIMSK |= 0x30;        // INT4, INT5 Enable(허용) 
+ 812:	89 b7       	in	r24, 0x39	; 57
+ 814:	80 63       	ori	r24, 0x30	; 48
+ 816:	89 bf       	out	0x39, r24	; 57
+                          			  // EIMSK = 0b**11****,  EIMSK = EIMSK | 0b00110000( 0x30 ) 
+				flag = 0;
+ 818:	10 92 29 01 	sts	0x0129, r1
+				sensor_count = 0;
+ 81c:	10 92 3e 01 	sts	0x013E, r1
+				active_sensor_flag = 0;
+ 820:	10 92 28 01 	sts	0x0128, r1
+				Warning_Flag = 0;
+ 824:	10 92 3f 01 	sts	0x013F, r1
+				Delay_Time = 0;
+ 828:	10 92 41 01 	sts	0x0141, r1
+ 82c:	10 92 40 01 	sts	0x0140, r1
+				curr_delay = 0;
+ 830:	10 92 45 01 	sts	0x0145, r1
+ 834:	10 92 44 01 	sts	0x0144, r1
+				PORTA &= ~0x01;
+ 838:	d8 98       	cbi	0x1b, 0	; 27
+ 83a:	0e c0       	rjmp	.+28     	; 0x858 <main+0x104>
+
+			}
+			else if( cnt == 0 )	//Key1 이 짝수번 눌러지면
+ 83c:	20 97       	sbiw	r28, 0x00	; 0
+ 83e:	61 f4       	brne	.+24     	; 0x858 <main+0x104>
+			{
+			    cli();
+ 840:	f8 94       	cli
+				//TIMSK &= ~0x01; // 타이머0 오버플로 인터럽트금지(초음파신호를 쏘지 않음)
+
+				//EIMSK &= ~0x30;        // INT4, INT5 Enable(허용) 
+                          			   // EIMSK = 0b**00****,  EIMSK = EIMSK & 0b00110000( 0x30 ) 
+
+				PORTA &= ~0x08;		   // PA3(버저) OFF : 버저 OFF
+ 842:	db 98       	cbi	0x1b, 3	; 27
+				PORTA |= 0x10;		   // PA4(LED) OFF : LED OFF
+ 844:	dc 9a       	sbi	0x1b, 4	; 27
+ 846:	06 c0       	rjmp	.+12     	; 0x854 <main+0x100>
+			}
+	   
+	   }
+	   else if(	pressed_key == KEY2 )
+ 848:	02 97       	sbiw	r24, 0x02	; 2
+ 84a:	31 f4       	brne	.+12     	; 0x858 <main+0x104>
+	   {
+	   		cnt++;
+ 84c:	21 96       	adiw	r28, 0x01	; 1
+			if( cnt == 3 ) cnt = 0;
+ 84e:	c3 30       	cpi	r28, 0x03	; 3
+ 850:	d1 05       	cpc	r29, r1
+ 852:	11 f4       	brne	.+4      	; 0x858 <main+0x104>
+ 854:	c0 e0       	ldi	r28, 0x00	; 0
+ 856:	d0 e0       	ldi	r29, 0x00	; 0
+			{
+				
+			}
+	   }
+
+       cli();                            // 전역인터럽트 금지
+ 858:	f8 94       	cli
+
+ 	   dist_1 = distance_1 ;            // 초음파센서모듈1이 측정한 거리측정값을 변수 dist_1에 저장 
+ 85a:	00 91 34 01 	lds	r16, 0x0134
+ 85e:	10 91 35 01 	lds	r17, 0x0135
+ 	   dist_2 = distance_2 ;            // 초음파센서모듈2가 측정한 거리측정값을 변수 dist_2에 저장 
+ 862:	e0 90 2a 01 	lds	r14, 0x012A
+ 866:	f0 90 2b 01 	lds	r15, 0x012B
+
+       sei();                           // 전역인터럽트 허용
+ 86a:	78 94       	sei
+
+	   LcdMove(0, 9);                   // LCD에 쓸 데이터 초기 위치 설정 (0행, 9열)
+ 86c:	80 e0       	ldi	r24, 0x00	; 0
+ 86e:	69 e0       	ldi	r22, 0x09	; 9
+ 870:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+       Display_Number_LCD(dist_1, 3);   // 초음파센서모듈1이 측정한 거리측정값을 100자리까지 디스플레이 
+ 874:	c8 01       	movw	r24, r16
+ 876:	63 e0       	ldi	r22, 0x03	; 3
+ 878:	0e 94 67 03 	call	0x6ce	; 0x6ce <Display_Number_LCD>
+       LcdMove(1, 9);                   // LCD에 쓸 데이터 초기 위치 설정 (1행, 9열)
+ 87c:	81 e0       	ldi	r24, 0x01	; 1
+ 87e:	69 e0       	ldi	r22, 0x09	; 9
+ 880:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+       Display_Number_LCD(dist_2, 3);   // 초음파센서모듈2가 측정한 거리측정값을 100자리까지 디스플레이 
+ 884:	c7 01       	movw	r24, r14
+ 886:	63 e0       	ldi	r22, 0x03	; 3
+ 888:	0e 94 67 03 	call	0x6ce	; 0x6ce <Display_Number_LCD>
+ 88c:	b3 cf       	rjmp	.-154    	; 0x7f4 <main+0xa0>
+
+0000088e <__udivmodhi4>:
+ 88e:	aa 1b       	sub	r26, r26
+ 890:	bb 1b       	sub	r27, r27
+ 892:	51 e1       	ldi	r21, 0x11	; 17
+ 894:	07 c0       	rjmp	.+14     	; 0x8a4 <__udivmodhi4_ep>
+
+00000896 <__udivmodhi4_loop>:
+ 896:	aa 1f       	adc	r26, r26
+ 898:	bb 1f       	adc	r27, r27
+ 89a:	a6 17       	cp	r26, r22
+ 89c:	b7 07       	cpc	r27, r23
+ 89e:	10 f0       	brcs	.+4      	; 0x8a4 <__udivmodhi4_ep>
+ 8a0:	a6 1b       	sub	r26, r22
+ 8a2:	b7 0b       	sbc	r27, r23
+
+000008a4 <__udivmodhi4_ep>:
+ 8a4:	88 1f       	adc	r24, r24
+ 8a6:	99 1f       	adc	r25, r25
+ 8a8:	5a 95       	dec	r21
+ 8aa:	a9 f7       	brne	.-22     	; 0x896 <__udivmodhi4_loop>
+ 8ac:	80 95       	com	r24
+ 8ae:	90 95       	com	r25
+ 8b0:	bc 01       	movw	r22, r24
+ 8b2:	cd 01       	movw	r24, r26
+ 8b4:	08 95       	ret
+
+000008b6 <_exit>:
+ 8b6:	f8 94       	cli
+
+000008b8 <__stop_program>:
+ 8b8:	ff cf       	rjmp	.-2      	; 0x8b8 <__stop_program>
