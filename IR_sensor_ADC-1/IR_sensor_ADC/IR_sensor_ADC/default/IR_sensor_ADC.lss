@@ -1,0 +1,918 @@
+
+IR_sensor_ADC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000018  00800100  00000426  000004ba  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000426  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000007  00800118  00800118  000004d2  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  000004d2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000000dd  00000000  00000000  00000512  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a93  00000000  00000000  000005ef  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000002f3  00000000  00000000  00001082  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000063c  00000000  00000000  00001375  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000100  00000000  00000000  000019b4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000001e8  00000000  00000000  00001ab4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000396  00000000  00000000  00001c9c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 67 00 	jmp	0xce	; 0xce <__vector_16>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e6 e2       	ldi	r30, 0x26	; 38
+  a0:	f4 e0       	ldi	r31, 0x04	; 4
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a8 31       	cpi	r26, 0x18	; 24
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a8 e1       	ldi	r26, 0x18	; 24
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	af 31       	cpi	r26, 0x1F	; 31
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 18 01 	call	0x230	; 0x230 <main>
+  c6:	0c 94 11 02 	jmp	0x422	; 0x422 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <__vector_16>:
+}      // int main() 함수의 끝 
+
+
+
+ISR( TIMER0_OVF_vect )     //  2 msec 주기의 타이머0 오버플로 인터럽트 서비스프로그램
+{                          //  2msec 마다 적외선 LED 쏘고 반사되는 적외선 양 검출 
+  ce:	1f 92       	push	r1
+  d0:	0f 92       	push	r0
+  d2:	0f b6       	in	r0, 0x3f	; 63
+  d4:	0f 92       	push	r0
+  d6:	11 24       	eor	r1, r1
+  d8:	2f 93       	push	r18
+  da:	3f 93       	push	r19
+  dc:	8f 93       	push	r24
+  de:	9f 93       	push	r25
+
+    TCNT0 = 256 - 31;         // 내부클럭주기 = 1024/ (16x10^6) = 64 usec,  
+  e0:	81 ee       	ldi	r24, 0xE1	; 225
+  e2:	82 bf       	out	0x32, r24	; 50
+                              // 오버플로인터럽트 주기 = 2msec
+                              // 31 = 2msec/ 64usec,  TCNT0 = 256 - 31
+
+    /////  적외선LED(EL-7L) 켜기(ON)  //////
+
+    PORTA |=  0x01;        // 적외선LED(EL-7L) ON ( PA0 = 1)
+  e4:	d8 9a       	sbi	0x1b, 0	; 27
+  e6:	82 e3       	ldi	r24, 0x32	; 50
+  e8:	90 e0       	ldi	r25, 0x00	; 0
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+  ea:	35 e0       	ldi	r19, 0x05	; 5
+  ec:	23 2f       	mov	r18, r19
+  ee:	2a 95       	dec	r18
+  f0:	f1 f7       	brne	.-4      	; 0xee <__vector_16+0x20>
+		_delay_ms(1);		// 1msec 시간 지연
+}
+
+void usec_delay(int n)      // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		    // 1usec 시간 지연을 n회 반복
+  f2:	01 97       	sbiw	r24, 0x01	; 1
+  f4:	d9 f7       	brne	.-10     	; 0xec <__vector_16+0x1e>
+    usec_delay(50);        // 50usec동안 계속 켜기(적외선이 반사되어 돌아올때(안정화될 때)까지 계속 켠다.) 
+
+    /////////////   반사된 적외선 센서신호 검출(AD변환)  ////////////////
+    //////  (교재 P321 레제스터 ADMUX 그림, 표15.1, p322 표15.2 참조) 
+
+    ADMUX &= ~0x0F;         // ADC 채널 0 ( ADC0 ) 선택 
+  f6:	87 b1       	in	r24, 0x07	; 7
+  f8:	80 7f       	andi	r24, 0xF0	; 240
+  fa:	87 b9       	out	0x07, r24	; 7
+                            // ADMUX = 0b***0 0000  
+                            // ADMUX = ADMUX & ~0b0001 1111 (~0x1F ) 
+
+    ADCSRA |= 0x40;         // ADC 변환 시작 ( ADCSRA 레지스터 bit6 = 1 )
+  fc:	36 9a       	sbi	0x06, 6	; 6
+                            // ADCSRA = 0b*1** ****  
+                            // ADCSRA = ADCSRA | 0b0100 0000 ( 0x40 ) 
+
+    while( !( ADCSRA & 0x10) );  // ADC 변환이 완료될 때까지 기다림. 
+  fe:	34 9b       	sbis	0x06, 4	; 6
+ 100:	fe cf       	rjmp	.-4      	; 0xfe <__vector_16+0x30>
+                                 // ADCSRA 레지스터의 ADC 인터럽트 플래그비트(ADIF, bit4) = 1 이면 변환완료.
+ 
+    ADCSRA |= 0x10;              // ADCSRA 레지스터의 ADC 인터럽트 플래그비트(ADIF, bit4) 지움.
+ 102:	34 9a       	sbi	0x06, 4	; 6
+                                 // ADCSRA = 0b***1 ****  
+                                 // ADCSRA = ADCSRA | 0b0001 0000 ( 0x10 ) 
+
+    IR_adc0_value = ADC;         // ADC 변환 완료된 디지털 값( 레지스터 ADC )을 전역변수에 저장  
+ 104:	84 b1       	in	r24, 0x04	; 4
+ 106:	95 b1       	in	r25, 0x05	; 5
+ 108:	90 93 1e 01 	sts	0x011E, r25
+ 10c:	80 93 1d 01 	sts	0x011D, r24
+
+    /////  적외선LED(EL-7L) 끄기(OFF)  //////
+    PORTA &= ~0x01;        // 적외선LED(EL-7L) OFF ( PA0 = 0 )
+ 110:	d8 98       	cbi	0x1b, 0	; 27
+                           // PORTA = 0b**** ***0,   PORTA = PORTA & ~0b0000 0001( ~0x01 )
+
+}
+ 112:	9f 91       	pop	r25
+ 114:	8f 91       	pop	r24
+ 116:	3f 91       	pop	r19
+ 118:	2f 91       	pop	r18
+ 11a:	0f 90       	pop	r0
+ 11c:	0f be       	out	0x3f, r0	; 63
+ 11e:	0f 90       	pop	r0
+ 120:	1f 90       	pop	r1
+ 122:	18 95       	reti
+
+00000124 <HexToDec>:
+
+}
+
+
+void HexToDec( unsigned short num, unsigned short radix)   // num으로 넘어온 16진수 형태의 데이터를 10진수로 
+{                                                          //  변환하여 각각의 자릿수를 전역변수 배열 cnumber[0](1자리) - cnumber[4](10000자리)에 저장하는 함수. 
+ 124:	0f 93       	push	r16
+ 126:	1f 93       	push	r17
+ 128:	cf 93       	push	r28
+ 12a:	df 93       	push	r29
+ 12c:	9c 01       	movw	r18, r24
+ 12e:	8b 01       	movw	r16, r22
+
+	int j ;
+
+	for(j=0; j<5 ; j++) cnumber[j] = 0 ;
+ 130:	10 92 18 01 	sts	0x0118, r1
+ 134:	10 92 19 01 	sts	0x0119, r1
+ 138:	10 92 1a 01 	sts	0x011A, r1
+ 13c:	10 92 1b 01 	sts	0x011B, r1
+ 140:	10 92 1c 01 	sts	0x011C, r1
+ 144:	c0 e0       	ldi	r28, 0x00	; 0
+ 146:	d0 e0       	ldi	r29, 0x00	; 0
+	j=0;
+	do
+	{
+		cnumber[j++] = num % radix ; 
+ 148:	c9 01       	movw	r24, r18
+ 14a:	b8 01       	movw	r22, r16
+ 14c:	0e 94 fd 01 	call	0x3fa	; 0x3fa <__udivmodhi4>
+ 150:	fe 01       	movw	r30, r28
+ 152:	e8 5e       	subi	r30, 0xE8	; 232
+ 154:	fe 4f       	sbci	r31, 0xFE	; 254
+ 156:	80 83       	st	Z, r24
+ 158:	21 96       	adiw	r28, 0x01	; 1
+		num /= radix; 
+ 15a:	c9 01       	movw	r24, r18
+ 15c:	b8 01       	movw	r22, r16
+ 15e:	0e 94 fd 01 	call	0x3fa	; 0x3fa <__udivmodhi4>
+ 162:	9b 01       	movw	r18, r22
+	} while(num);
+ 164:	61 15       	cp	r22, r1
+ 166:	71 05       	cpc	r23, r1
+ 168:	79 f7       	brne	.-34     	; 0x148 <HexToDec+0x24>
+
+} 
+ 16a:	df 91       	pop	r29
+ 16c:	cf 91       	pop	r28
+ 16e:	1f 91       	pop	r17
+ 170:	0f 91       	pop	r16
+ 172:	08 95       	ret
+
+00000174 <NumToAsc>:
+
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 174:	8a 30       	cpi	r24, 0x0A	; 10
+ 176:	10 f4       	brcc	.+4      	; 0x17c <NumToAsc+0x8>
+ 178:	80 5d       	subi	r24, 0xD0	; 208
+ 17a:	08 95       	ret
+	else          Num += 0x37; 
+ 17c:	89 5c       	subi	r24, 0xC9	; 201
+
+	return Num ;
+}
+ 17e:	08 95       	ret
+
+00000180 <msec_delay>:
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 180:	20 ea       	ldi	r18, 0xA0	; 160
+ 182:	3f e0       	ldi	r19, 0x0F	; 15
+ 184:	04 c0       	rjmp	.+8      	; 0x18e <msec_delay+0xe>
+ 186:	f9 01       	movw	r30, r18
+ 188:	31 97       	sbiw	r30, 0x01	; 1
+ 18a:	f1 f7       	brne	.-4      	; 0x188 <msec_delay+0x8>
+
+/////////////////////////////////////
+
+void msec_delay(int n)      // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		    // 1msec 시간 지연을 n회 반복
+ 18c:	01 97       	sbiw	r24, 0x01	; 1
+ 18e:	18 16       	cp	r1, r24
+ 190:	19 06       	cpc	r1, r25
+ 192:	cc f3       	brlt	.-14     	; 0x186 <msec_delay+0x6>
+		_delay_ms(1);		// 1msec 시간 지연
+}
+ 194:	08 95       	ret
+
+00000196 <usec_delay>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 196:	35 e0       	ldi	r19, 0x05	; 5
+ 198:	04 c0       	rjmp	.+8      	; 0x1a2 <usec_delay+0xc>
+ 19a:	23 2f       	mov	r18, r19
+ 19c:	2a 95       	dec	r18
+ 19e:	f1 f7       	brne	.-4      	; 0x19c <usec_delay+0x6>
+
+void usec_delay(int n)      // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		    // 1usec 시간 지연을 n회 반복
+ 1a0:	01 97       	sbiw	r24, 0x01	; 1
+ 1a2:	18 16       	cp	r1, r24
+ 1a4:	19 06       	cpc	r1, r25
+ 1a6:	cc f3       	brlt	.-14     	; 0x19a <usec_delay+0x4>
+		_delay_us(1);		// 1usec 시간 지연
+}
+ 1a8:	08 95       	ret
+
+000001aa <Display_Number_LCD>:
+
+/////////////////////////////////////////////////////////////////
+
+ 
+void Display_Number_LCD( unsigned short num, unsigned char digit ) //부호없는 정수형변수(num)을 10진수 형태로 
+{                                                       // 정해진 자릿수(digit) 만큼 LCD 에 디스플레이 하는 함수 
+ 1aa:	1f 93       	push	r17
+ 1ac:	16 2f       	mov	r17, r22
+
+      HexToDec( num, 10); //10진수로 변환
+ 1ae:	6a e0       	ldi	r22, 0x0A	; 10
+ 1b0:	70 e0       	ldi	r23, 0x00	; 0
+ 1b2:	0e 94 92 00 	call	0x124	; 0x124 <HexToDec>
+
+      if( digit < 1 )     digit = 1 ;
+ 1b6:	11 23       	and	r17, r17
+ 1b8:	81 f1       	breq	.+96     	; 0x21a <Display_Number_LCD+0x70>
+      if( digit > 5 )     digit = 5 ;
+ 1ba:	16 30       	cpi	r17, 0x06	; 6
+ 1bc:	10 f0       	brcs	.+4      	; 0x1c2 <Display_Number_LCD+0x18>
+ 1be:	15 e0       	ldi	r17, 0x05	; 5
+ 1c0:	02 c0       	rjmp	.+4      	; 0x1c6 <Display_Number_LCD+0x1c>
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 1c2:	15 30       	cpi	r17, 0x05	; 5
+ 1c4:	49 f4       	brne	.+18     	; 0x1d8 <Display_Number_LCD+0x2e>
+ 1c6:	80 91 1c 01 	lds	r24, 0x011C
+} 
+
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 1ca:	8a 30       	cpi	r24, 0x0A	; 10
+ 1cc:	10 f4       	brcc	.+4      	; 0x1d2 <Display_Number_LCD+0x28>
+ 1ce:	80 5d       	subi	r24, 0xD0	; 208
+ 1d0:	01 c0       	rjmp	.+2      	; 0x1d4 <Display_Number_LCD+0x2a>
+	else          Num += 0x37; 
+ 1d2:	89 5c       	subi	r24, 0xC9	; 201
+      HexToDec( num, 10); //10진수로 변환
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 1d4:	0e 94 54 01 	call	0x2a8	; 0x2a8 <LcdPutchar>
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+ 1d8:	14 30       	cpi	r17, 0x04	; 4
+ 1da:	48 f0       	brcs	.+18     	; 0x1ee <Display_Number_LCD+0x44>
+ 1dc:	80 91 1b 01 	lds	r24, 0x011B
+} 
+
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 1e0:	8a 30       	cpi	r24, 0x0A	; 10
+ 1e2:	10 f4       	brcc	.+4      	; 0x1e8 <Display_Number_LCD+0x3e>
+ 1e4:	80 5d       	subi	r24, 0xD0	; 208
+ 1e6:	01 c0       	rjmp	.+2      	; 0x1ea <Display_Number_LCD+0x40>
+	else          Num += 0x37; 
+ 1e8:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+ 1ea:	0e 94 54 01 	call	0x2a8	; 0x2a8 <LcdPutchar>
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 1ee:	13 30       	cpi	r17, 0x03	; 3
+ 1f0:	48 f0       	brcs	.+18     	; 0x204 <Display_Number_LCD+0x5a>
+ 1f2:	80 91 1a 01 	lds	r24, 0x011A
+} 
+
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 1f6:	8a 30       	cpi	r24, 0x0A	; 10
+ 1f8:	10 f4       	brcc	.+4      	; 0x1fe <Display_Number_LCD+0x54>
+ 1fa:	80 5d       	subi	r24, 0xD0	; 208
+ 1fc:	01 c0       	rjmp	.+2      	; 0x200 <Display_Number_LCD+0x56>
+	else          Num += 0x37; 
+ 1fe:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 200:	0e 94 54 01 	call	0x2a8	; 0x2a8 <LcdPutchar>
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 204:	11 30       	cpi	r17, 0x01	; 1
+ 206:	49 f0       	breq	.+18     	; 0x21a <Display_Number_LCD+0x70>
+ 208:	80 91 19 01 	lds	r24, 0x0119
+} 
+
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 20c:	8a 30       	cpi	r24, 0x0A	; 10
+ 20e:	10 f4       	brcc	.+4      	; 0x214 <Display_Number_LCD+0x6a>
+ 210:	80 5d       	subi	r24, 0xD0	; 208
+ 212:	01 c0       	rjmp	.+2      	; 0x216 <Display_Number_LCD+0x6c>
+	else          Num += 0x37; 
+ 214:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 216:	0e 94 54 01 	call	0x2a8	; 0x2a8 <LcdPutchar>
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 21a:	80 91 18 01 	lds	r24, 0x0118
+} 
+
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 21e:	8a 30       	cpi	r24, 0x0A	; 10
+ 220:	10 f4       	brcc	.+4      	; 0x226 <Display_Number_LCD+0x7c>
+ 222:	80 5d       	subi	r24, 0xD0	; 208
+ 224:	01 c0       	rjmp	.+2      	; 0x228 <Display_Number_LCD+0x7e>
+	else          Num += 0x37; 
+ 226:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 228:	0e 94 54 01 	call	0x2a8	; 0x2a8 <LcdPutchar>
+
+}
+ 22c:	1f 91       	pop	r17
+ 22e:	08 95       	ret
+
+00000230 <main>:
+
+static volatile unsigned short    IR_adc0_value = 0  ;
+
+
+int main() 
+{   
+ 230:	0f 93       	push	r16
+ 232:	1f 93       	push	r17
+
+    unsigned short  IR_data0 = 0  ;
+
+    LcdInit();                     // LCd 초기화 함수 
+ 234:	0e 94 d6 01 	call	0x3ac	; 0x3ac <LcdInit>
+
+    LcdMove(0,0);                  // LCD에 쓸 데이터 초기 위치 설정( 0행 0열)
+ 238:	80 e0       	ldi	r24, 0x00	; 0
+ 23a:	60 e0       	ldi	r22, 0x00	; 0
+ 23c:	0e 94 c6 01 	call	0x38c	; 0x38c <LcdMove>
+    LcdPuts("IR Sensor");          // LCD에 문자열 디스플레이 
+ 240:	80 e0       	ldi	r24, 0x00	; 0
+ 242:	91 e0       	ldi	r25, 0x01	; 1
+ 244:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LcdPuts>
+    LcdMove(1,0);                  // LCD에 쓸 데이터 초기 위치 설정( 1행 0열)   
+ 248:	81 e0       	ldi	r24, 0x01	; 1
+ 24a:	60 e0       	ldi	r22, 0x00	; 0
+ 24c:	0e 94 c6 01 	call	0x38c	; 0x38c <LcdMove>
+    LcdPuts("IR_ADC =     ");      // LCD에 문자열 디스플레이
+ 250:	8a e0       	ldi	r24, 0x0A	; 10
+ 252:	91 e0       	ldi	r25, 0x01	; 1
+ 254:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LcdPuts>
+
+
+   ////////  적외선센서모듈(TCRT5000) 구동을 위한 HW 관련 레지스터 설정  ////////////
+
+   //  입력/출력 포트 설정 	(교재 pp75-76 레지스터그림, 표6.1 참조)
+    DDRA |= 0x01;          // 적외선LED ON/OFF 신호( PA0 : 출력포트 설정  )
+ 258:	d0 9a       	sbi	0x1a, 0	; 26
+                           // DDRA = 0b**** ***1, DDRA = DDRA | 0b0000 0001( 0x01 ) 
+
+    PORTA &= ~0x01;        // 적외선LED(EL-7L) OFF ( PA0 = 0 )
+ 25a:	d8 98       	cbi	0x1b, 0	; 27
+                           // PORTA = 0b**** ***0,   PORTA = PORTA & ~0b0000 0001( ~0x01 )
+
+    DDRF &= ~0x01;         // 적외선센서출력신호V?(포토TR Emitter 신호) 연결핀 ( ADC0(PF0) : 입력포트 설정 )  
+ 25c:	80 91 61 00 	lds	r24, 0x0061
+ 260:	8e 7f       	andi	r24, 0xFE	; 254
+ 262:	80 93 61 00 	sts	0x0061, r24
+                           // 입력포트 설정.  DDRF = 0b**** ***0, DDRF = DDRF & ~0b0000 0001(~0x01)
+  
+    ////////////  Timer 0 설정  ( 2 msec 주기의 타이머0 오버플로 인터럽트 설정 )  ///////////////
+    // 교재 P133-137(레지스터 그림과 표8.1-표8.5) 참조    
+
+    TCCR0 &= ~0x48;           // Normal mode(타이머모드), 타이머 0 시작(1024분주 사용)
+ 266:	83 b7       	in	r24, 0x33	; 51
+ 268:	87 7b       	andi	r24, 0xB7	; 183
+ 26a:	83 bf       	out	0x33, r24	; 51
+                              // TCCR0 = 0b*0**0111 
+                              // TCCR0 =TCCR0 & ~0b01001000(~0x48 )  
+    TCCR0 |= 0x07;            // TCCR0 =TCCR0 | 0b00000111( 0x07 )  
+ 26c:	83 b7       	in	r24, 0x33	; 51
+ 26e:	87 60       	ori	r24, 0x07	; 7
+ 270:	83 bf       	out	0x33, r24	; 51
+
+    TCNT0 = 256 - 31;         // 내부클럭주기 = 1024/ (16x10^6) = 64 usec,  
+ 272:	81 ee       	ldi	r24, 0xE1	; 225
+ 274:	82 bf       	out	0x32, r24	; 50
+                              // 오버플로인터럽트 주기 = 2msec
+                              // 31 = 2msec/ 64usec,  TCNT0 = 256 - 31 
+
+    TIMSK |= 0x01;            // 타이머0 오버플로 인터럽트 허용 
+ 276:	87 b7       	in	r24, 0x37	; 55
+ 278:	81 60       	ori	r24, 0x01	; 1
+ 27a:	87 bf       	out	0x37, r24	; 55
+                              // TIMSK = 0b**** ***1, TIMSK = TIMSK | 0b0000 0001( 0x01 ) 
+
+    sei();                    // 전역 인터럽트 허용
+ 27c:	78 94       	sei
+
+
+    //////////   ADC( AD변환기 ) 설정  /////////////
+   //////  (교재 pp321-322 레제스터 ADMUX 그림, 표15.1, 표15.2 참조)
+
+    ADMUX &= ~0xE0;       // 기준전압선택( AREF ), ADC결과 오른쪽 정렬 
+ 27e:	87 b1       	in	r24, 0x07	; 7
+ 280:	8f 71       	andi	r24, 0x1F	; 31
+ 282:	87 b9       	out	0x07, r24	; 7
+                          // ADMUX = 0b000* ****  
+                          // ADMUX = ADMUX & ~0b1110 0000( ~0xE0 )  
+
+    //////  (교재 pp323-324 레제스터 ADCSRA 그림, 표15.3 참조)
+
+	ADCSRA |= 0x87;       // ADC 가능(enable), 프리스케일러(Prescaler) 선택: 128 분주
+ 284:	86 b1       	in	r24, 0x06	; 6
+ 286:	87 68       	ori	r24, 0x87	; 135
+ 288:	86 b9       	out	0x06, r24	; 6
+                          // ADCSRA = ADCSRA | 0b1000 0111( 0x87 ) 
+	 
+    while (1) 
+    { 
+
+       cli();                               // 전역인터럽트 금지
+ 28a:	f8 94       	cli
+
+ 	   IR_data0 = IR_adc0_value;            // ADC 값을 변수 IR_data0 에 저장 
+ 28c:	00 91 1d 01 	lds	r16, 0x011D
+ 290:	10 91 1e 01 	lds	r17, 0x011E
+
+       sei();                              // 전역인터럽트 허용
+ 294:	78 94       	sei
+
+	   LcdMove(1, 9);                     // LCD에 쓸 데이터 초기 위치 설정 (1행, 9열)
+ 296:	81 e0       	ldi	r24, 0x01	; 1
+ 298:	69 e0       	ldi	r22, 0x09	; 9
+ 29a:	0e 94 c6 01 	call	0x38c	; 0x38c <LcdMove>
+       Display_Number_LCD(IR_data0, 3);  // 반사된 적외선양(ADC값) 변수 IR_data0 을 100자리까지 디스플레이 
+ 29e:	c8 01       	movw	r24, r16
+ 2a0:	63 e0       	ldi	r22, 0x03	; 3
+ 2a2:	0e 94 d5 00 	call	0x1aa	; 0x1aa <Display_Number_LCD>
+ 2a6:	f1 cf       	rjmp	.-30     	; 0x28a <main+0x5a>
+
+000002a8 <LcdPutchar>:
+ 2a8:	95 e3       	ldi	r25, 0x35	; 53
+ 2aa:	29 2f       	mov	r18, r25
+ 2ac:	2a 95       	dec	r18
+ 2ae:	f1 f7       	brne	.-4      	; 0x2ac <LcdPutchar+0x4>
+
+static void write_data(char ch)
+{
+	unsigned char temp;
+
+	temp = (ch & 0xF0) | 0x05;
+ 2b0:	29 2f       	mov	r18, r25
+ 2b2:	2a 95       	dec	r18
+ 2b4:	f1 f7       	brne	.-4      	; 0x2b2 <LcdPutchar+0xa>
+ 2b6:	29 2f       	mov	r18, r25
+ 2b8:	2a 95       	dec	r18
+ 2ba:	f1 f7       	brne	.-4      	; 0x2b8 <LcdPutchar+0x10>
+ 2bc:	29 2f       	mov	r18, r25
+ 2be:	2a 95       	dec	r18
+ 2c0:	f1 f7       	brne	.-4      	; 0x2be <LcdPutchar+0x16>
+ 2c2:	9a 95       	dec	r25
+ 2c4:	f1 f7       	brne	.-4      	; 0x2c2 <LcdPutchar+0x1a>
+ 2c6:	98 2f       	mov	r25, r24
+ 2c8:	90 7f       	andi	r25, 0xF0	; 240
+ 2ca:	95 60       	ori	r25, 0x05	; 5
+
+	LCD_PORT = temp;
+ 2cc:	95 bb       	out	0x15, r25	; 21
+	LCD_PORT = temp & ~0x04;
+ 2ce:	9b 7f       	andi	r25, 0xFB	; 251
+ 2d0:	95 bb       	out	0x15, r25	; 21
+
+	temp = (ch<<4) | 0x05;
+ 2d2:	82 95       	swap	r24
+ 2d4:	80 7f       	andi	r24, 0xF0	; 240
+ 2d6:	85 60       	ori	r24, 0x05	; 5
+
+	LCD_PORT = temp;
+ 2d8:	85 bb       	out	0x15, r24	; 21
+	LCD_PORT = temp & ~0x04;
+ 2da:	8b 7f       	andi	r24, 0xFB	; 251
+ 2dc:	85 bb       	out	0x15, r24	; 21
+
+void LcdPutchar(char ch)
+{
+	checkbusy();
+	write_data(ch);
+}
+ 2de:	08 95       	ret
+
+000002e0 <LcdPuts>:
+
+void LcdPuts(char* str)
+{
+ 2e0:	cf 93       	push	r28
+ 2e2:	df 93       	push	r29
+ 2e4:	ec 01       	movw	r28, r24
+ 2e6:	03 c0       	rjmp	.+6      	; 0x2ee <LcdPuts+0xe>
+   while(*str)
+  {
+   LcdPutchar(*str);
+ 2e8:	0e 94 54 01 	call	0x2a8	; 0x2a8 <LcdPutchar>
+   str++;
+ 2ec:	21 96       	adiw	r28, 0x01	; 1
+	write_data(ch);
+}
+
+void LcdPuts(char* str)
+{
+   while(*str)
+ 2ee:	88 81       	ld	r24, Y
+ 2f0:	88 23       	and	r24, r24
+ 2f2:	d1 f7       	brne	.-12     	; 0x2e8 <LcdPuts+0x8>
+  {
+   LcdPutchar(*str);
+   str++;
+  }
+}
+ 2f4:	df 91       	pop	r29
+ 2f6:	cf 91       	pop	r28
+ 2f8:	08 95       	ret
+
+000002fa <write_command>:
+
+static void write_command(char command)
+
+{
+  char temp;
+  temp = (command & 0xF0)|0x04;
+ 2fa:	98 2f       	mov	r25, r24
+ 2fc:	90 7f       	andi	r25, 0xF0	; 240
+ 2fe:	94 60       	ori	r25, 0x04	; 4
+
+LCD_PORT = temp;
+ 300:	95 bb       	out	0x15, r25	; 21
+LCD_PORT = temp & ~0x04;
+ 302:	9b 7f       	andi	r25, 0xFB	; 251
+ 304:	95 bb       	out	0x15, r25	; 21
+
+temp = (command << 4) | 0x04;
+ 306:	82 95       	swap	r24
+ 308:	80 7f       	andi	r24, 0xF0	; 240
+ 30a:	84 60       	ori	r24, 0x04	; 4
+
+LCD_PORT = temp;
+ 30c:	85 bb       	out	0x15, r24	; 21
+LCD_PORT = temp & ~0x04;
+ 30e:	8b 7f       	andi	r24, 0xFB	; 251
+ 310:	85 bb       	out	0x15, r24	; 21
+ 312:	85 e0       	ldi	r24, 0x05	; 5
+ 314:	8a 95       	dec	r24
+ 316:	f1 f7       	brne	.-4      	; 0x314 <write_command+0x1a>
+_delay_us(1);
+}
+ 318:	08 95       	ret
+
+0000031a <LcdCommand>:
+	LcdCommand(ENTMOD);
+
+	LcdCommand(DISP_ON);
+}
+void LcdCommand(char command)
+{
+ 31a:	1f 93       	push	r17
+ 31c:	18 2f       	mov	r17, r24
+ 31e:	85 e3       	ldi	r24, 0x35	; 53
+ 320:	98 2f       	mov	r25, r24
+ 322:	9a 95       	dec	r25
+ 324:	f1 f7       	brne	.-4      	; 0x322 <LcdCommand+0x8>
+	checkbusy();
+	write_command(command);
+ 326:	98 2f       	mov	r25, r24
+ 328:	9a 95       	dec	r25
+ 32a:	f1 f7       	brne	.-4      	; 0x328 <LcdCommand+0xe>
+ 32c:	98 2f       	mov	r25, r24
+ 32e:	9a 95       	dec	r25
+ 330:	f1 f7       	brne	.-4      	; 0x32e <LcdCommand+0x14>
+ 332:	98 2f       	mov	r25, r24
+ 334:	9a 95       	dec	r25
+ 336:	f1 f7       	brne	.-4      	; 0x334 <LcdCommand+0x1a>
+ 338:	8a 95       	dec	r24
+ 33a:	f1 f7       	brne	.-4      	; 0x338 <LcdCommand+0x1e>
+ 33c:	81 2f       	mov	r24, r17
+ 33e:	0e 94 7d 01 	call	0x2fa	; 0x2fa <write_command>
+	if(command==ALLCLR || command==HOME)
+ 342:	11 50       	subi	r17, 0x01	; 1
+ 344:	12 30       	cpi	r17, 0x02	; 2
+ 346:	20 f4       	brcc	.+8      	; 0x350 <LcdCommand+0x36>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 348:	80 e4       	ldi	r24, 0x40	; 64
+ 34a:	9f e1       	ldi	r25, 0x1F	; 31
+ 34c:	01 97       	sbiw	r24, 0x01	; 1
+ 34e:	f1 f7       	brne	.-4      	; 0x34c <LcdCommand+0x32>
+		_delay_ms(2);
+}
+ 350:	1f 91       	pop	r17
+ 352:	08 95       	ret
+
+00000354 <LcdNewchar>:
+  LcdCommand(pos);
+}
+
+
+void LcdNewchar(char ch, char font[])
+{
+ 354:	0f 93       	push	r16
+ 356:	1f 93       	push	r17
+ 358:	cf 93       	push	r28
+ 35a:	df 93       	push	r29
+ 35c:	8b 01       	movw	r16, r22
+ int i;
+
+ ch <<=3;
+ 35e:	88 0f       	add	r24, r24
+ 360:	88 0f       	add	r24, r24
+ 362:	88 0f       	add	r24, r24
+ ch|= 0x40;
+
+ LcdCommand(ch);
+ 364:	80 64       	ori	r24, 0x40	; 64
+ 366:	0e 94 8d 01 	call	0x31a	; 0x31a <LcdCommand>
+ 36a:	c0 e0       	ldi	r28, 0x00	; 0
+ 36c:	d0 e0       	ldi	r29, 0x00	; 0
+
+ for(i=0;i<8;i++)
+    LcdPutchar(font[i]);
+ 36e:	f8 01       	movw	r30, r16
+ 370:	ec 0f       	add	r30, r28
+ 372:	fd 1f       	adc	r31, r29
+ 374:	80 81       	ld	r24, Z
+ 376:	0e 94 54 01 	call	0x2a8	; 0x2a8 <LcdPutchar>
+ ch <<=3;
+ ch|= 0x40;
+
+ LcdCommand(ch);
+
+ for(i=0;i<8;i++)
+ 37a:	21 96       	adiw	r28, 0x01	; 1
+ 37c:	c8 30       	cpi	r28, 0x08	; 8
+ 37e:	d1 05       	cpc	r29, r1
+ 380:	b1 f7       	brne	.-20     	; 0x36e <LcdNewchar+0x1a>
+    LcdPutchar(font[i]);
+}
+ 382:	df 91       	pop	r29
+ 384:	cf 91       	pop	r28
+ 386:	1f 91       	pop	r17
+ 388:	0f 91       	pop	r16
+ 38a:	08 95       	ret
+
+0000038c <LcdMove>:
+
+{ 
+
+//  pos = (line << 6) + pos; 
+
+	if(line == 0 )       pos = 0x00 + pos ;
+ 38c:	88 23       	and	r24, r24
+ 38e:	49 f0       	breq	.+18     	; 0x3a2 <LcdMove+0x16>
+	else if( line == 1 ) pos = 0x40 + pos ;
+ 390:	81 30       	cpi	r24, 0x01	; 1
+ 392:	11 f4       	brne	.+4      	; 0x398 <LcdMove+0xc>
+ 394:	60 5c       	subi	r22, 0xC0	; 192
+ 396:	05 c0       	rjmp	.+10     	; 0x3a2 <LcdMove+0x16>
+	else if( line == 2 ) pos = 0x10 + pos ;
+ 398:	82 30       	cpi	r24, 0x02	; 2
+ 39a:	11 f4       	brne	.+4      	; 0x3a0 <LcdMove+0x14>
+ 39c:	60 5f       	subi	r22, 0xF0	; 240
+ 39e:	01 c0       	rjmp	.+2      	; 0x3a2 <LcdMove+0x16>
+	else                 pos = 0x50 + pos ;
+ 3a0:	60 5b       	subi	r22, 0xB0	; 176
+
+  pos |= 0x80;
+ 
+  LcdCommand(pos);
+ 3a2:	86 2f       	mov	r24, r22
+ 3a4:	80 68       	ori	r24, 0x80	; 128
+ 3a6:	0e 94 8d 01 	call	0x31a	; 0x31a <LcdCommand>
+}
+ 3aa:	08 95       	ret
+
+000003ac <LcdInit>:
+static void write_command(char command);
+static void write_data(char ch);
+
+void LcdInit(void)
+{
+	LCD_DDR = 0xff;
+ 3ac:	8f ef       	ldi	r24, 0xFF	; 255
+ 3ae:	84 bb       	out	0x14, r24	; 20
+ 3b0:	80 e6       	ldi	r24, 0x60	; 96
+ 3b2:	9a ee       	ldi	r25, 0xEA	; 234
+ 3b4:	01 97       	sbiw	r24, 0x01	; 1
+ 3b6:	f1 f7       	brne	.-4      	; 0x3b4 <LcdInit+0x8>
+	_delay_ms(15);
+	write_command(0x30);
+ 3b8:	80 e3       	ldi	r24, 0x30	; 48
+ 3ba:	0e 94 7d 01 	call	0x2fa	; 0x2fa <write_command>
+ 3be:	80 e2       	ldi	r24, 0x20	; 32
+ 3c0:	9e e4       	ldi	r25, 0x4E	; 78
+ 3c2:	01 97       	sbiw	r24, 0x01	; 1
+ 3c4:	f1 f7       	brne	.-4      	; 0x3c2 <LcdInit+0x16>
+	_delay_ms(5);
+	write_command(0x30);
+ 3c6:	80 e3       	ldi	r24, 0x30	; 48
+ 3c8:	0e 94 7d 01 	call	0x2fa	; 0x2fa <write_command>
+ 3cc:	80 ea       	ldi	r24, 0xA0	; 160
+ 3ce:	9f e0       	ldi	r25, 0x0F	; 15
+ 3d0:	01 97       	sbiw	r24, 0x01	; 1
+ 3d2:	f1 f7       	brne	.-4      	; 0x3d0 <LcdInit+0x24>
+	_delay_ms(1);
+	write_command(0x32);
+ 3d4:	82 e3       	ldi	r24, 0x32	; 50
+ 3d6:	0e 94 7d 01 	call	0x2fa	; 0x2fa <write_command>
+
+	LcdCommand(FUNSET);
+ 3da:	88 e2       	ldi	r24, 0x28	; 40
+ 3dc:	0e 94 8d 01 	call	0x31a	; 0x31a <LcdCommand>
+	LcdCommand(DISP_OFF);
+ 3e0:	88 e0       	ldi	r24, 0x08	; 8
+ 3e2:	0e 94 8d 01 	call	0x31a	; 0x31a <LcdCommand>
+	LcdCommand(ALLCLR);
+ 3e6:	81 e0       	ldi	r24, 0x01	; 1
+ 3e8:	0e 94 8d 01 	call	0x31a	; 0x31a <LcdCommand>
+	LcdCommand(ENTMOD);
+ 3ec:	86 e0       	ldi	r24, 0x06	; 6
+ 3ee:	0e 94 8d 01 	call	0x31a	; 0x31a <LcdCommand>
+
+	LcdCommand(DISP_ON);
+ 3f2:	8c e0       	ldi	r24, 0x0C	; 12
+ 3f4:	0e 94 8d 01 	call	0x31a	; 0x31a <LcdCommand>
+}
+ 3f8:	08 95       	ret
+
+000003fa <__udivmodhi4>:
+ 3fa:	aa 1b       	sub	r26, r26
+ 3fc:	bb 1b       	sub	r27, r27
+ 3fe:	51 e1       	ldi	r21, 0x11	; 17
+ 400:	07 c0       	rjmp	.+14     	; 0x410 <__udivmodhi4_ep>
+
+00000402 <__udivmodhi4_loop>:
+ 402:	aa 1f       	adc	r26, r26
+ 404:	bb 1f       	adc	r27, r27
+ 406:	a6 17       	cp	r26, r22
+ 408:	b7 07       	cpc	r27, r23
+ 40a:	10 f0       	brcs	.+4      	; 0x410 <__udivmodhi4_ep>
+ 40c:	a6 1b       	sub	r26, r22
+ 40e:	b7 0b       	sbc	r27, r23
+
+00000410 <__udivmodhi4_ep>:
+ 410:	88 1f       	adc	r24, r24
+ 412:	99 1f       	adc	r25, r25
+ 414:	5a 95       	dec	r21
+ 416:	a9 f7       	brne	.-22     	; 0x402 <__udivmodhi4_loop>
+ 418:	80 95       	com	r24
+ 41a:	90 95       	com	r25
+ 41c:	bc 01       	movw	r22, r24
+ 41e:	cd 01       	movw	r24, r26
+ 420:	08 95       	ret
+
+00000422 <_exit>:
+ 422:	f8 94       	cli
+
+00000424 <__stop_program>:
+ 424:	ff cf       	rjmp	.-2      	; 0x424 <__stop_program>
