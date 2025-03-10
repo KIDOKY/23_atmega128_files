@@ -1,0 +1,1656 @@
+
+Bluetooth_Prog1-2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000094  00800100  000007cc  00000860  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000007cc  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000011  00800194  00800194  000008f4  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  000008f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000012e  00000000  00000000  00000934  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000e09  00000000  00000000  00000a62  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000035e  00000000  00000000  0000186b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000009d9  00000000  00000000  00001bc9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000140  00000000  00000000  000025a4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000002fc  00000000  00000000  000026e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000005a8  00000000  00000000  000029e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000030  00000000  00000000  00002f88  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 0a 01 	jmp	0x214	; 0x214 <__vector_30>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ec ec       	ldi	r30, 0xCC	; 204
+  a0:	f7 e0       	ldi	r31, 0x07	; 7
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a4 39       	cpi	r26, 0x94	; 148
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a4 e9       	ldi	r26, 0x94	; 148
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a5 3a       	cpi	r26, 0xA5	; 165
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 60 02 	call	0x4c0	; 0x4c0 <main>
+  c6:	0c 94 e4 03 	jmp	0x7c8	; 0x7c8 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <LcdPutchar>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+  ce:	95 e3       	ldi	r25, 0x35	; 53
+  d0:	29 2f       	mov	r18, r25
+  d2:	2a 95       	dec	r18
+  d4:	f1 f7       	brne	.-4      	; 0xd2 <LcdPutchar+0x4>
+{
+	unsigned char temp;
+
+	// 상위 니블 출력
+	//
+  	temp = (ch & 0xF0)|0x05;		// 0x05:RS=1(데이터)
+  d6:	29 2f       	mov	r18, r25
+  d8:	2a 95       	dec	r18
+  da:	f1 f7       	brne	.-4      	; 0xd8 <LcdPutchar+0xa>
+  dc:	29 2f       	mov	r18, r25
+  de:	2a 95       	dec	r18
+  e0:	f1 f7       	brne	.-4      	; 0xde <LcdPutchar+0x10>
+  e2:	29 2f       	mov	r18, r25
+  e4:	2a 95       	dec	r18
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <LcdPutchar+0x16>
+  e8:	9a 95       	dec	r25
+  ea:	f1 f7       	brne	.-4      	; 0xe8 <LcdPutchar+0x1a>
+  ec:	98 2f       	mov	r25, r24
+  ee:	90 7f       	andi	r25, 0xF0	; 240
+  f0:	95 60       	ori	r25, 0x05	; 5
+									// RW=0(쓰기),E=1
+	LCD_PORT = temp;
+  f2:	95 bb       	out	0x15, r25	; 21
+	LCD_PORT = temp & ~0x04; 		// E = 0
+  f4:	9b 7f       	andi	r25, 0xFB	; 251
+  f6:	95 bb       	out	0x15, r25	; 21
+
+
+	// 하위 니블 출력
+	//
+	temp = (ch << 4) | 0x05;		// 0x05:RS=1(데이터)
+  f8:	82 95       	swap	r24
+  fa:	80 7f       	andi	r24, 0xF0	; 240
+  fc:	85 60       	ori	r24, 0x05	; 5
+									// RW=0(쓰기),E=1
+	LCD_PORT = temp;
+  fe:	85 bb       	out	0x15, r24	; 21
+	LCD_PORT = temp & ~0x04;		// E = 0
+ 100:	8b 7f       	andi	r24, 0xFB	; 251
+ 102:	85 bb       	out	0x15, r24	; 21
+
+void LcdPutchar(char ch)
+{
+	checkbusy();
+	write_data(ch);
+}
+ 104:	08 95       	ret
+
+00000106 <LcdPuts>:
+//	입력 : str - 출력할 문자열
+//
+//======================================================
+
+void LcdPuts(char* str)
+{
+ 106:	cf 93       	push	r28
+ 108:	df 93       	push	r29
+ 10a:	ec 01       	movw	r28, r24
+ 10c:	03 c0       	rjmp	.+6      	; 0x114 <LcdPuts+0xe>
+	while(*str)  			// *str이 NULL 문자가 아니면 루프를 돈다.
+	{
+		LcdPutchar(*str);	// 문자 *str을 화면에 출력
+ 10e:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+		str++;				// str이 다음 문자를 가리킴
+ 112:	21 96       	adiw	r28, 0x01	; 1
+//
+//======================================================
+
+void LcdPuts(char* str)
+{
+	while(*str)  			// *str이 NULL 문자가 아니면 루프를 돈다.
+ 114:	88 81       	ld	r24, Y
+ 116:	88 23       	and	r24, r24
+ 118:	d1 f7       	brne	.-12     	; 0x10e <LcdPuts+0x8>
+	{
+		LcdPutchar(*str);	// 문자 *str을 화면에 출력
+		str++;				// str이 다음 문자를 가리킴
+	}
+}
+ 11a:	df 91       	pop	r29
+ 11c:	cf 91       	pop	r28
+ 11e:	08 95       	ret
+
+00000120 <write_command>:
+	char temp;
+ 
+	//
+	// 상위 니블 출력
+	//
+  	temp = (command & 0xF0)|0x04;	//0x04 : RS=0(명령)
+ 120:	98 2f       	mov	r25, r24
+ 122:	90 7f       	andi	r25, 0xF0	; 240
+ 124:	94 60       	ori	r25, 0x04	; 4
+									// RW=0(쓰기),E=1
+  	LCD_PORT = temp;
+ 126:	95 bb       	out	0x15, r25	; 21
+  	LCD_PORT = temp & ~0x04;		// E = 0
+ 128:	9b 7f       	andi	r25, 0xFB	; 251
+ 12a:	95 bb       	out	0x15, r25	; 21
+
+  	//
+  	// 하위 니블 출력
+  	//
+  	temp = (command << 4) | 0x04;	// 0x04 :RS=0(명령)
+ 12c:	82 95       	swap	r24
+ 12e:	80 7f       	andi	r24, 0xF0	; 240
+ 130:	84 60       	ori	r24, 0x04	; 4
+									// RW=0(쓰기),E=1
+  	LCD_PORT = temp;	
+ 132:	85 bb       	out	0x15, r24	; 21
+	LCD_PORT = temp & ~0x04;		// E = 0
+ 134:	8b 7f       	andi	r24, 0xFB	; 251
+ 136:	85 bb       	out	0x15, r24	; 21
+ 138:	85 e0       	ldi	r24, 0x05	; 5
+ 13a:	8a 95       	dec	r24
+ 13c:	f1 f7       	brne	.-4      	; 0x13a <write_command+0x1a>
+	_delay_us(1);
+}
+ 13e:	08 95       	ret
+
+00000140 <LcdCommand>:
+//	  		      lcd.h에 정의된 명령을 사용할 것
+//
+//======================================================
+
+void LcdCommand(char command)
+{ 
+ 140:	1f 93       	push	r17
+ 142:	18 2f       	mov	r17, r24
+ 144:	85 e3       	ldi	r24, 0x35	; 53
+ 146:	98 2f       	mov	r25, r24
+ 148:	9a 95       	dec	r25
+ 14a:	f1 f7       	brne	.-4      	; 0x148 <LcdCommand+0x8>
+	checkbusy();
+	write_command(command);
+ 14c:	98 2f       	mov	r25, r24
+ 14e:	9a 95       	dec	r25
+ 150:	f1 f7       	brne	.-4      	; 0x14e <LcdCommand+0xe>
+ 152:	98 2f       	mov	r25, r24
+ 154:	9a 95       	dec	r25
+ 156:	f1 f7       	brne	.-4      	; 0x154 <LcdCommand+0x14>
+ 158:	98 2f       	mov	r25, r24
+ 15a:	9a 95       	dec	r25
+ 15c:	f1 f7       	brne	.-4      	; 0x15a <LcdCommand+0x1a>
+ 15e:	8a 95       	dec	r24
+ 160:	f1 f7       	brne	.-4      	; 0x15e <LcdCommand+0x1e>
+ 162:	81 2f       	mov	r24, r17
+ 164:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+	if(command == ALLCLR || command == HOME)
+ 168:	11 50       	subi	r17, 0x01	; 1
+ 16a:	12 30       	cpi	r17, 0x02	; 2
+ 16c:	20 f4       	brcc	.+8      	; 0x176 <LcdCommand+0x36>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 16e:	80 e4       	ldi	r24, 0x40	; 64
+ 170:	9f e1       	ldi	r25, 0x1F	; 31
+ 172:	01 97       	sbiw	r24, 0x01	; 1
+ 174:	f1 f7       	brne	.-4      	; 0x172 <LcdCommand+0x32>
+		_delay_ms(2);
+}
+ 176:	1f 91       	pop	r17
+ 178:	08 95       	ret
+
+0000017a <LcdMove>:
+// 입력 : 	line - 화면의 행(0행부터 시작)
+//			pos  - 화면의 열(0열부터 시작)
+//=======================================================
+void LcdMove(char line, char pos)
+{
+	pos = (line << 6) + pos; 
+ 17a:	82 95       	swap	r24
+ 17c:	88 0f       	add	r24, r24
+ 17e:	88 0f       	add	r24, r24
+ 180:	80 7c       	andi	r24, 0xC0	; 192
+ 182:	68 0f       	add	r22, r24
+  	pos |= 0x80;			// 비트 7를 세트한다.
+
+  	LcdCommand(pos);
+ 184:	86 2f       	mov	r24, r22
+ 186:	80 68       	ori	r24, 0x80	; 128
+ 188:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 18c:	08 95       	ret
+
+0000018e <LcdInit>:
+// 기능 : LCD Display를 초기화한다.
+//==================================
+
+void LcdInit(void)
+{
+	LCD_DDR	= 0xFF;			// LCD포트를 출력으로 설정
+ 18e:	8f ef       	ldi	r24, 0xFF	; 255
+ 190:	84 bb       	out	0x14, r24	; 20
+ 192:	80 e6       	ldi	r24, 0x60	; 96
+ 194:	9a ee       	ldi	r25, 0xEA	; 234
+ 196:	01 97       	sbiw	r24, 0x01	; 1
+ 198:	f1 f7       	brne	.-4      	; 0x196 <LcdInit+0x8>
+	_delay_ms(15);
+	write_command(0x30);
+ 19a:	80 e3       	ldi	r24, 0x30	; 48
+ 19c:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1a0:	80 e2       	ldi	r24, 0x20	; 32
+ 1a2:	9e e4       	ldi	r25, 0x4E	; 78
+ 1a4:	01 97       	sbiw	r24, 0x01	; 1
+ 1a6:	f1 f7       	brne	.-4      	; 0x1a4 <LcdInit+0x16>
+	_delay_ms(5);
+	write_command(0x30);
+ 1a8:	80 e3       	ldi	r24, 0x30	; 48
+ 1aa:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1ae:	80 ea       	ldi	r24, 0xA0	; 160
+ 1b0:	9f e0       	ldi	r25, 0x0F	; 15
+ 1b2:	01 97       	sbiw	r24, 0x01	; 1
+ 1b4:	f1 f7       	brne	.-4      	; 0x1b2 <LcdInit+0x24>
+	_delay_ms(1);
+	write_command(0x32);
+ 1b6:	82 e3       	ldi	r24, 0x32	; 50
+ 1b8:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+
+	LcdCommand(FUNSET);
+ 1bc:	88 e2       	ldi	r24, 0x28	; 40
+ 1be:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(DISP_OFF);
+ 1c2:	88 e0       	ldi	r24, 0x08	; 8
+ 1c4:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ALLCLR);
+ 1c8:	81 e0       	ldi	r24, 0x01	; 1
+ 1ca:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ENTMOD);
+ 1ce:	86 e0       	ldi	r24, 0x06	; 6
+ 1d0:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+
+	LcdCommand(DISP_ON);		// 화면을 켠다.
+ 1d4:	8c e0       	ldi	r24, 0x0C	; 12
+ 1d6:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 1da:	08 95       	ret
+
+000001dc <LcdNewchar>:
+// 입력 : ch	- 문자코드
+//	      font	- 글꼴 데이터
+//========================================
+
+void LcdNewchar(char ch, char font[])	// 글자 등록함수
+{
+ 1dc:	0f 93       	push	r16
+ 1de:	1f 93       	push	r17
+ 1e0:	cf 93       	push	r28
+ 1e2:	df 93       	push	r29
+ 1e4:	8b 01       	movw	r16, r22
+	int i;
+		
+	ch <<= 3;			// ch = ch << 3;과 같음
+ 1e6:	88 0f       	add	r24, r24
+ 1e8:	88 0f       	add	r24, r24
+ 1ea:	88 0f       	add	r24, r24
+	ch |= 0x40;		// 비트6을 세트 => CGRAM 주소설정
+
+	LcdCommand(ch);	// CGRAM 주소설정 =>LcdPutchar()로 
+ 1ec:	80 64       	ori	r24, 0x40	; 64
+ 1ee:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+ 1f2:	c0 e0       	ldi	r28, 0x00	; 0
+ 1f4:	d0 e0       	ldi	r29, 0x00	; 0
+					// 쓰는 문자는 CGRAM에 저장
+
+	for(i=0; i<8; i++)	// 글꼴을 CGRAM에 저장한다.
+		LcdPutchar(font[i]);
+ 1f6:	f8 01       	movw	r30, r16
+ 1f8:	ec 0f       	add	r30, r28
+ 1fa:	fd 1f       	adc	r31, r29
+ 1fc:	80 81       	ld	r24, Z
+ 1fe:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+	ch |= 0x40;		// 비트6을 세트 => CGRAM 주소설정
+
+	LcdCommand(ch);	// CGRAM 주소설정 =>LcdPutchar()로 
+					// 쓰는 문자는 CGRAM에 저장
+
+	for(i=0; i<8; i++)	// 글꼴을 CGRAM에 저장한다.
+ 202:	21 96       	adiw	r28, 0x01	; 1
+ 204:	c8 30       	cpi	r28, 0x08	; 8
+ 206:	d1 05       	cpc	r29, r1
+ 208:	b1 f7       	brne	.-20     	; 0x1f6 <LcdNewchar+0x1a>
+		LcdPutchar(font[i]);
+}
+ 20a:	df 91       	pop	r29
+ 20c:	cf 91       	pop	r28
+ 20e:	1f 91       	pop	r17
+ 210:	0f 91       	pop	r16
+ 212:	08 95       	ret
+
+00000214 <__vector_30>:
+
+//////  USART1 통신(시리얼통신) 수신완료 인터럽트 서비스 프로그램   ///////
+
+
+ISR( USART1_RX_vect )      // 107쪽( 또는 108쪽) 표7.2 인터럽트벡터의 매크로 참조
+{
+ 214:	1f 92       	push	r1
+ 216:	0f 92       	push	r0
+ 218:	0f b6       	in	r0, 0x3f	; 63
+ 21a:	0f 92       	push	r0
+ 21c:	11 24       	eor	r1, r1
+ 21e:	2f 93       	push	r18
+ 220:	3f 93       	push	r19
+ 222:	4f 93       	push	r20
+ 224:	8f 93       	push	r24
+ 226:	9f 93       	push	r25
+
+    static  unsigned short  data_buf = 0;
+
+    rdata = UDR1;           // USART1 수신단자(RXD1 핀)로부터 수신된 1바이트 데이터를 전역변수 rdata에 저장
+ 228:	80 91 9c 00 	lds	r24, 0x009C
+ 22c:	80 93 99 01 	sts	0x0199, r24
+ 
+    SerialPutChar_USART1(rdata);  //Echo: 수신된 데이터를 바로 휴대폰으로 송신하여 수신된데이터가 정확한지 확인 
+ 230:	90 91 99 01 	lds	r25, 0x0199
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 234:	80 91 9b 00 	lds	r24, 0x009B
+ 238:	85 ff       	sbrs	r24, 5
+ 23a:	fc cf       	rjmp	.-8      	; 0x234 <__vector_30+0x20>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 23c:	90 93 9c 00 	sts	0x009C, r25
+
+    rdata = UDR1;           // USART1 수신단자(RXD1 핀)로부터 수신된 1바이트 데이터를 전역변수 rdata에 저장
+ 
+    SerialPutChar_USART1(rdata);  //Echo: 수신된 데이터를 바로 휴대폰으로 송신하여 수신된데이터가 정확한지 확인 
+
+    recv_cnt++ ;            // 수신된 데이터 바이트수 증가 및 저장
+ 240:	80 91 9a 01 	lds	r24, 0x019A
+ 244:	8f 5f       	subi	r24, 0xFF	; 255
+ 246:	80 93 9a 01 	sts	0x019A, r24
+
+      
+    if( data_flag == 0 )
+ 24a:	80 91 9b 01 	lds	r24, 0x019B
+ 24e:	88 23       	and	r24, r24
+ 250:	e9 f4       	brne	.+58     	; 0x28c <__vector_30+0x78>
+	{
+       if( rdata == 's' )
+ 252:	80 91 99 01 	lds	r24, 0x0199
+ 256:	83 37       	cpi	r24, 0x73	; 115
+ 258:	41 f4       	brne	.+16     	; 0x26a <__vector_30+0x56>
+       {
+           recv_cmd = rdata; 
+ 25a:	80 91 99 01 	lds	r24, 0x0199
+ 25e:	80 93 9c 01 	sts	0x019C, r24
+           data_flag = 1;
+ 262:	81 e0       	ldi	r24, 0x01	; 1
+ 264:	80 93 9b 01 	sts	0x019B, r24
+ 268:	64 c0       	rjmp	.+200    	; 0x332 <__vector_30+0x11e>
+       }
+       else if( rdata != 's' )
+ 26a:	80 91 99 01 	lds	r24, 0x0199
+ 26e:	83 37       	cpi	r24, 0x73	; 115
+ 270:	09 f4       	brne	.+2      	; 0x274 <__vector_30+0x60>
+ 272:	5f c0       	rjmp	.+190    	; 0x332 <__vector_30+0x11e>
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 274:	80 91 9b 00 	lds	r24, 0x009B
+ 278:	85 ff       	sbrs	r24, 5
+ 27a:	fc cf       	rjmp	.-8      	; 0x274 <__vector_30+0x60>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 27c:	8a e0       	ldi	r24, 0x0A	; 10
+ 27e:	80 93 9c 00 	sts	0x009C, r24
+       }
+       else if( rdata != 's' )
+       {
+           SerialPutChar_USART1('\n');   //휴대폰으로 데이터 전송시 Line Feed('\n')를 항상 끝에 전송해야함 
+
+           recv_cmd = rdata; 
+ 282:	80 91 99 01 	lds	r24, 0x0199
+ 286:	80 93 9c 01 	sts	0x019C, r24
+ 28a:	50 c0       	rjmp	.+160    	; 0x32c <__vector_30+0x118>
+           new_recv_flag = 1;      // 새로운 문자(명령)가 휴대폰으로부터 수신되었음을 나타내는 수신 플래그 변수를 Set
+       }
+    }
+    else if( data_flag == 1 )
+ 28c:	80 91 9b 01 	lds	r24, 0x019B
+ 290:	81 30       	cpi	r24, 0x01	; 1
+ 292:	09 f0       	breq	.+2      	; 0x296 <__vector_30+0x82>
+ 294:	4e c0       	rjmp	.+156    	; 0x332 <__vector_30+0x11e>
+    {
+       if( rdata >='0'  &&  rdata <='9' )
+ 296:	80 91 99 01 	lds	r24, 0x0199
+ 29a:	80 33       	cpi	r24, 0x30	; 48
+ 29c:	08 f1       	brcs	.+66     	; 0x2e0 <__vector_30+0xcc>
+ 29e:	80 91 99 01 	lds	r24, 0x0199
+ 2a2:	8a 33       	cpi	r24, 0x3A	; 58
+ 2a4:	e8 f4       	brcc	.+58     	; 0x2e0 <__vector_30+0xcc>
+       {
+          data_buf *= 10;
+ 2a6:	20 91 a0 01 	lds	r18, 0x01A0
+ 2aa:	30 91 a1 01 	lds	r19, 0x01A1
+          data_buf += AscToNum( rdata );
+ 2ae:	80 91 99 01 	lds	r24, 0x0199
+	return Num ;
+}
+
+unsigned char AscToNum( char asc )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( asc >= '0'  &&  asc <= '9')  asc -= 0x30; 
+ 2b2:	48 2f       	mov	r20, r24
+ 2b4:	40 53       	subi	r20, 0x30	; 48
+ 2b6:	4a 30       	cpi	r20, 0x0A	; 10
+ 2b8:	08 f0       	brcs	.+2      	; 0x2bc <__vector_30+0xa8>
+	else                             asc -= 0x37; 
+ 2ba:	47 50       	subi	r20, 0x07	; 7
+    else if( data_flag == 1 )
+    {
+       if( rdata >='0'  &&  rdata <='9' )
+       {
+          data_buf *= 10;
+          data_buf += AscToNum( rdata );
+ 2bc:	c9 01       	movw	r24, r18
+ 2be:	22 0f       	add	r18, r18
+ 2c0:	33 1f       	adc	r19, r19
+ 2c2:	22 0f       	add	r18, r18
+ 2c4:	33 1f       	adc	r19, r19
+ 2c6:	22 0f       	add	r18, r18
+ 2c8:	33 1f       	adc	r19, r19
+ 2ca:	88 0f       	add	r24, r24
+ 2cc:	99 1f       	adc	r25, r25
+ 2ce:	28 0f       	add	r18, r24
+ 2d0:	39 1f       	adc	r19, r25
+ 2d2:	24 0f       	add	r18, r20
+ 2d4:	31 1d       	adc	r19, r1
+ 2d6:	30 93 a1 01 	sts	0x01A1, r19
+ 2da:	20 93 a0 01 	sts	0x01A0, r18
+ 2de:	29 c0       	rjmp	.+82     	; 0x332 <__vector_30+0x11e>
+       }
+       else if( rdata =='.')
+ 2e0:	80 91 99 01 	lds	r24, 0x0199
+ 2e4:	8e 32       	cpi	r24, 0x2E	; 46
+ 2e6:	29 f5       	brne	.+74     	; 0x332 <__vector_30+0x11e>
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 2e8:	80 91 9b 00 	lds	r24, 0x009B
+ 2ec:	85 ff       	sbrs	r24, 5
+ 2ee:	fc cf       	rjmp	.-8      	; 0x2e8 <__vector_30+0xd4>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 2f0:	8a e0       	ldi	r24, 0x0A	; 10
+ 2f2:	80 93 9c 00 	sts	0x009C, r24
+       }
+       else if( rdata =='.')
+       {
+           SerialPutChar_USART1('\n');   //휴대폰으로 데이터 전송시 Line Feed('\n')를 항상 끝에 전송해야함
+
+           Servo1_Position = data_buf; 
+ 2f6:	80 91 a0 01 	lds	r24, 0x01A0
+ 2fa:	90 91 a1 01 	lds	r25, 0x01A1
+ 2fe:	90 93 9f 01 	sts	0x019F, r25
+ 302:	80 93 9e 01 	sts	0x019E, r24
+           if( Servo1_Position > 180 )  Servo1_Position = 180;
+ 306:	80 91 9e 01 	lds	r24, 0x019E
+ 30a:	90 91 9f 01 	lds	r25, 0x019F
+ 30e:	85 3b       	cpi	r24, 0xB5	; 181
+ 310:	91 05       	cpc	r25, r1
+ 312:	34 f0       	brlt	.+12     	; 0x320 <__vector_30+0x10c>
+ 314:	84 eb       	ldi	r24, 0xB4	; 180
+ 316:	90 e0       	ldi	r25, 0x00	; 0
+ 318:	90 93 9f 01 	sts	0x019F, r25
+ 31c:	80 93 9e 01 	sts	0x019E, r24
+
+           data_flag = 0 ;
+ 320:	10 92 9b 01 	sts	0x019B, r1
+           data_buf = 0;
+ 324:	10 92 a1 01 	sts	0x01A1, r1
+ 328:	10 92 a0 01 	sts	0x01A0, r1
+           new_recv_flag = 1;  // 새로운 문자(명령)가 휴대폰으로부터 수신되었음을 나타내는 수신 플래그 변수를 Set
+ 32c:	81 e0       	ldi	r24, 0x01	; 1
+ 32e:	80 93 9d 01 	sts	0x019D, r24
+       }
+    }
+}
+ 332:	9f 91       	pop	r25
+ 334:	8f 91       	pop	r24
+ 336:	4f 91       	pop	r20
+ 338:	3f 91       	pop	r19
+ 33a:	2f 91       	pop	r18
+ 33c:	0f 90       	pop	r0
+ 33e:	0f be       	out	0x3f, r0	; 63
+ 340:	0f 90       	pop	r0
+ 342:	1f 90       	pop	r1
+ 344:	18 95       	reti
+
+00000346 <SerialPutChar_USART1>:
+////////////////////////////////////////////////////////////
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+ 346:	98 2f       	mov	r25, r24
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 348:	80 91 9b 00 	lds	r24, 0x009B
+ 34c:	85 ff       	sbrs	r24, 5
+ 34e:	fc cf       	rjmp	.-8      	; 0x348 <SerialPutChar_USART1+0x2>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 350:	90 93 9c 00 	sts	0x009C, r25
+}
+ 354:	08 95       	ret
+
+00000356 <SerialPutString_USART1>:
+// 문자열을 송신한다.
+// 입력   : str - 송신한 문자열을 저장할 버퍼의 주소
+/////////////////////////////////////////////////////////////////
+
+void SerialPutString_USART1(char *str)
+{
+ 356:	fc 01       	movw	r30, r24
+ 358:	07 c0       	rjmp	.+14     	; 0x368 <SerialPutString_USART1+0x12>
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 35a:	80 91 9b 00 	lds	r24, 0x009B
+ 35e:	85 ff       	sbrs	r24, 5
+ 360:	fc cf       	rjmp	.-8      	; 0x35a <SerialPutString_USART1+0x4>
+{
+
+    while(*str != '\0')         // 수신된 문자가 Null 문자( 0x00 )가 아니면 
+    {
+
+        SerialPutChar_USART1(*str++);
+ 362:	31 96       	adiw	r30, 0x01	; 1
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 364:	90 93 9c 00 	sts	0x009C, r25
+/////////////////////////////////////////////////////////////////
+
+void SerialPutString_USART1(char *str)
+{
+
+    while(*str != '\0')         // 수신된 문자가 Null 문자( 0x00 )가 아니면 
+ 368:	90 81       	ld	r25, Z
+ 36a:	99 23       	and	r25, r25
+ 36c:	b1 f7       	brne	.-20     	; 0x35a <SerialPutString_USART1+0x4>
+    {
+
+        SerialPutChar_USART1(*str++);
+    }
+}
+ 36e:	08 95       	ret
+
+00000370 <Servo1_Move>:
+
+//////////////////////////////////////////////////////////
+
+void Servo1_Move( short sv_pos_cmd )    // 서보모터1을 주어진 각도(sv_pos_cmd) 만큼 회전. 0도 - 180도만 가능
+{
+ 370:	9c 01       	movw	r18, r24
+      if( sv_pos_cmd > 180 )   sv_pos_cmd = 180;   // 허용범위(0도 - 180도)를 벗어나지 않도록 설정 
+ 372:	85 3b       	cpi	r24, 0xB5	; 181
+ 374:	91 05       	cpc	r25, r1
+ 376:	1c f0       	brlt	.+6      	; 0x37e <Servo1_Move+0xe>
+ 378:	24 eb       	ldi	r18, 0xB4	; 180
+ 37a:	30 e0       	ldi	r19, 0x00	; 0
+ 37c:	04 c0       	rjmp	.+8      	; 0x386 <Servo1_Move+0x16>
+      if( sv_pos_cmd < 0 )     sv_pos_cmd = 0; 
+ 37e:	97 ff       	sbrs	r25, 7
+ 380:	02 c0       	rjmp	.+4      	; 0x386 <Servo1_Move+0x16>
+ 382:	20 e0       	ldi	r18, 0x00	; 0
+ 384:	30 e0       	ldi	r19, 0x00	; 0
+
+      OCR3A = ( 5 * sv_pos_cmd )/9  + 44 ;       // OC3A(PE3)핀으로 출력되는 PWM 신호의 펄스폭(duty) 결정 
+ 386:	c9 01       	movw	r24, r18
+ 388:	88 0f       	add	r24, r24
+ 38a:	99 1f       	adc	r25, r25
+ 38c:	88 0f       	add	r24, r24
+ 38e:	99 1f       	adc	r25, r25
+ 390:	82 0f       	add	r24, r18
+ 392:	93 1f       	adc	r25, r19
+ 394:	69 e0       	ldi	r22, 0x09	; 9
+ 396:	70 e0       	ldi	r23, 0x00	; 0
+ 398:	0e 94 d1 03 	call	0x7a2	; 0x7a2 <__divmodhi4>
+ 39c:	64 5d       	subi	r22, 0xD4	; 212
+ 39e:	7f 4f       	sbci	r23, 0xFF	; 255
+ 3a0:	70 93 87 00 	sts	0x0087, r23
+ 3a4:	60 93 86 00 	sts	0x0086, r22
+                                                 // 레지스터값 설정 
+
+      //  펄스폭 = 0.7msec = 16usec * 44,   왼쪽 끝(0 도)  (펄스폭 = 0.7msec )
+      //  펄스폭 = 1.5msec = 16usec * 94 ,  가운데(90 도) (펄스폭 = 1.5msec )
+      //  펄스폭 = 2.3msec = 16usec * 144 , 오른쪽 끝(180 도) (펄스폭 = 2.3msec ) 
+}
+ 3a8:	08 95       	ret
+
+000003aa <HexToDec>:
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+}
+
+void HexToDec( unsigned short num, unsigned short radix)   // num으로 넘어온 16진수 형태의 데이터를 10진수로 
+{                                                          //  변환하여 각각의 자릿수를 전역변수 배열 cnumber[0](1자리) - cnumber[4](10000자리)에 저장하는 함수. 
+ 3aa:	0f 93       	push	r16
+ 3ac:	1f 93       	push	r17
+ 3ae:	cf 93       	push	r28
+ 3b0:	df 93       	push	r29
+ 3b2:	9c 01       	movw	r18, r24
+ 3b4:	8b 01       	movw	r16, r22
+
+	int j ;
+
+	for(j=0; j<5 ; j++) cnumber[j] = 0 ;
+ 3b6:	10 92 94 01 	sts	0x0194, r1
+ 3ba:	10 92 95 01 	sts	0x0195, r1
+ 3be:	10 92 96 01 	sts	0x0196, r1
+ 3c2:	10 92 97 01 	sts	0x0197, r1
+ 3c6:	10 92 98 01 	sts	0x0198, r1
+ 3ca:	c0 e0       	ldi	r28, 0x00	; 0
+ 3cc:	d0 e0       	ldi	r29, 0x00	; 0
+	j=0;
+	do
+	{
+		cnumber[j++] = num % radix ; 
+ 3ce:	c9 01       	movw	r24, r18
+ 3d0:	b8 01       	movw	r22, r16
+ 3d2:	0e 94 bd 03 	call	0x77a	; 0x77a <__udivmodhi4>
+ 3d6:	fe 01       	movw	r30, r28
+ 3d8:	ec 56       	subi	r30, 0x6C	; 108
+ 3da:	fe 4f       	sbci	r31, 0xFE	; 254
+ 3dc:	80 83       	st	Z, r24
+ 3de:	21 96       	adiw	r28, 0x01	; 1
+		num /= radix; 
+ 3e0:	c9 01       	movw	r24, r18
+ 3e2:	b8 01       	movw	r22, r16
+ 3e4:	0e 94 bd 03 	call	0x77a	; 0x77a <__udivmodhi4>
+ 3e8:	9b 01       	movw	r18, r22
+	} while(num);
+ 3ea:	61 15       	cp	r22, r1
+ 3ec:	71 05       	cpc	r23, r1
+ 3ee:	79 f7       	brne	.-34     	; 0x3ce <HexToDec+0x24>
+} 
+ 3f0:	df 91       	pop	r29
+ 3f2:	cf 91       	pop	r28
+ 3f4:	1f 91       	pop	r17
+ 3f6:	0f 91       	pop	r16
+ 3f8:	08 95       	ret
+
+000003fa <NumToAsc>:
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 3fa:	8a 30       	cpi	r24, 0x0A	; 10
+ 3fc:	10 f4       	brcc	.+4      	; 0x402 <NumToAsc+0x8>
+ 3fe:	80 5d       	subi	r24, 0xD0	; 208
+ 400:	08 95       	ret
+	else          Num += 0x37; 
+ 402:	89 5c       	subi	r24, 0xC9	; 201
+
+	return Num ;
+}
+ 404:	08 95       	ret
+
+00000406 <AscToNum>:
+
+unsigned char AscToNum( char asc )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( asc >= '0'  &&  asc <= '9')  asc -= 0x30; 
+ 406:	80 53       	subi	r24, 0x30	; 48
+ 408:	8a 30       	cpi	r24, 0x0A	; 10
+ 40a:	08 f0       	brcs	.+2      	; 0x40e <AscToNum+0x8>
+	else                             asc -= 0x37; 
+ 40c:	87 50       	subi	r24, 0x07	; 7
+
+	return  (unsigned char) asc ;
+}
+ 40e:	08 95       	ret
+
+00000410 <msec_delay>:
+ 410:	20 ea       	ldi	r18, 0xA0	; 160
+ 412:	3f e0       	ldi	r19, 0x0F	; 15
+ 414:	04 c0       	rjmp	.+8      	; 0x41e <msec_delay+0xe>
+ 416:	f9 01       	movw	r30, r18
+ 418:	31 97       	sbiw	r30, 0x01	; 1
+ 41a:	f1 f7       	brne	.-4      	; 0x418 <msec_delay+0x8>
+
+
+
+void msec_delay(int n)      // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		    // 1msec 시간 지연을 n회 반복
+ 41c:	01 97       	sbiw	r24, 0x01	; 1
+ 41e:	18 16       	cp	r1, r24
+ 420:	19 06       	cpc	r1, r25
+ 422:	cc f3       	brlt	.-14     	; 0x416 <msec_delay+0x6>
+		_delay_ms(1);		// 1msec 시간 지연
+}
+ 424:	08 95       	ret
+
+00000426 <usec_delay>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 426:	35 e0       	ldi	r19, 0x05	; 5
+ 428:	04 c0       	rjmp	.+8      	; 0x432 <usec_delay+0xc>
+ 42a:	23 2f       	mov	r18, r19
+ 42c:	2a 95       	dec	r18
+ 42e:	f1 f7       	brne	.-4      	; 0x42c <usec_delay+0x6>
+void usec_delay(int n)      // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		    // 1usec 시간 지연을 n회 반복
+ 430:	01 97       	sbiw	r24, 0x01	; 1
+ 432:	18 16       	cp	r1, r24
+ 434:	19 06       	cpc	r1, r25
+ 436:	cc f3       	brlt	.-14     	; 0x42a <usec_delay+0x4>
+		_delay_us(1);		// 1usec 시간 지연
+}
+ 438:	08 95       	ret
+
+0000043a <Display_Number_LCD>:
+}
+
+////////////////////////////////////////////////////////////////////
+
+void Display_Number_LCD( unsigned short num, unsigned char digit ) //부호없는 정수형변수(num)을 10진수 형태로 
+{                                                       // 정해진 자릿수(digit) 만큼 LCD 에 디스플레이 하는 함수 
+ 43a:	1f 93       	push	r17
+ 43c:	16 2f       	mov	r17, r22
+      HexToDec( num, 10); //10진수로 변환
+ 43e:	6a e0       	ldi	r22, 0x0A	; 10
+ 440:	70 e0       	ldi	r23, 0x00	; 0
+ 442:	0e 94 d5 01 	call	0x3aa	; 0x3aa <HexToDec>
+
+      if( digit < 1 )     digit = 1 ;
+ 446:	11 23       	and	r17, r17
+ 448:	81 f1       	breq	.+96     	; 0x4aa <Display_Number_LCD+0x70>
+      if( digit > 5 )     digit = 5 ;
+ 44a:	16 30       	cpi	r17, 0x06	; 6
+ 44c:	10 f0       	brcs	.+4      	; 0x452 <Display_Number_LCD+0x18>
+ 44e:	15 e0       	ldi	r17, 0x05	; 5
+ 450:	02 c0       	rjmp	.+4      	; 0x456 <Display_Number_LCD+0x1c>
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 452:	15 30       	cpi	r17, 0x05	; 5
+ 454:	49 f4       	brne	.+18     	; 0x468 <Display_Number_LCD+0x2e>
+ 456:	80 91 98 01 	lds	r24, 0x0198
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 45a:	8a 30       	cpi	r24, 0x0A	; 10
+ 45c:	10 f4       	brcc	.+4      	; 0x462 <Display_Number_LCD+0x28>
+ 45e:	80 5d       	subi	r24, 0xD0	; 208
+ 460:	01 c0       	rjmp	.+2      	; 0x464 <Display_Number_LCD+0x2a>
+	else          Num += 0x37; 
+ 462:	89 5c       	subi	r24, 0xC9	; 201
+      HexToDec( num, 10); //10진수로 변환
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 464:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+ 468:	14 30       	cpi	r17, 0x04	; 4
+ 46a:	48 f0       	brcs	.+18     	; 0x47e <Display_Number_LCD+0x44>
+ 46c:	80 91 97 01 	lds	r24, 0x0197
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 470:	8a 30       	cpi	r24, 0x0A	; 10
+ 472:	10 f4       	brcc	.+4      	; 0x478 <Display_Number_LCD+0x3e>
+ 474:	80 5d       	subi	r24, 0xD0	; 208
+ 476:	01 c0       	rjmp	.+2      	; 0x47a <Display_Number_LCD+0x40>
+	else          Num += 0x37; 
+ 478:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+ 47a:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 47e:	13 30       	cpi	r17, 0x03	; 3
+ 480:	48 f0       	brcs	.+18     	; 0x494 <Display_Number_LCD+0x5a>
+ 482:	80 91 96 01 	lds	r24, 0x0196
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 486:	8a 30       	cpi	r24, 0x0A	; 10
+ 488:	10 f4       	brcc	.+4      	; 0x48e <Display_Number_LCD+0x54>
+ 48a:	80 5d       	subi	r24, 0xD0	; 208
+ 48c:	01 c0       	rjmp	.+2      	; 0x490 <Display_Number_LCD+0x56>
+	else          Num += 0x37; 
+ 48e:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 490:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 494:	11 30       	cpi	r17, 0x01	; 1
+ 496:	49 f0       	breq	.+18     	; 0x4aa <Display_Number_LCD+0x70>
+ 498:	80 91 95 01 	lds	r24, 0x0195
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 49c:	8a 30       	cpi	r24, 0x0A	; 10
+ 49e:	10 f4       	brcc	.+4      	; 0x4a4 <Display_Number_LCD+0x6a>
+ 4a0:	80 5d       	subi	r24, 0xD0	; 208
+ 4a2:	01 c0       	rjmp	.+2      	; 0x4a6 <Display_Number_LCD+0x6c>
+	else          Num += 0x37; 
+ 4a4:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 4a6:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 4aa:	80 91 94 01 	lds	r24, 0x0194
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 4ae:	8a 30       	cpi	r24, 0x0A	; 10
+ 4b0:	10 f4       	brcc	.+4      	; 0x4b6 <Display_Number_LCD+0x7c>
+ 4b2:	80 5d       	subi	r24, 0xD0	; 208
+ 4b4:	01 c0       	rjmp	.+2      	; 0x4b8 <Display_Number_LCD+0x7e>
+	else          Num += 0x37; 
+ 4b6:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이 
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 4b8:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+}
+ 4bc:	1f 91       	pop	r17
+ 4be:	08 95       	ret
+
+000004c0 <main>:
+static volatile  char  recv_cnt = 0, rdata=0, new_recv_flag = 0, recv_cmd = 0, data_flag = 0  ;               
+static volatile unsigned char   Command_Error_Flag = 0 ; 
+
+
+int main() 
+{   
+ 4c0:	0f 93       	push	r16
+ 4c2:	1f 93       	push	r17
+
+    LcdInit();                     // LCd 초기화 함수 호출
+ 4c4:	0e 94 c7 00 	call	0x18e	; 0x18e <LcdInit>
+
+    LcdMove(0,0);                  // LCD에 쓸 데이터 초기 위치 설정( 0행 0열)
+ 4c8:	80 e0       	ldi	r24, 0x00	; 0
+ 4ca:	60 e0       	ldi	r22, 0x00	; 0
+ 4cc:	0e 94 bd 00 	call	0x17a	; 0x17a <LcdMove>
+    LcdPuts("Bluetooth Prog");     // LCD에 블루투스 테스트 메시지 디스플레이 
+ 4d0:	80 e0       	ldi	r24, 0x00	; 0
+ 4d2:	91 e0       	ldi	r25, 0x01	; 1
+ 4d4:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+    LcdMove(1,0);                  // LCD에 쓸 데이터 초기 위치 설정( 1행 0열)   
+ 4d8:	81 e0       	ldi	r24, 0x01	; 1
+ 4da:	60 e0       	ldi	r22, 0x00	; 0
+ 4dc:	0e 94 bd 00 	call	0x17a	; 0x17a <LcdMove>
+    LcdPuts("Send Command.");      // LCD에 블루투스 테스트 메시지 디스플레이
+ 4e0:	8f e0       	ldi	r24, 0x0F	; 15
+ 4e2:	91 e0       	ldi	r25, 0x01	; 1
+ 4e4:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+ 4e8:	88 ee       	ldi	r24, 0xE8	; 232
+ 4ea:	93 e0       	ldi	r25, 0x03	; 3
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 4ec:	20 ea       	ldi	r18, 0xA0	; 160
+ 4ee:	3f e0       	ldi	r19, 0x0F	; 15
+ 4f0:	f9 01       	movw	r30, r18
+ 4f2:	31 97       	sbiw	r30, 0x01	; 1
+ 4f4:	f1 f7       	brne	.-4      	; 0x4f2 <main+0x32>
+
+
+
+void msec_delay(int n)      // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		    // 1msec 시간 지연을 n회 반복
+ 4f6:	01 97       	sbiw	r24, 0x01	; 1
+ 4f8:	d9 f7       	brne	.-10     	; 0x4f0 <main+0x30>
+
+    msec_delay(1000);             // 1초(1000msec) 시간지연 
+
+//  출력 포트 설정 	   (교재 pp75-76 레지스터그림, 표6.1 참조)   
+ 
+    DDRA |= 0x01;      // LED1( 블루투스통신 테스트 용)(PA0) : 출력포트로 설정                         
+ 4fa:	d0 9a       	sbi	0x1a, 0	; 26
+                       // DDRA = 0b**** ***1, DDRA = DDRA | 0b0000 0001( 0x01 ) 
+
+    PORTA |= 0x01;     // 초기에 LED1 OFF :  PA0 = 1 출력                        
+ 4fc:	d8 9a       	sbi	0x1b, 0	; 27
+                       // PORTA = 0b**** ***1, PORTA = PORTA | 0b0000 0001( 0x01 ) 
+
+  ////////  서보모터 1개 구동을 위한 HW 관련 레지스터 설정  ////////////
+   //  입력/출력 포트 설정 	   (교재 pp75-76 레지스터그림, 표6.1 참조)    
+
+    DDRE |= 0x08;      // 서보모터1 위치제어 PWM포트(OC3A/PE3): 출력포트로 설정          
+ 4fe:	13 9a       	sbi	0x02, 3	; 2
+
+   /////////////  Timer3 설정( 서보모터1 PWM신호(OC3A/PE3) 발생 )   //////////// 
+   ////////////   PWM신호 주파수 = 50Hz (주기 = 20msec )  //////////////////////
+   /////// 교재 P238-245(레지스터 그림과 표12.2, 표12.4, 표12.5) 참조    
+
+    TCCR3A &= ~0x41;     // Fast PWM: 비교일치시 OC3A/PE3 핀을 0으로 하고 TOP에서 1을 출력
+ 500:	80 91 8b 00 	lds	r24, 0x008B
+ 504:	8e 7b       	andi	r24, 0xBE	; 190
+ 506:	80 93 8b 00 	sts	0x008B, r24
+                         // (표12.2 참조),   Fast PWM ( mode 14 ) 설정 (표12.4 참조)
+    TCCR3A |= 0x82;      
+ 50a:	80 91 8b 00 	lds	r24, 0x008B
+ 50e:	82 68       	ori	r24, 0x82	; 130
+ 510:	80 93 8b 00 	sts	0x008B, r24
+
+    TCCR3B &= ~0x03;     // 256 분주 타이머3 시작(내부클럭 주기=256/(16*10^6Hz)=16usec ), 
+ 514:	80 91 8a 00 	lds	r24, 0x008A
+ 518:	8c 7f       	andi	r24, 0xFC	; 252
+ 51a:	80 93 8a 00 	sts	0x008A, r24
+                         // Fast PWM(mode 14)설정  (표12.4 - 표12.5 참조) 
+    TCCR3B |= 0x1C;       
+ 51e:	80 91 8a 00 	lds	r24, 0x008A
+ 522:	8c 61       	ori	r24, 0x1C	; 28
+ 524:	80 93 8a 00 	sts	0x008A, r24
+
+    ICR3 = 1250;         // PWM 주파수=50Hz(PWM주기 = 1/50Hz = 20msec)
+ 528:	82 ee       	ldi	r24, 0xE2	; 226
+ 52a:	94 e0       	ldi	r25, 0x04	; 4
+ 52c:	90 93 81 00 	sts	0x0081, r25
+ 530:	80 93 80 00 	sts	0x0080, r24
+                         // PWM 주기(주파수) 설정( 1250 = 20msec(PWM주기)/16usec(256분주된 내부클럭주기),
+						  
+    PWM_Period = ICR3;   // PWM 신호 주기를 전역변수에 저장 
+ 534:	80 91 80 00 	lds	r24, 0x0080
+ 538:	90 91 81 00 	lds	r25, 0x0081
+ 53c:	90 93 a3 01 	sts	0x01A3, r25
+ 540:	80 93 a2 01 	sts	0x01A2, r24
+
+    Servo1_Position = 0;  
+ 544:	10 92 9f 01 	sts	0x019F, r1
+ 548:	10 92 9e 01 	sts	0x019E, r1
+    Servo1_Move( Servo1_Position );       // 서보모터1 가운데(0도) 위치로 회전 
+ 54c:	80 91 9e 01 	lds	r24, 0x019E
+ 550:	90 91 9f 01 	lds	r25, 0x019F
+ 554:	0e 94 b8 01 	call	0x370	; 0x370 <Servo1_Move>
+
+
+/////////  USART1 통신 포트 설정 (344쪽 - 351쪽 관련 레지스터와 표 참조 )  //////////////////   
+ 
+    UCSR1A &= ~0x01;      // 다중 프로세서통신모드 사용 안함. --> bit0=0  
+ 558:	80 91 9b 00 	lds	r24, 0x009B
+ 55c:	8e 7f       	andi	r24, 0xFE	; 254
+ 55e:	80 93 9b 00 	sts	0x009B, r24
+                          // 전송속도 배가 모드 사용함. --> bit1=1
+                          // UCSR1A = 0b**** **10 --> 
+			  // UCSR1A = UCSR1A & ~0b0000 0001 ( ~0x01 ) : 0 설정 
+    UCSR1A |=  0x02;	  // UCSR1A = UCSR1A & ~0b0000 0010 ( ~0x02 ) : 1 설정 
+ 562:	80 91 9b 00 	lds	r24, 0x009B
+ 566:	82 60       	ori	r24, 0x02	; 2
+ 568:	80 93 9b 00 	sts	0x009B, r24
+
+
+    UCSR1B &= ~0x04;      // 문자크기(데이터 전송비트 수 ) = 8비트 --> bit2(UCSZn2)=0 
+ 56c:	80 91 9a 00 	lds	r24, 0x009A
+ 570:	8b 7f       	andi	r24, 0xFB	; 251
+ 572:	80 93 9a 00 	sts	0x009A, r24
+                          // 송수신 허용(enable) --> bit4=1, bit3=1                           
+                          // UCSR1B = 0b***1 10** --> 
+                          // UCSR1B = UCSR1B & ~0b0000 0100 ( ~0x04 ) : 0설정
+    UCSR1B |= 0x18;       // UCSR1B = UCSR1B |   0b0001 1000 (  0x18 ) : 1설정
+ 576:	80 91 9a 00 	lds	r24, 0x009A
+ 57a:	88 61       	ori	r24, 0x18	; 24
+ 57c:	80 93 9a 00 	sts	0x009A, r24
+
+    UCSR1C &= ~0x78;     // 문자크기(데이터 전송비트 수 ) = 8비트 --> bit2(UCSZn1)=1,  bit1(UCSZn0)=1  
+ 580:	80 91 9d 00 	lds	r24, 0x009D
+ 584:	87 78       	andi	r24, 0x87	; 135
+ 586:	80 93 9d 00 	sts	0x009D, r24
+                         // 정지비트수 = 1비트 사용 --> bit3 = 0   
+                         // 비동기 통신모드 선택 --> bit6=0,  패리티체크모드 사용 안함. --> bit5=0, bit4=0 
+                         // UCSR1C = 0b*000 011* --> 
+                         // UCSR1C = UCSR1C & ~0b0111 1000 ( ~0x78 ) : 0설정
+    UCSR1C |= 0x06;      // UCSR1C = UCSR1C |   0b0000 0110 (  0x06 ) : 1설정
+ 58a:	80 91 9d 00 	lds	r24, 0x009D
+ 58e:	86 60       	ori	r24, 0x06	; 6
+ 590:	80 93 9d 00 	sts	0x009D, r24
+    // 2바이트 변수로 쓰기를 할 수 없고 상위 1바이트(UBRR1H) 쓰기와 하위 1바이트(UBRR1L)쓰기를 따로 해야 함. 
+    // 표17.8을 참조하면 시스템클럭 주파수가 16MHz일 때 보레이트 9600 bps로 설정하려면 
+    // UBRR1(16비트) 레지스터에 207을 써주어야 함. 207은 8비트 이하 숫자이므로 UBRR1 레지스터의  
+    // 하위 1바이트(UBRR1L)에 207을 써주고 상위 1바이트(UBRR1H)에는 0을 써주면 됨.
+ 
+    UBRR1H = 0x00;      
+ 594:	10 92 98 00 	sts	0x0098, r1
+    UBRR1L = 207;          // 보레이트(Baud Rate) = 9600 bps로 설정 ( 361쪽, 표 17.8 참조 )
+ 598:	8f ec       	ldi	r24, 0xCF	; 207
+ 59a:	80 93 99 00 	sts	0x0099, r24
+
+    UCSR1B |= 0x80;        // UART1 송신(RX) 완료 인터럽트 허용
+ 59e:	80 91 9a 00 	lds	r24, 0x009A
+ 5a2:	80 68       	ori	r24, 0x80	; 128
+ 5a4:	80 93 9a 00 	sts	0x009A, r24
+                           // UCSR1B = 0b1*** ****, UCSR1B = UCSR1B | 0b1000 0000( 0x80 ) 
+						                
+    sei();                 // 전역인터럽트허용 
+ 5a8:	78 94       	sei
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 5aa:	0a e0       	ldi	r16, 0x0A	; 10
+    sei();                 // 전역인터럽트허용 
+
+
+    while (1) 
+    { 
+       if( new_recv_flag == 1 )             // 새로운 한 문자데이터(1바이트)가 수신되었으면  
+ 5ac:	10 91 9d 01 	lds	r17, 0x019D
+ 5b0:	11 30       	cpi	r17, 0x01	; 1
+ 5b2:	e1 f7       	brne	.-8      	; 0x5ac <main+0xec>
+	   { 
+
+	       /////////////  수신된 데이터(명령어) 처리   //////////////
+
+	       if( recv_cmd == 'a' )          // 수신된 문자 데이터가 ‘a’ 이면 
+ 5b4:	80 91 9c 01 	lds	r24, 0x019C
+ 5b8:	81 36       	cpi	r24, 0x61	; 97
+ 5ba:	11 f4       	brne	.+4      	; 0x5c0 <main+0x100>
+	       {
+               PORTA |= 0x01;          // LED1 OFF 
+ 5bc:	d8 9a       	sbi	0x1b, 0	; 27
+ 5be:	a0 c0       	rjmp	.+320    	; 0x700 <main+0x240>
+	       }
+
+	       else if( recv_cmd == 'b' )     // 수신된 문자 데이터가 'b' 이면
+ 5c0:	80 91 9c 01 	lds	r24, 0x019C
+ 5c4:	82 36       	cpi	r24, 0x62	; 98
+ 5c6:	11 f4       	brne	.+4      	; 0x5cc <main+0x10c>
+	       {
+               PORTA &= ~0x01;         // LED1 ON
+ 5c8:	d8 98       	cbi	0x1b, 0	; 27
+ 5ca:	9a c0       	rjmp	.+308    	; 0x700 <main+0x240>
+	       }
+
+	       else if( recv_cmd == 'c' )     // 수신된 문자 데이터가 'c' 이면
+ 5cc:	80 91 9c 01 	lds	r24, 0x019C
+ 5d0:	83 36       	cpi	r24, 0x63	; 99
+ 5d2:	21 f4       	brne	.+8      	; 0x5dc <main+0x11c>
+	       {
+                    PORTA ^= 0x01;         // LED1 Toggle
+ 5d4:	8b b3       	in	r24, 0x1b	; 27
+ 5d6:	81 27       	eor	r24, r17
+ 5d8:	8b bb       	out	0x1b, r24	; 27
+ 5da:	92 c0       	rjmp	.+292    	; 0x700 <main+0x240>
+	       }
+
+	       else if( recv_cmd == 'd')      // 수신된 문자데이터가 ‘d’ 이면
+ 5dc:	80 91 9c 01 	lds	r24, 0x019C
+ 5e0:	84 36       	cpi	r24, 0x64	; 100
+ 5e2:	e9 f5       	brne	.+122    	; 0x65e <main+0x19e>
+	       {
+               SerialPutString_USART1( "Received Data Count = " );     //  메시지를 휴대폰으로 전송
+ 5e4:	8d e1       	ldi	r24, 0x1D	; 29
+ 5e6:	91 e0       	ldi	r25, 0x01	; 1
+ 5e8:	0e 94 ab 01 	call	0x356	; 0x356 <SerialPutString_USART1>
+ 
+		        HexToDec(recv_cnt,10);            // 수신된 바이트수를 나타내는 변수인 recv_cnt를 십진수로 변환
+ 5ec:	80 91 9a 01 	lds	r24, 0x019A
+ 5f0:	90 e0       	ldi	r25, 0x00	; 0
+ 5f2:	6a e0       	ldi	r22, 0x0A	; 10
+ 5f4:	70 e0       	ldi	r23, 0x00	; 0
+ 5f6:	0e 94 d5 01 	call	0x3aa	; 0x3aa <HexToDec>
+
+                // 십진수로 변환된 각각의 자리수를 문자데이터(ASCII 코드)로 변환하여 스마트폰으로 전송
+
+                SerialPutChar_USART1( NumToAsc(cnumber[2]) );  // 변수 recv_cnt 값을 전송 상위(100자리)부터 전송 
+ 5fa:	80 91 96 01 	lds	r24, 0x0196
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 5fe:	8a 30       	cpi	r24, 0x0A	; 10
+ 600:	18 f4       	brcc	.+6      	; 0x608 <main+0x148>
+ 602:	98 2f       	mov	r25, r24
+ 604:	90 5d       	subi	r25, 0xD0	; 208
+ 606:	02 c0       	rjmp	.+4      	; 0x60c <main+0x14c>
+	else          Num += 0x37; 
+ 608:	98 2f       	mov	r25, r24
+ 60a:	99 5c       	subi	r25, 0xC9	; 201
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 60c:	80 91 9b 00 	lds	r24, 0x009B
+ 610:	85 ff       	sbrs	r24, 5
+ 612:	fc cf       	rjmp	.-8      	; 0x60c <main+0x14c>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 614:	90 93 9c 00 	sts	0x009C, r25
+		        HexToDec(recv_cnt,10);            // 수신된 바이트수를 나타내는 변수인 recv_cnt를 십진수로 변환
+
+                // 십진수로 변환된 각각의 자리수를 문자데이터(ASCII 코드)로 변환하여 스마트폰으로 전송
+
+                SerialPutChar_USART1( NumToAsc(cnumber[2]) );  // 변수 recv_cnt 값을 전송 상위(100자리)부터 전송 
+                SerialPutChar_USART1( NumToAsc(cnumber[1]) );  // 변수 recv_cnt 값의 10자리 전송
+ 618:	80 91 95 01 	lds	r24, 0x0195
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 61c:	8a 30       	cpi	r24, 0x0A	; 10
+ 61e:	18 f4       	brcc	.+6      	; 0x626 <main+0x166>
+ 620:	98 2f       	mov	r25, r24
+ 622:	90 5d       	subi	r25, 0xD0	; 208
+ 624:	02 c0       	rjmp	.+4      	; 0x62a <main+0x16a>
+	else          Num += 0x37; 
+ 626:	98 2f       	mov	r25, r24
+ 628:	99 5c       	subi	r25, 0xC9	; 201
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 62a:	80 91 9b 00 	lds	r24, 0x009B
+ 62e:	85 ff       	sbrs	r24, 5
+ 630:	fc cf       	rjmp	.-8      	; 0x62a <main+0x16a>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 632:	90 93 9c 00 	sts	0x009C, r25
+
+                // 십진수로 변환된 각각의 자리수를 문자데이터(ASCII 코드)로 변환하여 스마트폰으로 전송
+
+                SerialPutChar_USART1( NumToAsc(cnumber[2]) );  // 변수 recv_cnt 값을 전송 상위(100자리)부터 전송 
+                SerialPutChar_USART1( NumToAsc(cnumber[1]) );  // 변수 recv_cnt 값의 10자리 전송
+                SerialPutChar_USART1( NumToAsc(cnumber[0]) );  // 변수 recv_cnt 값의 1자리 전송
+ 636:	80 91 94 01 	lds	r24, 0x0194
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 63a:	8a 30       	cpi	r24, 0x0A	; 10
+ 63c:	18 f4       	brcc	.+6      	; 0x644 <main+0x184>
+ 63e:	98 2f       	mov	r25, r24
+ 640:	90 5d       	subi	r25, 0xD0	; 208
+ 642:	02 c0       	rjmp	.+4      	; 0x648 <main+0x188>
+	else          Num += 0x37; 
+ 644:	98 2f       	mov	r25, r24
+ 646:	99 5c       	subi	r25, 0xC9	; 201
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 648:	80 91 9b 00 	lds	r24, 0x009B
+ 64c:	85 ff       	sbrs	r24, 5
+ 64e:	fc cf       	rjmp	.-8      	; 0x648 <main+0x188>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 650:	90 93 9c 00 	sts	0x009C, r25
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 654:	80 91 9b 00 	lds	r24, 0x009B
+ 658:	85 ff       	sbrs	r24, 5
+ 65a:	fc cf       	rjmp	.-8      	; 0x654 <main+0x194>
+ 65c:	48 c0       	rjmp	.+144    	; 0x6ee <main+0x22e>
+                SerialPutChar_USART1( NumToAsc(cnumber[1]) );  // 변수 recv_cnt 값의 10자리 전송
+                SerialPutChar_USART1( NumToAsc(cnumber[0]) );  // 변수 recv_cnt 값의 1자리 전송
+                SerialPutChar_USART1('\n');    // 휴대폰으로 데이터 전송 시 Line Feed('\n')를 항상 끝에 전송해야함
+	       } 
+
+	       else if( recv_cmd == 's')      // 수신된 문자데이터가 ‘s’ 이면
+ 65e:	80 91 9c 01 	lds	r24, 0x019C
+ 662:	83 37       	cpi	r24, 0x73	; 115
+ 664:	09 f0       	breq	.+2      	; 0x668 <main+0x1a8>
+ 666:	46 c0       	rjmp	.+140    	; 0x6f4 <main+0x234>
+	       {        
+		              
+               Servo1_Move( Servo1_Position );       // 서보모터1을 Servo1_Position 위치로 회전 
+ 668:	80 91 9e 01 	lds	r24, 0x019E
+ 66c:	90 91 9f 01 	lds	r25, 0x019F
+ 670:	0e 94 b8 01 	call	0x370	; 0x370 <Servo1_Move>
+
+               SerialPutString_USART1( "Servo1 position = " );     //  메시지를 휴대폰으로 전송
+ 674:	84 e3       	ldi	r24, 0x34	; 52
+ 676:	91 e0       	ldi	r25, 0x01	; 1
+ 678:	0e 94 ab 01 	call	0x356	; 0x356 <SerialPutString_USART1>
+ 
+		        HexToDec(Servo1_Position,10);            // 수신된 바이트수를 나타내는 변수인 recv_cnt를 십진수로 변환
+ 67c:	80 91 9e 01 	lds	r24, 0x019E
+ 680:	90 91 9f 01 	lds	r25, 0x019F
+ 684:	6a e0       	ldi	r22, 0x0A	; 10
+ 686:	70 e0       	ldi	r23, 0x00	; 0
+ 688:	0e 94 d5 01 	call	0x3aa	; 0x3aa <HexToDec>
+
+                // 십진수로 변환된 각각의 자리수를 문자데이터(ASCII 코드)로 변환하여 스마트폰으로 전송
+
+                SerialPutChar_USART1( NumToAsc(cnumber[2]) );  // 변수 recv_cnt 값을 전송 상위(100자리)부터 전송 
+ 68c:	80 91 96 01 	lds	r24, 0x0196
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 690:	8a 30       	cpi	r24, 0x0A	; 10
+ 692:	18 f4       	brcc	.+6      	; 0x69a <main+0x1da>
+ 694:	98 2f       	mov	r25, r24
+ 696:	90 5d       	subi	r25, 0xD0	; 208
+ 698:	02 c0       	rjmp	.+4      	; 0x69e <main+0x1de>
+	else          Num += 0x37; 
+ 69a:	98 2f       	mov	r25, r24
+ 69c:	99 5c       	subi	r25, 0xC9	; 201
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 69e:	80 91 9b 00 	lds	r24, 0x009B
+ 6a2:	85 ff       	sbrs	r24, 5
+ 6a4:	fc cf       	rjmp	.-8      	; 0x69e <main+0x1de>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 6a6:	90 93 9c 00 	sts	0x009C, r25
+		        HexToDec(Servo1_Position,10);            // 수신된 바이트수를 나타내는 변수인 recv_cnt를 십진수로 변환
+
+                // 십진수로 변환된 각각의 자리수를 문자데이터(ASCII 코드)로 변환하여 스마트폰으로 전송
+
+                SerialPutChar_USART1( NumToAsc(cnumber[2]) );  // 변수 recv_cnt 값을 전송 상위(100자리)부터 전송 
+                SerialPutChar_USART1( NumToAsc(cnumber[1]) );  // 변수 recv_cnt 값의 10자리 전송
+ 6aa:	80 91 95 01 	lds	r24, 0x0195
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 6ae:	8a 30       	cpi	r24, 0x0A	; 10
+ 6b0:	18 f4       	brcc	.+6      	; 0x6b8 <main+0x1f8>
+ 6b2:	98 2f       	mov	r25, r24
+ 6b4:	90 5d       	subi	r25, 0xD0	; 208
+ 6b6:	02 c0       	rjmp	.+4      	; 0x6bc <main+0x1fc>
+	else          Num += 0x37; 
+ 6b8:	98 2f       	mov	r25, r24
+ 6ba:	99 5c       	subi	r25, 0xC9	; 201
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 6bc:	80 91 9b 00 	lds	r24, 0x009B
+ 6c0:	85 ff       	sbrs	r24, 5
+ 6c2:	fc cf       	rjmp	.-8      	; 0x6bc <main+0x1fc>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 6c4:	90 93 9c 00 	sts	0x009C, r25
+
+                // 십진수로 변환된 각각의 자리수를 문자데이터(ASCII 코드)로 변환하여 스마트폰으로 전송
+
+                SerialPutChar_USART1( NumToAsc(cnumber[2]) );  // 변수 recv_cnt 값을 전송 상위(100자리)부터 전송 
+                SerialPutChar_USART1( NumToAsc(cnumber[1]) );  // 변수 recv_cnt 값의 10자리 전송
+                SerialPutChar_USART1( NumToAsc(cnumber[0]) );  // 변수 recv_cnt 값의 1자리 전송
+ 6c8:	80 91 94 01 	lds	r24, 0x0194
+	} while(num);
+} 
+
+char NumToAsc( unsigned char Num )       // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 6cc:	8a 30       	cpi	r24, 0x0A	; 10
+ 6ce:	18 f4       	brcc	.+6      	; 0x6d6 <main+0x216>
+ 6d0:	98 2f       	mov	r25, r24
+ 6d2:	90 5d       	subi	r25, 0xD0	; 208
+ 6d4:	02 c0       	rjmp	.+4      	; 0x6da <main+0x21a>
+	else          Num += 0x37; 
+ 6d6:	98 2f       	mov	r25, r24
+ 6d8:	99 5c       	subi	r25, 0xC9	; 201
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 6da:	80 91 9b 00 	lds	r24, 0x009B
+ 6de:	85 ff       	sbrs	r24, 5
+ 6e0:	fc cf       	rjmp	.-8      	; 0x6da <main+0x21a>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 6e2:	90 93 9c 00 	sts	0x009C, r25
+// 한 문자를 송신한다.
+///////////////////////////////////////////////////////////
+
+void SerialPutChar_USART1(char ch)
+{
+	while( !( UCSR1A & 0x20 ) );	// 버퍼가 빌 때(새로운 데이터를 송신 가능할때)를 기다림
+ 6e6:	80 91 9b 00 	lds	r24, 0x009B
+ 6ea:	85 ff       	sbrs	r24, 5
+ 6ec:	fc cf       	rjmp	.-8      	; 0x6e6 <main+0x226>
+                                        // UCSR1A 레지스터의 데이터레지스터빔( bit5(UDRE) )비트가 
+                                        // 1 이 될 때까지 기다림.
+
+  	UDR1 = ch;		        // 버퍼에 문자를 쓴다
+ 6ee:	00 93 9c 00 	sts	0x009C, r16
+ 6f2:	06 c0       	rjmp	.+12     	; 0x700 <main+0x240>
+
+           }
+
+	       else                                //  수신된 문자데이터가 정의되지 않은 명령이면(즉, 명령 오류 이면)
+	       {
+              SerialPutString_USART1( "Command Error!!  Try again.\n" ); //  명령 오류 메시지를 휴대폰으로 전송
+ 6f4:	87 e4       	ldi	r24, 0x47	; 71
+ 6f6:	91 e0       	ldi	r25, 0x01	; 1
+ 6f8:	0e 94 ab 01 	call	0x356	; 0x356 <SerialPutString_USART1>
+
+		      Command_Error_Flag = 1;          // 명령 오류 플래그 셋
+ 6fc:	10 93 a4 01 	sts	0x01A4, r17
+	       }
+
+        ////////////////  LCD 디스플레이 //////////////////////////////////
+
+           if( Command_Error_Flag == 0  )          // 명령에 오류가 없으면  
+ 700:	80 91 a4 01 	lds	r24, 0x01A4
+ 704:	88 23       	and	r24, r24
+ 706:	f1 f4       	brne	.+60     	; 0x744 <main+0x284>
+	       {  
+                /////  수신된 바이트수(변수 값) LCD 디스플레이  /////////////////
+                LcdCommand( ALLCLR ) ;    // LCD Clear
+ 708:	81 e0       	ldi	r24, 0x01	; 1
+ 70a:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+
+	            LcdMove(0,0);    
+ 70e:	80 e0       	ldi	r24, 0x00	; 0
+ 710:	60 e0       	ldi	r22, 0x00	; 0
+ 712:	0e 94 bd 00 	call	0x17a	; 0x17a <LcdMove>
+	            LcdPuts("Recv cnt = "); 
+ 716:	84 e6       	ldi	r24, 0x64	; 100
+ 718:	91 e0       	ldi	r25, 0x01	; 1
+ 71a:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+                Display_Number_LCD( recv_cnt, 3 ); //수신된 바이트수 recv_cnt를 십진수로 변환하여 LCD에 디스플레이
+ 71e:	80 91 9a 01 	lds	r24, 0x019A
+ 722:	90 e0       	ldi	r25, 0x00	; 0
+ 724:	63 e0       	ldi	r22, 0x03	; 3
+ 726:	0e 94 1d 02 	call	0x43a	; 0x43a <Display_Number_LCD>
+	            LcdMove(1,0);    
+ 72a:	81 e0       	ldi	r24, 0x01	; 1
+ 72c:	60 e0       	ldi	r22, 0x00	; 0
+ 72e:	0e 94 bd 00 	call	0x17a	; 0x17a <LcdMove>
+	            LcdPuts("Recv data = "); 
+ 732:	80 e7       	ldi	r24, 0x70	; 112
+ 734:	91 e0       	ldi	r25, 0x01	; 1
+ 736:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+	            LcdPutchar( recv_cmd );       // 수신된 명령 recv_cmd 를 LCD에 디스플레이
+ 73a:	80 91 9c 01 	lds	r24, 0x019C
+ 73e:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+ 742:	18 c0       	rjmp	.+48     	; 0x774 <main+0x2b4>
+
+           }
+
+	       else if( Command_Error_Flag == 1 )    // 명령에 오류가 있으면
+ 744:	80 91 a4 01 	lds	r24, 0x01A4
+ 748:	81 30       	cpi	r24, 0x01	; 1
+ 74a:	a1 f4       	brne	.+40     	; 0x774 <main+0x2b4>
+	       {  
+
+		      LcdCommand( 0x01) ;         // LCD Claear
+ 74c:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+		      LcdMove(0, 0 );             // LCD에 오류메시지 디스플레이
+ 750:	80 e0       	ldi	r24, 0x00	; 0
+ 752:	60 e0       	ldi	r22, 0x00	; 0
+ 754:	0e 94 bd 00 	call	0x17a	; 0x17a <LcdMove>
+		      LcdPuts("Cmd Error!!"); 
+ 758:	8d e7       	ldi	r24, 0x7D	; 125
+ 75a:	91 e0       	ldi	r25, 0x01	; 1
+ 75c:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+		      LcdMove(1, 0 );
+ 760:	81 e0       	ldi	r24, 0x01	; 1
+ 762:	60 e0       	ldi	r22, 0x00	; 0
+ 764:	0e 94 bd 00 	call	0x17a	; 0x17a <LcdMove>
+		      LcdPuts("Try Again."); 
+ 768:	89 e8       	ldi	r24, 0x89	; 137
+ 76a:	91 e0       	ldi	r25, 0x01	; 1
+ 76c:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+
+		      Command_Error_Flag = 0 ;     // Command_Error_Flag 리셋 
+ 770:	10 92 a4 01 	sts	0x01A4, r1
+           }
+
+
+           new_recv_flag = 0;                      // 새 문자(명령) 수신 플래그 리셋
+ 774:	10 92 9d 01 	sts	0x019D, r1
+ 778:	19 cf       	rjmp	.-462    	; 0x5ac <main+0xec>
+
+0000077a <__udivmodhi4>:
+ 77a:	aa 1b       	sub	r26, r26
+ 77c:	bb 1b       	sub	r27, r27
+ 77e:	51 e1       	ldi	r21, 0x11	; 17
+ 780:	07 c0       	rjmp	.+14     	; 0x790 <__udivmodhi4_ep>
+
+00000782 <__udivmodhi4_loop>:
+ 782:	aa 1f       	adc	r26, r26
+ 784:	bb 1f       	adc	r27, r27
+ 786:	a6 17       	cp	r26, r22
+ 788:	b7 07       	cpc	r27, r23
+ 78a:	10 f0       	brcs	.+4      	; 0x790 <__udivmodhi4_ep>
+ 78c:	a6 1b       	sub	r26, r22
+ 78e:	b7 0b       	sbc	r27, r23
+
+00000790 <__udivmodhi4_ep>:
+ 790:	88 1f       	adc	r24, r24
+ 792:	99 1f       	adc	r25, r25
+ 794:	5a 95       	dec	r21
+ 796:	a9 f7       	brne	.-22     	; 0x782 <__udivmodhi4_loop>
+ 798:	80 95       	com	r24
+ 79a:	90 95       	com	r25
+ 79c:	bc 01       	movw	r22, r24
+ 79e:	cd 01       	movw	r24, r26
+ 7a0:	08 95       	ret
+
+000007a2 <__divmodhi4>:
+ 7a2:	97 fb       	bst	r25, 7
+ 7a4:	09 2e       	mov	r0, r25
+ 7a6:	07 26       	eor	r0, r23
+ 7a8:	0a d0       	rcall	.+20     	; 0x7be <__divmodhi4_neg1>
+ 7aa:	77 fd       	sbrc	r23, 7
+ 7ac:	04 d0       	rcall	.+8      	; 0x7b6 <__divmodhi4_neg2>
+ 7ae:	e5 df       	rcall	.-54     	; 0x77a <__udivmodhi4>
+ 7b0:	06 d0       	rcall	.+12     	; 0x7be <__divmodhi4_neg1>
+ 7b2:	00 20       	and	r0, r0
+ 7b4:	1a f4       	brpl	.+6      	; 0x7bc <__divmodhi4_exit>
+
+000007b6 <__divmodhi4_neg2>:
+ 7b6:	70 95       	com	r23
+ 7b8:	61 95       	neg	r22
+ 7ba:	7f 4f       	sbci	r23, 0xFF	; 255
+
+000007bc <__divmodhi4_exit>:
+ 7bc:	08 95       	ret
+
+000007be <__divmodhi4_neg1>:
+ 7be:	f6 f7       	brtc	.-4      	; 0x7bc <__divmodhi4_exit>
+ 7c0:	90 95       	com	r25
+ 7c2:	81 95       	neg	r24
+ 7c4:	9f 4f       	sbci	r25, 0xFF	; 255
+ 7c6:	08 95       	ret
+
+000007c8 <_exit>:
+ 7c8:	f8 94       	cli
+
+000007ca <__stop_program>:
+ 7ca:	ff cf       	rjmp	.-2      	; 0x7ca <__stop_program>
