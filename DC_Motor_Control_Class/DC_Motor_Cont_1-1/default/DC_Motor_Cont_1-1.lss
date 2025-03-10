@@ -1,0 +1,1551 @@
+
+DC_Motor_Cont_1-1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000058  00800100  00000824  000008b8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000824  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000a  00800158  00800158  00000910  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  00000910  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000001a2  00000000  00000000  00000950  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000cad  00000000  00000000  00000af2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000003b7  00000000  00000000  0000179f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000098b  00000000  00000000  00001b56  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000190  00000000  00000000  000024e4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000002d7  00000000  00000000  00002674  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000004aa  00000000  00000000  0000294b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000060  00000000  00000000  00002df5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 d2 01 	jmp	0x3a4	; 0x3a4 <__vector_10>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e4 e2       	ldi	r30, 0x24	; 36
+  a0:	f8 e0       	ldi	r31, 0x08	; 8
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a8 35       	cpi	r26, 0x58	; 88
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a8 e5       	ldi	r26, 0x58	; 88
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a2 36       	cpi	r26, 0x62	; 98
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 5f 03 	call	0x6be	; 0x6be <main>
+  c6:	0c 94 10 04 	jmp	0x820	; 0x820 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <LcdPutchar>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+  ce:	95 e3       	ldi	r25, 0x35	; 53
+  d0:	29 2f       	mov	r18, r25
+  d2:	2a 95       	dec	r18
+  d4:	f1 f7       	brne	.-4      	; 0xd2 <LcdPutchar+0x4>
+
+static void write_data(char ch)
+{
+	unsigned char temp;
+
+	temp = (ch & 0xF0) | 0x05;
+  d6:	29 2f       	mov	r18, r25
+  d8:	2a 95       	dec	r18
+  da:	f1 f7       	brne	.-4      	; 0xd8 <LcdPutchar+0xa>
+  dc:	29 2f       	mov	r18, r25
+  de:	2a 95       	dec	r18
+  e0:	f1 f7       	brne	.-4      	; 0xde <LcdPutchar+0x10>
+  e2:	29 2f       	mov	r18, r25
+  e4:	2a 95       	dec	r18
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <LcdPutchar+0x16>
+  e8:	9a 95       	dec	r25
+  ea:	f1 f7       	brne	.-4      	; 0xe8 <LcdPutchar+0x1a>
+  ec:	98 2f       	mov	r25, r24
+  ee:	90 7f       	andi	r25, 0xF0	; 240
+  f0:	95 60       	ori	r25, 0x05	; 5
+
+	LCD_PORT = temp;
+  f2:	95 bb       	out	0x15, r25	; 21
+	LCD_PORT = temp & ~0x04;
+  f4:	9b 7f       	andi	r25, 0xFB	; 251
+  f6:	95 bb       	out	0x15, r25	; 21
+
+	temp = (ch<<4) | 0x05;
+  f8:	82 95       	swap	r24
+  fa:	80 7f       	andi	r24, 0xF0	; 240
+  fc:	85 60       	ori	r24, 0x05	; 5
+
+	LCD_PORT = temp;
+  fe:	85 bb       	out	0x15, r24	; 21
+	LCD_PORT = temp & ~0x04;
+ 100:	8b 7f       	andi	r24, 0xFB	; 251
+ 102:	85 bb       	out	0x15, r24	; 21
+
+void LcdPutchar(char ch)
+{
+	checkbusy();
+	write_data(ch);
+}
+ 104:	08 95       	ret
+
+00000106 <LcdPuts>:
+
+void LcdPuts(char* str)
+{
+ 106:	cf 93       	push	r28
+ 108:	df 93       	push	r29
+ 10a:	ec 01       	movw	r28, r24
+ 10c:	03 c0       	rjmp	.+6      	; 0x114 <LcdPuts+0xe>
+   while(*str)
+  {
+   LcdPutchar(*str);
+ 10e:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+   str++;
+ 112:	21 96       	adiw	r28, 0x01	; 1
+	write_data(ch);
+}
+
+void LcdPuts(char* str)
+{
+   while(*str)
+ 114:	88 81       	ld	r24, Y
+ 116:	88 23       	and	r24, r24
+ 118:	d1 f7       	brne	.-12     	; 0x10e <LcdPuts+0x8>
+  {
+   LcdPutchar(*str);
+   str++;
+  }
+}
+ 11a:	df 91       	pop	r29
+ 11c:	cf 91       	pop	r28
+ 11e:	08 95       	ret
+
+00000120 <write_command>:
+
+static void write_command(char command)
+
+{
+  char temp;
+  temp = (command & 0xF0)|0x04;
+ 120:	98 2f       	mov	r25, r24
+ 122:	90 7f       	andi	r25, 0xF0	; 240
+ 124:	94 60       	ori	r25, 0x04	; 4
+
+LCD_PORT = temp;
+ 126:	95 bb       	out	0x15, r25	; 21
+LCD_PORT = temp & ~0x04;
+ 128:	9b 7f       	andi	r25, 0xFB	; 251
+ 12a:	95 bb       	out	0x15, r25	; 21
+
+temp = (command << 4) | 0x04;
+ 12c:	82 95       	swap	r24
+ 12e:	80 7f       	andi	r24, 0xF0	; 240
+ 130:	84 60       	ori	r24, 0x04	; 4
+
+LCD_PORT = temp;
+ 132:	85 bb       	out	0x15, r24	; 21
+LCD_PORT = temp & ~0x04;
+ 134:	8b 7f       	andi	r24, 0xFB	; 251
+ 136:	85 bb       	out	0x15, r24	; 21
+ 138:	85 e0       	ldi	r24, 0x05	; 5
+ 13a:	8a 95       	dec	r24
+ 13c:	f1 f7       	brne	.-4      	; 0x13a <write_command+0x1a>
+_delay_us(1);
+}
+ 13e:	08 95       	ret
+
+00000140 <LcdCommand>:
+	LcdCommand(ENTMOD);
+
+	LcdCommand(DISP_ON);
+}
+void LcdCommand(char command)
+{
+ 140:	1f 93       	push	r17
+ 142:	18 2f       	mov	r17, r24
+ 144:	85 e3       	ldi	r24, 0x35	; 53
+ 146:	98 2f       	mov	r25, r24
+ 148:	9a 95       	dec	r25
+ 14a:	f1 f7       	brne	.-4      	; 0x148 <LcdCommand+0x8>
+	checkbusy();
+	write_command(command);
+ 14c:	98 2f       	mov	r25, r24
+ 14e:	9a 95       	dec	r25
+ 150:	f1 f7       	brne	.-4      	; 0x14e <LcdCommand+0xe>
+ 152:	98 2f       	mov	r25, r24
+ 154:	9a 95       	dec	r25
+ 156:	f1 f7       	brne	.-4      	; 0x154 <LcdCommand+0x14>
+ 158:	98 2f       	mov	r25, r24
+ 15a:	9a 95       	dec	r25
+ 15c:	f1 f7       	brne	.-4      	; 0x15a <LcdCommand+0x1a>
+ 15e:	8a 95       	dec	r24
+ 160:	f1 f7       	brne	.-4      	; 0x15e <LcdCommand+0x1e>
+ 162:	81 2f       	mov	r24, r17
+ 164:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+	if(command==ALLCLR || command==HOME)
+ 168:	11 50       	subi	r17, 0x01	; 1
+ 16a:	12 30       	cpi	r17, 0x02	; 2
+ 16c:	20 f4       	brcc	.+8      	; 0x176 <LcdCommand+0x36>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 16e:	80 e4       	ldi	r24, 0x40	; 64
+ 170:	9f e1       	ldi	r25, 0x1F	; 31
+ 172:	01 97       	sbiw	r24, 0x01	; 1
+ 174:	f1 f7       	brne	.-4      	; 0x172 <LcdCommand+0x32>
+		_delay_ms(2);
+}
+ 176:	1f 91       	pop	r17
+ 178:	08 95       	ret
+
+0000017a <LcdNewchar>:
+  LcdCommand(pos);
+}
+
+
+void LcdNewchar(char ch, char font[])
+{
+ 17a:	0f 93       	push	r16
+ 17c:	1f 93       	push	r17
+ 17e:	cf 93       	push	r28
+ 180:	df 93       	push	r29
+ 182:	8b 01       	movw	r16, r22
+ int i;
+
+ ch <<=3;
+ 184:	88 0f       	add	r24, r24
+ 186:	88 0f       	add	r24, r24
+ 188:	88 0f       	add	r24, r24
+ ch|= 0x40;
+
+ LcdCommand(ch);
+ 18a:	80 64       	ori	r24, 0x40	; 64
+ 18c:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+ 190:	c0 e0       	ldi	r28, 0x00	; 0
+ 192:	d0 e0       	ldi	r29, 0x00	; 0
+
+ for(i=0;i<8;i++)
+    LcdPutchar(font[i]);
+ 194:	f8 01       	movw	r30, r16
+ 196:	ec 0f       	add	r30, r28
+ 198:	fd 1f       	adc	r31, r29
+ 19a:	80 81       	ld	r24, Z
+ 19c:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+ ch <<=3;
+ ch|= 0x40;
+
+ LcdCommand(ch);
+
+ for(i=0;i<8;i++)
+ 1a0:	21 96       	adiw	r28, 0x01	; 1
+ 1a2:	c8 30       	cpi	r28, 0x08	; 8
+ 1a4:	d1 05       	cpc	r29, r1
+ 1a6:	b1 f7       	brne	.-20     	; 0x194 <LcdNewchar+0x1a>
+    LcdPutchar(font[i]);
+}
+ 1a8:	df 91       	pop	r29
+ 1aa:	cf 91       	pop	r28
+ 1ac:	1f 91       	pop	r17
+ 1ae:	0f 91       	pop	r16
+ 1b0:	08 95       	ret
+
+000001b2 <LcdMove>:
+
+{ 
+
+//  pos = (line << 6) + pos; 
+
+	if(line == 0 )       pos = 0x00 + pos ;
+ 1b2:	88 23       	and	r24, r24
+ 1b4:	49 f0       	breq	.+18     	; 0x1c8 <LcdMove+0x16>
+	else if( line == 1 ) pos = 0x40 + pos ;
+ 1b6:	81 30       	cpi	r24, 0x01	; 1
+ 1b8:	11 f4       	brne	.+4      	; 0x1be <LcdMove+0xc>
+ 1ba:	60 5c       	subi	r22, 0xC0	; 192
+ 1bc:	05 c0       	rjmp	.+10     	; 0x1c8 <LcdMove+0x16>
+	else if( line == 2 ) pos = 0x10 + pos ;
+ 1be:	82 30       	cpi	r24, 0x02	; 2
+ 1c0:	11 f4       	brne	.+4      	; 0x1c6 <LcdMove+0x14>
+ 1c2:	60 5f       	subi	r22, 0xF0	; 240
+ 1c4:	01 c0       	rjmp	.+2      	; 0x1c8 <LcdMove+0x16>
+	else                 pos = 0x50 + pos ;
+ 1c6:	60 5b       	subi	r22, 0xB0	; 176
+
+  pos |= 0x80;
+ 
+  LcdCommand(pos);
+ 1c8:	86 2f       	mov	r24, r22
+ 1ca:	80 68       	ori	r24, 0x80	; 128
+ 1cc:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 1d0:	08 95       	ret
+
+000001d2 <LcdInit>:
+static void write_command(char command);
+static void write_data(char ch);
+
+void LcdInit(void)
+{
+	LCD_DDR = 0xff;
+ 1d2:	8f ef       	ldi	r24, 0xFF	; 255
+ 1d4:	84 bb       	out	0x14, r24	; 20
+ 1d6:	80 e6       	ldi	r24, 0x60	; 96
+ 1d8:	9a ee       	ldi	r25, 0xEA	; 234
+ 1da:	01 97       	sbiw	r24, 0x01	; 1
+ 1dc:	f1 f7       	brne	.-4      	; 0x1da <LcdInit+0x8>
+	_delay_ms(15);
+	write_command(0x30);
+ 1de:	80 e3       	ldi	r24, 0x30	; 48
+ 1e0:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1e4:	80 e2       	ldi	r24, 0x20	; 32
+ 1e6:	9e e4       	ldi	r25, 0x4E	; 78
+ 1e8:	01 97       	sbiw	r24, 0x01	; 1
+ 1ea:	f1 f7       	brne	.-4      	; 0x1e8 <LcdInit+0x16>
+	_delay_ms(5);
+	write_command(0x30);
+ 1ec:	80 e3       	ldi	r24, 0x30	; 48
+ 1ee:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1f2:	80 ea       	ldi	r24, 0xA0	; 160
+ 1f4:	9f e0       	ldi	r25, 0x0F	; 15
+ 1f6:	01 97       	sbiw	r24, 0x01	; 1
+ 1f8:	f1 f7       	brne	.-4      	; 0x1f6 <LcdInit+0x24>
+	_delay_ms(1);
+	write_command(0x32);
+ 1fa:	82 e3       	ldi	r24, 0x32	; 50
+ 1fc:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+
+	LcdCommand(FUNSET);
+ 200:	88 e2       	ldi	r24, 0x28	; 40
+ 202:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(DISP_OFF);
+ 206:	88 e0       	ldi	r24, 0x08	; 8
+ 208:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ALLCLR);
+ 20c:	81 e0       	ldi	r24, 0x01	; 1
+ 20e:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ENTMOD);
+ 212:	86 e0       	ldi	r24, 0x06	; 6
+ 214:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+
+	LcdCommand(DISP_ON);
+ 218:	8c e0       	ldi	r24, 0x0C	; 12
+ 21a:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 21e:	08 95       	ret
+
+00000220 <IO_Port_Init>:
+void IO_Port_Init( void )	// IO Port Setting
+{
+	////////  DC모터 2개 구동을 위한 HW 관련 레지스터 설정  ////////////
+    //  입력/출력 포트 설정 	   (교재 pp75-76 레지스터그림, 표6.1 참조)
+
+    DDRA |= 0x03;       // DC모터1 방향제어포트(PA0), DC모터2 방향제어포트(PA1) : 출력포트로 설정   
+ 220:	8a b3       	in	r24, 0x1a	; 26
+ 222:	83 60       	ori	r24, 0x03	; 3
+ 224:	8a bb       	out	0x1a, r24	; 26
+                        // DDRA = 0b**** **11, DDRA = DDRA | 0b0000 0011( 0x03 )
+
+    DDRB |= 0x60;       // DC모터1 속도제어 PWM포트(OC1A/PB5), DC모터2 속도제어 PWM포트(OC1B/PB6): 
+ 226:	87 b3       	in	r24, 0x17	; 23
+ 228:	80 66       	ori	r24, 0x60	; 96
+ 22a:	87 bb       	out	0x17, r24	; 23
+                        // 출력포트로 설정   
+                        // DDRB = 0b*11* ****, DDRB = DDRB | 0b0110 0000( 0x60 )
+
+    DDRA |= 0x0C;       // LED1(DC모터1 동작상태표시)(PA2), LED2(DC모터2 동작상태표시)(PA3) : 출력포트로 설정
+ 22c:	8a b3       	in	r24, 0x1a	; 26
+ 22e:	8c 60       	ori	r24, 0x0C	; 12
+ 230:	8a bb       	out	0x1a, r24	; 26
+						// DDRA = 0b**** 11**, DDRA = DDRA | 0b0000 1100( 0x0C )
+}
+ 232:	08 95       	ret
+
+00000234 <PWM_Timer1_Init>:
+{
+	////////  Timer1 설정( DC모터1 PWM신호(OC1A/PB5), DC모터2 PWM신호(OC1B/PB6) 발생 )   //////////// 
+    ///////   PWM신호 주파수 = 5kHz (주기 = 200usec )  //////////////////////
+    ///////   교재 P238-245(레지스터 그림과 표12.2, 표12.4, 표12.5) 참조    
+
+    TCCR1A &= ~0x51;     // Fast PWM: 비교일치시 OC1A(PB5)), OC1B(PB6)핀을 0으로하고 TOP에서 1을 출력
+ 234:	8f b5       	in	r24, 0x2f	; 47
+ 236:	8e 7a       	andi	r24, 0xAE	; 174
+ 238:	8f bd       	out	0x2f, r24	; 47
+                         // (표12.2 참조),   Fast PWM ( mode 14 ) 설정 (표12.4 참조)
+                         // TCCR1A = 0b1010 **10 
+                         // TCCR1A = TCCR1A & ~0b0101 0001(~0x51 )  
+    TCCR1A |= 0xA2;      // TCCR1A = TCCR1A |   0b1010 0010( 0xA2 )  
+ 23a:	8f b5       	in	r24, 0x2f	; 47
+ 23c:	82 6a       	ori	r24, 0xA2	; 162
+ 23e:	8f bd       	out	0x2f, r24	; 47
+
+    TCCR1B &= ~0x04;     // 64분주 타이머1 시작(내부클럭 주기=64/(16*10^6Hz)=4usec ), Fast PWM(mode 14)설정
+ 240:	8e b5       	in	r24, 0x2e	; 46
+ 242:	8b 7f       	andi	r24, 0xFB	; 251
+ 244:	8e bd       	out	0x2e, r24	; 46
+                         // (표12.4 - 표12.5 참조)
+                         // TCCR1B = 0b***1 1011   
+                         // TCCR1B = TCCR1B & ~0b0000 0100(~0x04 )  
+    TCCR1B |= 0x1B;      // TCCR1B = TCCR1B |   0b0001 1011( 0x1B )  
+ 246:	8e b5       	in	r24, 0x2e	; 46
+ 248:	8b 61       	ori	r24, 0x1B	; 27
+ 24a:	8e bd       	out	0x2e, r24	; 46
+
+    ICR1 = 50;           // PWM 주기(주파수) 설정( 주기= 50*4usec = 200usec, 주파수 = 1/(200usec) = 5kHz )
+ 24c:	82 e3       	ldi	r24, 0x32	; 50
+ 24e:	90 e0       	ldi	r25, 0x00	; 0
+ 250:	97 bd       	out	0x27, r25	; 39
+ 252:	86 bd       	out	0x26, r24	; 38
+    return ICR1;   // PWM 신호 주기를 return
+ 254:	26 b5       	in	r18, 0x26	; 38
+ 256:	37 b5       	in	r19, 0x27	; 39
+}
+ 258:	c9 01       	movw	r24, r18
+ 25a:	08 95       	ret
+
+0000025c <Timer2_OVF_Int_Init>:
+void Timer2_OVF_Int_Init( void )		// Timer2 Overflow interrupt Setting
+{
+	////////////  Timer 2 설정  ( 10 msec 주기의 타이머2 오버플로 인터럽트 설정 )  ///////////////
+    // 교재 P133-137(레지스터 그림과 표8.1-표8.6) 참조    
+
+    TCCR2 &= ~0x4A;           // Normal mode(타이머모드), 타이머 2 시작(1024분주 사용)
+ 25c:	85 b5       	in	r24, 0x25	; 37
+ 25e:	85 7b       	andi	r24, 0xB5	; 181
+ 260:	85 bd       	out	0x25, r24	; 37
+                              // TCCR2 = 0b*0**0101 
+                              // TCCR2 =TCCR2 & ~0b01001010(~0x4A )  
+    TCCR2 |= 0x05;            // TCCR2 =TCCR2 | 0b00000101( 0x05 )  
+ 262:	85 b5       	in	r24, 0x25	; 37
+ 264:	85 60       	ori	r24, 0x05	; 5
+ 266:	85 bd       	out	0x25, r24	; 37
+    TCNT2 = 256 - 156;        // 내부클럭주기 = 1024/ (16x10^6) = 64 usec,  
+ 268:	84 e6       	ldi	r24, 0x64	; 100
+ 26a:	84 bd       	out	0x24, r24	; 36
+                              // 오버플로인터럽트 주기 = 2msec
+                              // 156 = 10msec/ 64usec,  TCNT2 = 256 - 156
+    TIMSK |= 0x40;            // 타이머2 오버플로 인터럽트 허용 
+ 26c:	87 b7       	in	r24, 0x37	; 55
+ 26e:	80 64       	ori	r24, 0x40	; 64
+ 270:	87 bf       	out	0x37, r24	; 55
+                              // TIMSK = 0b*1** ****, TIMSK = TIMSK | 0b0100 0000( 0x40 )
+}
+ 272:	08 95       	ret
+
+00000274 <DC_Motor1_Run_Fwd>:
+
+/////////////////////////////////////////////////////////
+
+void DC_Motor1_Run_Fwd( short duty )   // DC 모터1 정회전 함수 
+{
+ 274:	9c 01       	movw	r18, r24
+    if( duty > Duty1_Max )     duty = Duty1_Max; // duty 범위를 벗어나면 Duty1_Max로 설정 
+ 276:	80 91 56 01 	lds	r24, 0x0156
+ 27a:	90 91 57 01 	lds	r25, 0x0157
+ 27e:	82 17       	cp	r24, r18
+ 280:	93 07       	cpc	r25, r19
+ 282:	24 f4       	brge	.+8      	; 0x28c <DC_Motor1_Run_Fwd+0x18>
+ 284:	20 91 56 01 	lds	r18, 0x0156
+ 288:	30 91 57 01 	lds	r19, 0x0157
+    duty = ( duty*PWM_Period )/Duty1_Max;        // %단위의 duty 값을 실제 레지스터(OCR1A) 설정 값으로 변환
+ 28c:	80 91 5a 01 	lds	r24, 0x015A
+ 290:	90 91 5b 01 	lds	r25, 0x015B
+ 294:	60 91 56 01 	lds	r22, 0x0156
+ 298:	70 91 57 01 	lds	r23, 0x0157
+
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :   DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 29c:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = duty;        // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 29e:	ac 01       	movw	r20, r24
+ 2a0:	24 9f       	mul	r18, r20
+ 2a2:	c0 01       	movw	r24, r0
+ 2a4:	25 9f       	mul	r18, r21
+ 2a6:	90 0d       	add	r25, r0
+ 2a8:	34 9f       	mul	r19, r20
+ 2aa:	90 0d       	add	r25, r0
+ 2ac:	11 24       	eor	r1, r1
+ 2ae:	0e 94 e9 03 	call	0x7d2	; 0x7d2 <__divmodhi4>
+ 2b2:	7b bd       	out	0x2b, r23	; 43
+ 2b4:	6a bd       	out	0x2a, r22	; 42
+}
+ 2b6:	08 95       	ret
+
+000002b8 <DC_Motor1_Run_Rev>:
+
+void DC_Motor1_Run_Rev( short duty )   // DC 모터1 역회전 함수 
+{
+ 2b8:	ac 01       	movw	r20, r24
+    if( duty > Duty1_Max )     duty = Duty1_Max;  // duty 범위를 벗어나면 Duty1_Max로 설정 
+ 2ba:	80 91 56 01 	lds	r24, 0x0156
+ 2be:	90 91 57 01 	lds	r25, 0x0157
+ 2c2:	84 17       	cp	r24, r20
+ 2c4:	95 07       	cpc	r25, r21
+ 2c6:	24 f4       	brge	.+8      	; 0x2d0 <DC_Motor1_Run_Rev+0x18>
+ 2c8:	40 91 56 01 	lds	r20, 0x0156
+ 2cc:	50 91 57 01 	lds	r21, 0x0157
+    duty = ( duty*PWM_Period )/Duty1_Max;         // %단위의 duty 값을 실제 레지스터(OCR1A) 설정 값으로 변환
+ 2d0:	80 91 5a 01 	lds	r24, 0x015A
+ 2d4:	90 91 5b 01 	lds	r25, 0x015B
+ 2d8:	60 91 56 01 	lds	r22, 0x0156
+ 2dc:	70 91 57 01 	lds	r23, 0x0157
+
+    PORTA |= 0x01;               // 회전방향설정(역회전) :   DC모터1 B단자(-) = 1(High) ( PA0 = 1 )    
+ 2e0:	d8 9a       	sbi	0x1b, 0	; 27
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 2e2:	20 91 5a 01 	lds	r18, 0x015A
+ 2e6:	30 91 5b 01 	lds	r19, 0x015B
+ 2ea:	fc 01       	movw	r30, r24
+ 2ec:	4e 9f       	mul	r20, r30
+ 2ee:	c0 01       	movw	r24, r0
+ 2f0:	4f 9f       	mul	r20, r31
+ 2f2:	90 0d       	add	r25, r0
+ 2f4:	5e 9f       	mul	r21, r30
+ 2f6:	90 0d       	add	r25, r0
+ 2f8:	11 24       	eor	r1, r1
+ 2fa:	0e 94 e9 03 	call	0x7d2	; 0x7d2 <__divmodhi4>
+ 2fe:	26 1b       	sub	r18, r22
+ 300:	37 0b       	sbc	r19, r23
+ 302:	3b bd       	out	0x2b, r19	; 43
+ 304:	2a bd       	out	0x2a, r18	; 42
+}
+ 306:	08 95       	ret
+
+00000308 <DC_Motor1_Stop>:
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 308:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 30a:	1b bc       	out	0x2b, r1	; 43
+ 30c:	1a bc       	out	0x2a, r1	; 42
+}
+ 30e:	08 95       	ret
+
+00000310 <DC_Motor2_Run_Fwd>:
+
+void DC_Motor2_Run_Fwd( short duty )   // DC 모터2 정회전 함수 
+{
+ 310:	9c 01       	movw	r18, r24
+    if( duty > Duty2_Max )     duty = Duty2_Max;  // duty 범위를 벗어나면 Duty2_Max로 설정 
+ 312:	80 91 54 01 	lds	r24, 0x0154
+ 316:	90 91 55 01 	lds	r25, 0x0155
+ 31a:	82 17       	cp	r24, r18
+ 31c:	93 07       	cpc	r25, r19
+ 31e:	24 f4       	brge	.+8      	; 0x328 <DC_Motor2_Run_Fwd+0x18>
+ 320:	20 91 54 01 	lds	r18, 0x0154
+ 324:	30 91 55 01 	lds	r19, 0x0155
+    duty = ( duty*PWM_Period )/Duty2_Max;         // %단위의 duty 값을 실제 레지스터(OCR1B) 설정 값으로 변환
+ 328:	80 91 5a 01 	lds	r24, 0x015A
+ 32c:	90 91 5b 01 	lds	r25, 0x015B
+ 330:	60 91 54 01 	lds	r22, 0x0154
+ 334:	70 91 55 01 	lds	r23, 0x0155
+
+
+    PORTA &= ~0x02;      // 회전방향설정(정회전) :   DC모터2 B단자(-) = 0(Low) ( PA1 = 0 )    
+ 338:	d9 98       	cbi	0x1b, 1	; 27
+    OCR1B = duty;        // 회전속도(PWM Duty)설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+ 33a:	ac 01       	movw	r20, r24
+ 33c:	24 9f       	mul	r18, r20
+ 33e:	c0 01       	movw	r24, r0
+ 340:	25 9f       	mul	r18, r21
+ 342:	90 0d       	add	r25, r0
+ 344:	34 9f       	mul	r19, r20
+ 346:	90 0d       	add	r25, r0
+ 348:	11 24       	eor	r1, r1
+ 34a:	0e 94 e9 03 	call	0x7d2	; 0x7d2 <__divmodhi4>
+ 34e:	79 bd       	out	0x29, r23	; 41
+ 350:	68 bd       	out	0x28, r22	; 40
+}
+ 352:	08 95       	ret
+
+00000354 <DC_Motor2_Run_Rev>:
+
+void DC_Motor2_Run_Rev( short duty )   // DC 모터2 역회전 함수 
+{
+ 354:	ac 01       	movw	r20, r24
+    if( duty > Duty2_Max )     duty = Duty2_Max;  // duty 범위를 벗어나면 Duty2_Max로 설정 
+ 356:	80 91 54 01 	lds	r24, 0x0154
+ 35a:	90 91 55 01 	lds	r25, 0x0155
+ 35e:	84 17       	cp	r24, r20
+ 360:	95 07       	cpc	r25, r21
+ 362:	24 f4       	brge	.+8      	; 0x36c <DC_Motor2_Run_Rev+0x18>
+ 364:	40 91 54 01 	lds	r20, 0x0154
+ 368:	50 91 55 01 	lds	r21, 0x0155
+    duty = ( duty*PWM_Period )/Duty2_Max;         // %단위의 duty 값을 실제 레지스터(OCR1B) 설정 값으로 변환
+ 36c:	80 91 5a 01 	lds	r24, 0x015A
+ 370:	90 91 5b 01 	lds	r25, 0x015B
+ 374:	60 91 54 01 	lds	r22, 0x0154
+ 378:	70 91 55 01 	lds	r23, 0x0155
+
+    PORTA |= 0x02;               // 회전방향설정(역회전) :   DC모터2 B단자(-) = 1(High) ( PA1 = 1 )    
+ 37c:	d9 9a       	sbi	0x1b, 1	; 27
+    OCR1B = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+ 37e:	20 91 5a 01 	lds	r18, 0x015A
+ 382:	30 91 5b 01 	lds	r19, 0x015B
+ 386:	fc 01       	movw	r30, r24
+ 388:	4e 9f       	mul	r20, r30
+ 38a:	c0 01       	movw	r24, r0
+ 38c:	4f 9f       	mul	r20, r31
+ 38e:	90 0d       	add	r25, r0
+ 390:	5e 9f       	mul	r21, r30
+ 392:	90 0d       	add	r25, r0
+ 394:	11 24       	eor	r1, r1
+ 396:	0e 94 e9 03 	call	0x7d2	; 0x7d2 <__divmodhi4>
+ 39a:	26 1b       	sub	r18, r22
+ 39c:	37 0b       	sbc	r19, r23
+ 39e:	39 bd       	out	0x29, r19	; 41
+ 3a0:	28 bd       	out	0x28, r18	; 40
+}
+ 3a2:	08 95       	ret
+
+000003a4 <__vector_10>:
+
+
+////////////////////////////////////////////////////////////////
+
+ISR( TIMER2_OVF_vect )   // 10msec 주기의 타이머2 오버플로 인터럽트 서비스프로그램
+{                        // DC모터1, DC모터2 동작시퀀스 실행 
+ 3a4:	1f 92       	push	r1
+ 3a6:	0f 92       	push	r0
+ 3a8:	0f b6       	in	r0, 0x3f	; 63
+ 3aa:	0f 92       	push	r0
+ 3ac:	0b b6       	in	r0, 0x3b	; 59
+ 3ae:	0f 92       	push	r0
+ 3b0:	11 24       	eor	r1, r1
+ 3b2:	0f 93       	push	r16
+ 3b4:	1f 93       	push	r17
+ 3b6:	2f 93       	push	r18
+ 3b8:	3f 93       	push	r19
+ 3ba:	4f 93       	push	r20
+ 3bc:	5f 93       	push	r21
+ 3be:	6f 93       	push	r22
+ 3c0:	7f 93       	push	r23
+ 3c2:	8f 93       	push	r24
+ 3c4:	9f 93       	push	r25
+ 3c6:	af 93       	push	r26
+ 3c8:	bf 93       	push	r27
+ 3ca:	ef 93       	push	r30
+ 3cc:	ff 93       	push	r31
+
+    TCNT2 = 256 - 156;        // 내부클럭주기 = 1024/ (16x10^6) = 64 usec,  
+ 3ce:	84 e6       	ldi	r24, 0x64	; 100
+ 3d0:	84 bd       	out	0x24, r24	; 36
+                              // 오버플로인터럽트 주기 = 10msec
+                              // 156 = 10msec/ 64usec,  TCNT2 = 256 - 156 
+
+    ///////  DC모터1, DC모터2 동작 시퀀스 ////////////
+
+    if( Step == 0 )    
+ 3d2:	80 91 5c 01 	lds	r24, 0x015C
+ 3d6:	90 91 5d 01 	lds	r25, 0x015D
+ 3da:	89 2b       	or	r24, r25
+ 3dc:	91 f5       	brne	.+100    	; 0x442 <__vector_10+0x9e>
+unsigned char Time_Delay_Polling( unsigned short d_time )  // 시간경과 체크함수(폴링방식)
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 3de:	80 91 58 01 	lds	r24, 0x0158
+ 3e2:	90 91 59 01 	lds	r25, 0x0159
+ 3e6:	01 96       	adiw	r24, 0x01	; 1
+ 3e8:	90 93 59 01 	sts	0x0159, r25
+ 3ec:	80 93 58 01 	sts	0x0158, r24
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 3f0:	88 3c       	cpi	r24, 0xC8	; 200
+ 3f2:	91 05       	cpc	r25, r1
+ 3f4:	70 f0       	brcs	.+28     	; 0x412 <__vector_10+0x6e>
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 3f6:	10 92 59 01 	sts	0x0159, r1
+ 3fa:	10 92 58 01 	sts	0x0158, r1
+           PORTA &=  ~0x08;                     // LED2 ON ( PA3 = 0 ) : DC모터2 회전상태 표시
+                                                // PORTA = 0b**** 0***,   PORTA = PORTA & ~0b0000 1000( ~0x08 )
+        }
+        else                                    // 2초 경과 후 
+        {
+           Step++;                              // Step1 로 넘어감. 
+ 3fe:	80 91 5c 01 	lds	r24, 0x015C
+ 402:	90 91 5d 01 	lds	r25, 0x015D
+ 406:	01 96       	adiw	r24, 0x01	; 1
+ 408:	90 93 5d 01 	sts	0x015D, r25
+ 40c:	80 93 5c 01 	sts	0x015C, r24
+ 410:	18 c0       	rjmp	.+48     	; 0x442 <__vector_10+0x9e>
+
+    if( Step == 0 )    
+	{
+        if( Time_Delay_Polling( 200 ) != 1 )  //10msec * 200=2000msec=2초가 경과되지 않았으면 (2초 동안 회전)
+        { 
+           Motor1_Duty = 80;                    // DC모터1 duty(속도) = 80[%] 설정 
+ 412:	00 e5       	ldi	r16, 0x50	; 80
+ 414:	10 e0       	ldi	r17, 0x00	; 0
+ 416:	10 93 5f 01 	sts	0x015F, r17
+ 41a:	00 93 5e 01 	sts	0x015E, r16
+           DC_Motor1_Run_Fwd( Motor1_Duty );    // DC 모터1 정회전(PWM구동) 함수(2초동안 정회전) 
+ 41e:	80 91 5e 01 	lds	r24, 0x015E
+ 422:	90 91 5f 01 	lds	r25, 0x015F
+ 426:	0e 94 3a 01 	call	0x274	; 0x274 <DC_Motor1_Run_Fwd>
+           PORTA &=  ~0x04;                     // LED1 ON ( PA2 = 0 ) : DC모터1 회전상태 표시
+ 42a:	da 98       	cbi	0x1b, 2	; 27
+                                                // PORTA = 0b**** *0**,   PORTA = PORTA & ~0b0000 0100( ~0x04 )
+
+           Motor2_Duty = 80;                    // DC모터2 duty(속도) = 80[%] 설정
+ 42c:	10 93 61 01 	sts	0x0161, r17
+ 430:	00 93 60 01 	sts	0x0160, r16
+           DC_Motor2_Run_Rev( Motor2_Duty );    // DC 모터2 역회전(PWM구동) 함수(2초동안 역회전)  
+ 434:	80 91 60 01 	lds	r24, 0x0160
+ 438:	90 91 61 01 	lds	r25, 0x0161
+ 43c:	0e 94 aa 01 	call	0x354	; 0x354 <DC_Motor2_Run_Rev>
+           PORTA &=  ~0x08;                     // LED2 ON ( PA3 = 0 ) : DC모터2 회전상태 표시
+ 440:	db 98       	cbi	0x1b, 3	; 27
+        {
+           Step++;                              // Step1 로 넘어감. 
+        }
+    }
+
+    if( Step == 1 )    
+ 442:	80 91 5c 01 	lds	r24, 0x015C
+ 446:	90 91 5d 01 	lds	r25, 0x015D
+ 44a:	01 97       	sbiw	r24, 0x01	; 1
+ 44c:	51 f5       	brne	.+84     	; 0x4a2 <__vector_10+0xfe>
+unsigned char Time_Delay_Polling( unsigned short d_time )  // 시간경과 체크함수(폴링방식)
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 44e:	80 91 58 01 	lds	r24, 0x0158
+ 452:	90 91 59 01 	lds	r25, 0x0159
+ 456:	01 96       	adiw	r24, 0x01	; 1
+ 458:	90 93 59 01 	sts	0x0159, r25
+ 45c:	80 93 58 01 	sts	0x0158, r24
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 460:	84 36       	cpi	r24, 0x64	; 100
+ 462:	91 05       	cpc	r25, r1
+ 464:	70 f0       	brcs	.+28     	; 0x482 <__vector_10+0xde>
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 466:	10 92 59 01 	sts	0x0159, r1
+ 46a:	10 92 58 01 	sts	0x0158, r1
+           PORTA |=  0x08;         // LED2 OFF ( PA3 = 1 ) : DC모터2 정지상태 표시
+                                   // PORTA = 0b**** 1***,   PORTA = PORTA | 0b0000 1000( 0x08 )
+        }
+        else                       // 1초 경과 후 
+        {
+           Step++;                 // Step2 로 넘어감. 
+ 46e:	80 91 5c 01 	lds	r24, 0x015C
+ 472:	90 91 5d 01 	lds	r25, 0x015D
+ 476:	01 96       	adiw	r24, 0x01	; 1
+ 478:	90 93 5d 01 	sts	0x015D, r25
+ 47c:	80 93 5c 01 	sts	0x015C, r24
+ 480:	10 c0       	rjmp	.+32     	; 0x4a2 <__vector_10+0xfe>
+
+    if( Step == 1 )    
+	{   
+        if( Time_Delay_Polling( 100 ) != 1 )  //10msec * 100=1000msec= 1초가 경과되지 않았으면(1초 동안 정지)
+        { 
+           Motor1_Duty = 0;        // DC모터1 duty = 0[%] 설정(정지) 
+ 482:	10 92 5f 01 	sts	0x015F, r1
+ 486:	10 92 5e 01 	sts	0x015E, r1
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+}
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 48a:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 48c:	1b bc       	out	0x2b, r1	; 43
+ 48e:	1a bc       	out	0x2a, r1	; 42
+        if( Time_Delay_Polling( 100 ) != 1 )  //10msec * 100=1000msec= 1초가 경과되지 않았으면(1초 동안 정지)
+        { 
+           Motor1_Duty = 0;        // DC모터1 duty = 0[%] 설정(정지) 
+           DC_Motor1_Stop( );      // DC 모터1 정지(PWM구동) 함수 호출 (1초동안 정지) 
+
+           PORTA |=  0x04;         // LED1 OFF ( PA2 = 1 ) : DC모터1 정지상태 표시
+ 490:	da 9a       	sbi	0x1b, 2	; 27
+                                   // PORTA = 0b**** *1**,   PORTA = PORTA | 0b0000 0100( 0x04 )
+           Motor2_Duty = 0;        // DC모터2 duty = 0[%] 설정(정지)  
+ 492:	10 92 61 01 	sts	0x0161, r1
+ 496:	10 92 60 01 	sts	0x0160, r1
+    OCR1B = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+}
+
+void DC_Motor2_Stop( void )   // DC 모터2 정지 함수 
+{
+    PORTA &= ~0x02;      // 회전방향설정(정회전) :          DC모터2 B단자(-) = 0(Low) ( PA1 = 0 )    
+ 49a:	d9 98       	cbi	0x1b, 1	; 27
+    OCR1B = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+ 49c:	19 bc       	out	0x29, r1	; 41
+ 49e:	18 bc       	out	0x28, r1	; 40
+           PORTA |=  0x04;         // LED1 OFF ( PA2 = 1 ) : DC모터1 정지상태 표시
+                                   // PORTA = 0b**** *1**,   PORTA = PORTA | 0b0000 0100( 0x04 )
+           Motor2_Duty = 0;        // DC모터2 duty = 0[%] 설정(정지)  
+           DC_Motor2_Stop( );      // DC 모터2 정지(PWM구동) 함수 호출 (1초동안 정지)
+
+           PORTA |=  0x08;         // LED2 OFF ( PA3 = 1 ) : DC모터2 정지상태 표시
+ 4a0:	db 9a       	sbi	0x1b, 3	; 27
+        {
+           Step++;                 // Step2 로 넘어감. 
+        }
+    }
+
+    if( Step == 2 )    
+ 4a2:	80 91 5c 01 	lds	r24, 0x015C
+ 4a6:	90 91 5d 01 	lds	r25, 0x015D
+ 4aa:	02 97       	sbiw	r24, 0x02	; 2
+ 4ac:	91 f5       	brne	.+100    	; 0x512 <__vector_10+0x16e>
+unsigned char Time_Delay_Polling( unsigned short d_time )  // 시간경과 체크함수(폴링방식)
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 4ae:	80 91 58 01 	lds	r24, 0x0158
+ 4b2:	90 91 59 01 	lds	r25, 0x0159
+ 4b6:	01 96       	adiw	r24, 0x01	; 1
+ 4b8:	90 93 59 01 	sts	0x0159, r25
+ 4bc:	80 93 58 01 	sts	0x0158, r24
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 4c0:	88 3c       	cpi	r24, 0xC8	; 200
+ 4c2:	91 05       	cpc	r25, r1
+ 4c4:	70 f0       	brcs	.+28     	; 0x4e2 <__vector_10+0x13e>
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 4c6:	10 92 59 01 	sts	0x0159, r1
+ 4ca:	10 92 58 01 	sts	0x0158, r1
+           PORTA &=  ~0x08;                    // LED2 ON ( PA3 = 0 ) : DC모터2 회전상태 표시
+                                               // PORTA = 0b**** 0***,   PORTA = PORTA & ~0b0000 1000( ~0x08 )
+        }
+        else                                   // 2초 경과 후 
+        {
+           Step++;                             // Step3 으로 넘어감. 
+ 4ce:	80 91 5c 01 	lds	r24, 0x015C
+ 4d2:	90 91 5d 01 	lds	r25, 0x015D
+ 4d6:	01 96       	adiw	r24, 0x01	; 1
+ 4d8:	90 93 5d 01 	sts	0x015D, r25
+ 4dc:	80 93 5c 01 	sts	0x015C, r24
+ 4e0:	18 c0       	rjmp	.+48     	; 0x512 <__vector_10+0x16e>
+
+    if( Step == 2 )    
+	{   
+        if( Time_Delay_Polling( 200 ) != 1 )  //10msec * 200=2000msec= 2초가 경과되지 않았으면(2초 동안 회전) 
+        { 
+           Motor1_Duty = 100;                  // DC모터1 duty(속도) = 100[%] 설정 (최대속도) 
+ 4e2:	04 e6       	ldi	r16, 0x64	; 100
+ 4e4:	10 e0       	ldi	r17, 0x00	; 0
+ 4e6:	10 93 5f 01 	sts	0x015F, r17
+ 4ea:	00 93 5e 01 	sts	0x015E, r16
+           DC_Motor1_Run_Rev( Motor1_Duty );   // DC 모터1 역회전(PWM구동) 함수 호출(2초동안 역회전) 
+ 4ee:	80 91 5e 01 	lds	r24, 0x015E
+ 4f2:	90 91 5f 01 	lds	r25, 0x015F
+ 4f6:	0e 94 5c 01 	call	0x2b8	; 0x2b8 <DC_Motor1_Run_Rev>
+
+           PORTA &=  ~0x04;                    // LED1 ON ( PA2 = 0 ) : DC모터1 회전상태 표시
+ 4fa:	da 98       	cbi	0x1b, 2	; 27
+                                               // PORTA = 0b**** *0**,   PORTA = PORTA & ~0b0000 0100( ~0x04 ) 
+
+           Motor2_Duty = 100;                  // DC모터2 duty(속도) = 100[%] 설정 (최대속도) 
+ 4fc:	10 93 61 01 	sts	0x0161, r17
+ 500:	00 93 60 01 	sts	0x0160, r16
+           DC_Motor2_Run_Fwd( Motor2_Duty );   // DC 모터2 정회전(PWM구동) 함수 호출(2초동안 정회전) 
+ 504:	80 91 60 01 	lds	r24, 0x0160
+ 508:	90 91 61 01 	lds	r25, 0x0161
+ 50c:	0e 94 88 01 	call	0x310	; 0x310 <DC_Motor2_Run_Fwd>
+
+           PORTA &=  ~0x08;                    // LED2 ON ( PA3 = 0 ) : DC모터2 회전상태 표시
+ 510:	db 98       	cbi	0x1b, 3	; 27
+        {
+           Step++;                             // Step3 으로 넘어감. 
+        }
+    }
+
+    if( Step == 3 )    
+ 512:	80 91 5c 01 	lds	r24, 0x015C
+ 516:	90 91 5d 01 	lds	r25, 0x015D
+ 51a:	03 97       	sbiw	r24, 0x03	; 3
+ 51c:	29 f5       	brne	.+74     	; 0x568 <__vector_10+0x1c4>
+unsigned char Time_Delay_Polling( unsigned short d_time )  // 시간경과 체크함수(폴링방식)
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 51e:	80 91 58 01 	lds	r24, 0x0158
+ 522:	90 91 59 01 	lds	r25, 0x0159
+ 526:	01 96       	adiw	r24, 0x01	; 1
+ 528:	90 93 59 01 	sts	0x0159, r25
+ 52c:	80 93 58 01 	sts	0x0158, r24
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 530:	84 36       	cpi	r24, 0x64	; 100
+ 532:	91 05       	cpc	r25, r1
+ 534:	48 f0       	brcs	.+18     	; 0x548 <__vector_10+0x1a4>
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 536:	10 92 59 01 	sts	0x0159, r1
+ 53a:	10 92 58 01 	sts	0x0158, r1
+           PORTA |=  0x08;         // LED2 OFF ( PA3 = 1 ) : DC모터2 정지상태 표시
+                                   // PORTA = 0b**** 1***,   PORTA = PORTA | 0b0000 1000( 0x08 )
+        }
+        else                       // 1초 경과 후 
+        {
+           Step = 0;              // 동작시퀀스 종료. 초기단계(Step0)로 돌아가서 다시 반복. 
+ 53e:	10 92 5d 01 	sts	0x015D, r1
+ 542:	10 92 5c 01 	sts	0x015C, r1
+ 546:	10 c0       	rjmp	.+32     	; 0x568 <__vector_10+0x1c4>
+
+    if( Step == 3 )    
+	{   
+        if( Time_Delay_Polling( 100 ) != 1 )  //10msec * 100=1000msec= 1초가 경과되지 않았으면(1초 동안 정지)
+        { 
+           Motor1_Duty = 0;        // DC모터1 duty = 0[%] 설정(정지) (1초동안 정지)
+ 548:	10 92 5f 01 	sts	0x015F, r1
+ 54c:	10 92 5e 01 	sts	0x015E, r1
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+}
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 550:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 552:	1b bc       	out	0x2b, r1	; 43
+ 554:	1a bc       	out	0x2a, r1	; 42
+        if( Time_Delay_Polling( 100 ) != 1 )  //10msec * 100=1000msec= 1초가 경과되지 않았으면(1초 동안 정지)
+        { 
+           Motor1_Duty = 0;        // DC모터1 duty = 0[%] 설정(정지) (1초동안 정지)
+           DC_Motor1_Stop( );      // DC 모터1 정지(PWM구동) 함수 호출  
+
+           PORTA |=  0x04;         // LED1 OFF ( PA2 = 1 ) : DC모터1 정지상태 표시
+ 556:	da 9a       	sbi	0x1b, 2	; 27
+                                   // PORTA = 0b**** *1**,   PORTA = PORTA | 0b0000 0100( 0x04 )
+
+           Motor2_Duty = 0;        // DC모터2 duty = 0[%] 설정(정지) (1초동안 정지)
+ 558:	10 92 61 01 	sts	0x0161, r1
+ 55c:	10 92 60 01 	sts	0x0160, r1
+    OCR1B = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+}
+
+void DC_Motor2_Stop( void )   // DC 모터2 정지 함수 
+{
+    PORTA &= ~0x02;      // 회전방향설정(정회전) :          DC모터2 B단자(-) = 0(Low) ( PA1 = 0 )    
+ 560:	d9 98       	cbi	0x1b, 1	; 27
+    OCR1B = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+ 562:	19 bc       	out	0x29, r1	; 41
+ 564:	18 bc       	out	0x28, r1	; 40
+                                   // PORTA = 0b**** *1**,   PORTA = PORTA | 0b0000 0100( 0x04 )
+
+           Motor2_Duty = 0;        // DC모터2 duty = 0[%] 설정(정지) (1초동안 정지)
+           DC_Motor2_Stop( );      // DC 모터2 정지(PWM구동) 함수 호출
+
+           PORTA |=  0x08;         // LED2 OFF ( PA3 = 1 ) : DC모터2 정지상태 표시
+ 566:	db 9a       	sbi	0x1b, 3	; 27
+           Step = 0;              // 동작시퀀스 종료. 초기단계(Step0)로 돌아가서 다시 반복. 
+        }
+
+    } 
+
+}       // End of  ISR( TIMER2_OVF_vect ) 
+ 568:	ff 91       	pop	r31
+ 56a:	ef 91       	pop	r30
+ 56c:	bf 91       	pop	r27
+ 56e:	af 91       	pop	r26
+ 570:	9f 91       	pop	r25
+ 572:	8f 91       	pop	r24
+ 574:	7f 91       	pop	r23
+ 576:	6f 91       	pop	r22
+ 578:	5f 91       	pop	r21
+ 57a:	4f 91       	pop	r20
+ 57c:	3f 91       	pop	r19
+ 57e:	2f 91       	pop	r18
+ 580:	1f 91       	pop	r17
+ 582:	0f 91       	pop	r16
+ 584:	0f 90       	pop	r0
+ 586:	0b be       	out	0x3b, r0	; 59
+ 588:	0f 90       	pop	r0
+ 58a:	0f be       	out	0x3f, r0	; 63
+ 58c:	0f 90       	pop	r0
+ 58e:	1f 90       	pop	r1
+ 590:	18 95       	reti
+
+00000592 <DC_Motor2_Stop>:
+    OCR1B = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+}
+
+void DC_Motor2_Stop( void )   // DC 모터2 정지 함수 
+{
+    PORTA &= ~0x02;      // 회전방향설정(정회전) :          DC모터2 B단자(-) = 0(Low) ( PA1 = 0 )    
+ 592:	d9 98       	cbi	0x1b, 1	; 27
+    OCR1B = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+ 594:	19 bc       	out	0x29, r1	; 41
+ 596:	18 bc       	out	0x28, r1	; 40
+}
+ 598:	08 95       	ret
+
+0000059a <DC_Motor1_PWM>:
+
+void DC_Motor1_PWM( short duty )   // DC 모터1 PWM 구동 함수  
+{
+ 59a:	9c 01       	movw	r18, r24
+   if ( duty > Duty1_Max )       duty = Duty1_Max;    // duty가 양의 최대법위 보다 크면 Duty1_Max로 설정 
+ 59c:	80 91 56 01 	lds	r24, 0x0156
+ 5a0:	90 91 57 01 	lds	r25, 0x0157
+ 5a4:	82 17       	cp	r24, r18
+ 5a6:	93 07       	cpc	r25, r19
+ 5a8:	2c f4       	brge	.+10     	; 0x5b4 <DC_Motor1_PWM+0x1a>
+ 5aa:	20 91 56 01 	lds	r18, 0x0156
+ 5ae:	30 91 57 01 	lds	r19, 0x0157
+ 5b2:	12 c0       	rjmp	.+36     	; 0x5d8 <DC_Motor1_PWM+0x3e>
+   else if( duty < -Duty1_Max )  duty = -Duty1_Max;   // duty가 음의 최소범위 보다 작으면 -Duty1_Max로 설정 
+ 5b4:	80 91 56 01 	lds	r24, 0x0156
+ 5b8:	90 91 57 01 	lds	r25, 0x0157
+ 5bc:	90 95       	com	r25
+ 5be:	81 95       	neg	r24
+ 5c0:	9f 4f       	sbci	r25, 0xFF	; 255
+ 5c2:	28 17       	cp	r18, r24
+ 5c4:	39 07       	cpc	r19, r25
+ 5c6:	44 f4       	brge	.+16     	; 0x5d8 <DC_Motor1_PWM+0x3e>
+ 5c8:	80 91 56 01 	lds	r24, 0x0156
+ 5cc:	90 91 57 01 	lds	r25, 0x0157
+ 5d0:	22 27       	eor	r18, r18
+ 5d2:	33 27       	eor	r19, r19
+ 5d4:	28 1b       	sub	r18, r24
+ 5d6:	39 0b       	sbc	r19, r25
+
+   if( duty > 0 )          DC_Motor1_Run_Fwd( duty );
+ 5d8:	12 16       	cp	r1, r18
+ 5da:	13 06       	cpc	r1, r19
+ 5dc:	24 f4       	brge	.+8      	; 0x5e6 <DC_Motor1_PWM+0x4c>
+ 5de:	c9 01       	movw	r24, r18
+ 5e0:	0e 94 3a 01 	call	0x274	; 0x274 <DC_Motor1_Run_Fwd>
+ 5e4:	08 95       	ret
+   else if( duty == 0 )    DC_Motor1_Stop();
+ 5e6:	21 15       	cp	r18, r1
+ 5e8:	31 05       	cpc	r19, r1
+ 5ea:	21 f4       	brne	.+8      	; 0x5f4 <DC_Motor1_PWM+0x5a>
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+}
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 5ec:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 5ee:	1b bc       	out	0x2b, r1	; 43
+ 5f0:	1a bc       	out	0x2a, r1	; 42
+ 5f2:	08 95       	ret
+   if ( duty > Duty1_Max )       duty = Duty1_Max;    // duty가 양의 최대법위 보다 크면 Duty1_Max로 설정 
+   else if( duty < -Duty1_Max )  duty = -Duty1_Max;   // duty가 음의 최소범위 보다 작으면 -Duty1_Max로 설정 
+
+   if( duty > 0 )          DC_Motor1_Run_Fwd( duty );
+   else if( duty == 0 )    DC_Motor1_Stop();
+   else if( duty < 0 )     DC_Motor1_Run_Rev( -duty );
+ 5f4:	88 27       	eor	r24, r24
+ 5f6:	99 27       	eor	r25, r25
+ 5f8:	82 1b       	sub	r24, r18
+ 5fa:	93 0b       	sbc	r25, r19
+ 5fc:	0e 94 5c 01 	call	0x2b8	; 0x2b8 <DC_Motor1_Run_Rev>
+ 600:	08 95       	ret
+
+00000602 <DC_Motor2_PWM>:
+}
+
+void DC_Motor2_PWM( short duty )   // DC 모터2 PWM 구동 함수  
+{
+ 602:	9c 01       	movw	r18, r24
+   if ( duty > Duty2_Max )       duty = Duty2_Max;   // duty가 양의 최대범위 보다 크면 Duty2_Max로 설정 
+ 604:	80 91 54 01 	lds	r24, 0x0154
+ 608:	90 91 55 01 	lds	r25, 0x0155
+ 60c:	82 17       	cp	r24, r18
+ 60e:	93 07       	cpc	r25, r19
+ 610:	2c f4       	brge	.+10     	; 0x61c <DC_Motor2_PWM+0x1a>
+ 612:	20 91 54 01 	lds	r18, 0x0154
+ 616:	30 91 55 01 	lds	r19, 0x0155
+ 61a:	12 c0       	rjmp	.+36     	; 0x640 <DC_Motor2_PWM+0x3e>
+   else if( duty < -Duty2_Max )  duty = -Duty2_Max;   // duty가 음의 최소범위 보다 작으면 -Duty2_Max로 설정 
+ 61c:	80 91 54 01 	lds	r24, 0x0154
+ 620:	90 91 55 01 	lds	r25, 0x0155
+ 624:	90 95       	com	r25
+ 626:	81 95       	neg	r24
+ 628:	9f 4f       	sbci	r25, 0xFF	; 255
+ 62a:	28 17       	cp	r18, r24
+ 62c:	39 07       	cpc	r19, r25
+ 62e:	44 f4       	brge	.+16     	; 0x640 <DC_Motor2_PWM+0x3e>
+ 630:	80 91 54 01 	lds	r24, 0x0154
+ 634:	90 91 55 01 	lds	r25, 0x0155
+ 638:	22 27       	eor	r18, r18
+ 63a:	33 27       	eor	r19, r19
+ 63c:	28 1b       	sub	r18, r24
+ 63e:	39 0b       	sbc	r19, r25
+
+   if( duty > 0 )         DC_Motor2_Run_Fwd( duty );
+ 640:	12 16       	cp	r1, r18
+ 642:	13 06       	cpc	r1, r19
+ 644:	24 f4       	brge	.+8      	; 0x64e <DC_Motor2_PWM+0x4c>
+ 646:	c9 01       	movw	r24, r18
+ 648:	0e 94 88 01 	call	0x310	; 0x310 <DC_Motor2_Run_Fwd>
+ 64c:	08 95       	ret
+   else if( duty == 0 )   DC_Motor2_Stop();
+ 64e:	21 15       	cp	r18, r1
+ 650:	31 05       	cpc	r19, r1
+ 652:	21 f4       	brne	.+8      	; 0x65c <DC_Motor2_PWM+0x5a>
+    OCR1B = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+}
+
+void DC_Motor2_Stop( void )   // DC 모터2 정지 함수 
+{
+    PORTA &= ~0x02;      // 회전방향설정(정회전) :          DC모터2 B단자(-) = 0(Low) ( PA1 = 0 )    
+ 654:	d9 98       	cbi	0x1b, 1	; 27
+    OCR1B = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+ 656:	19 bc       	out	0x29, r1	; 41
+ 658:	18 bc       	out	0x28, r1	; 40
+ 65a:	08 95       	ret
+   if ( duty > Duty2_Max )       duty = Duty2_Max;   // duty가 양의 최대범위 보다 크면 Duty2_Max로 설정 
+   else if( duty < -Duty2_Max )  duty = -Duty2_Max;   // duty가 음의 최소범위 보다 작으면 -Duty2_Max로 설정 
+
+   if( duty > 0 )         DC_Motor2_Run_Fwd( duty );
+   else if( duty == 0 )   DC_Motor2_Stop();
+   else if( duty < 0 )    DC_Motor2_Run_Rev( -duty );
+ 65c:	88 27       	eor	r24, r24
+ 65e:	99 27       	eor	r25, r25
+ 660:	82 1b       	sub	r24, r18
+ 662:	93 0b       	sbc	r25, r19
+ 664:	0e 94 aa 01 	call	0x354	; 0x354 <DC_Motor2_Run_Rev>
+ 668:	08 95       	ret
+
+0000066a <Time_Delay_Polling>:
+unsigned char Time_Delay_Polling( unsigned short d_time )  // 시간경과 체크함수(폴링방식)
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 66a:	20 91 58 01 	lds	r18, 0x0158
+ 66e:	30 91 59 01 	lds	r19, 0x0159
+ 672:	2f 5f       	subi	r18, 0xFF	; 255
+ 674:	3f 4f       	sbci	r19, 0xFF	; 255
+ 676:	30 93 59 01 	sts	0x0159, r19
+ 67a:	20 93 58 01 	sts	0x0158, r18
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 67e:	28 17       	cp	r18, r24
+ 680:	39 07       	cpc	r19, r25
+ 682:	10 f4       	brcc	.+4      	; 0x688 <Time_Delay_Polling+0x1e>
+ 684:	80 e0       	ldi	r24, 0x00	; 0
+ 686:	08 95       	ret
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 688:	10 92 59 01 	sts	0x0159, r1
+ 68c:	10 92 58 01 	sts	0x0158, r1
+ 690:	81 e0       	ldi	r24, 0x01	; 1
+    } 
+    return  ret_val ;
+}
+ 692:	08 95       	ret
+
+00000694 <msec_delay>:
+ 694:	20 ea       	ldi	r18, 0xA0	; 160
+ 696:	3f e0       	ldi	r19, 0x0F	; 15
+ 698:	04 c0       	rjmp	.+8      	; 0x6a2 <msec_delay+0xe>
+ 69a:	f9 01       	movw	r30, r18
+ 69c:	31 97       	sbiw	r30, 0x01	; 1
+ 69e:	f1 f7       	brne	.-4      	; 0x69c <msec_delay+0x8>
+
+void msec_delay(int n)           // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1msec 시간 지연을 n회 반복
+ 6a0:	01 97       	sbiw	r24, 0x01	; 1
+ 6a2:	18 16       	cp	r1, r24
+ 6a4:	19 06       	cpc	r1, r25
+ 6a6:	cc f3       	brlt	.-14     	; 0x69a <msec_delay+0x6>
+		_delay_ms(1);		// 1msec 시간 지연
+}
+ 6a8:	08 95       	ret
+
+000006aa <usec_delay>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 6aa:	35 e0       	ldi	r19, 0x05	; 5
+ 6ac:	04 c0       	rjmp	.+8      	; 0x6b6 <usec_delay+0xc>
+ 6ae:	23 2f       	mov	r18, r19
+ 6b0:	2a 95       	dec	r18
+ 6b2:	f1 f7       	brne	.-4      	; 0x6b0 <usec_delay+0x6>
+void usec_delay(int n)            // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1usec 시간 지연을 n회 반복
+ 6b4:	01 97       	sbiw	r24, 0x01	; 1
+ 6b6:	18 16       	cp	r1, r24
+ 6b8:	19 06       	cpc	r1, r25
+ 6ba:	cc f3       	brlt	.-14     	; 0x6ae <usec_delay+0x4>
+		_delay_us(1);		// 1usec 시간 지연
+}
+ 6bc:	08 95       	ret
+
+000006be <main>:
+static volatile short  Duty1_Max= 100, Duty2_Max=100, PWM_Period=0;    //모터1, 모터2의 최대PWM duty = 100[%]
+static volatile short  Motor1_Duty = 0, Motor2_Duty = 0, Step = 0 ;    //모터1, 모터2의 PWM duty [%]
+
+
+int main() 
+{   
+ 6be:	cf 93       	push	r28
+ 6c0:	df 93       	push	r29
+    short  duty_1 = 0, duty_2 = 0 ; 
+
+    LcdInit();                     // LCd 초기화 함수 
+ 6c2:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <LcdInit>
+
+    LcdMove(0,0);                 // LCD에 쓸 데이터 초기 위치 설정( 0행 0열)
+ 6c6:	80 e0       	ldi	r24, 0x00	; 0
+ 6c8:	60 e0       	ldi	r22, 0x00	; 0
+ 6ca:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+    LcdPuts("DC Motor Control");  // LCD에 DC모터제어 메시지 디스플레이 
+ 6ce:	80 e0       	ldi	r24, 0x00	; 0
+ 6d0:	91 e0       	ldi	r25, 0x01	; 1
+ 6d2:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+    LcdMove(1,0);                 // LCD에 쓸 데이터 초기 위치 설정( 1행 0열)   
+ 6d6:	81 e0       	ldi	r24, 0x01	; 1
+ 6d8:	60 e0       	ldi	r22, 0x00	; 0
+ 6da:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+    LcdPuts("Test Program");      // LCD에 DC모터제어 메시지 디스플레이
+ 6de:	81 e1       	ldi	r24, 0x11	; 17
+ 6e0:	91 e0       	ldi	r25, 0x01	; 1
+ 6e2:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+ 6e6:	80 ed       	ldi	r24, 0xD0	; 208
+ 6e8:	97 e0       	ldi	r25, 0x07	; 7
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 6ea:	20 ea       	ldi	r18, 0xA0	; 160
+ 6ec:	3f e0       	ldi	r19, 0x0F	; 15
+ 6ee:	f9 01       	movw	r30, r18
+ 6f0:	31 97       	sbiw	r30, 0x01	; 1
+ 6f2:	f1 f7       	brne	.-4      	; 0x6f0 <main+0x32>
+    return  ret_val ;
+}
+
+void msec_delay(int n)           // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1msec 시간 지연을 n회 반복
+ 6f4:	01 97       	sbiw	r24, 0x01	; 1
+ 6f6:	d9 f7       	brne	.-10     	; 0x6ee <main+0x30>
+    LcdPuts("Test Program");      // LCD에 DC모터제어 메시지 디스플레이
+    msec_delay(2000);            // 2초(2000msec) 시간지연
+
+    ////////  DC모터 2개 구동을 위한 HW 관련 레지스터 설정  ////////////
+
+    IO_Port_Init();	// IO Port Setting
+ 6f8:	0e 94 10 01 	call	0x220	; 0x220 <IO_Port_Init>
+    
+    PWM_Period = PWM_Timer1_Init();	// PWM 신호( 타이머1 이용 ) 설정함수 호출, PWM 신호 주기를 전역변수에 저장 
+ 6fc:	0e 94 1a 01 	call	0x234	; 0x234 <PWM_Timer1_Init>
+ 700:	90 93 5b 01 	sts	0x015B, r25
+ 704:	80 93 5a 01 	sts	0x015A, r24
+
+    Motor1_Duty = 0;         // DC모터1 속도 0 설정( 최대 = 100[%],  최소 = 0[%] )
+ 708:	10 92 5f 01 	sts	0x015F, r1
+ 70c:	10 92 5e 01 	sts	0x015E, r1
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+}
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 710:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 712:	1b bc       	out	0x2b, r1	; 43
+ 714:	1a bc       	out	0x2a, r1	; 42
+    
+    PWM_Period = PWM_Timer1_Init();	// PWM 신호( 타이머1 이용 ) 설정함수 호출, PWM 신호 주기를 전역변수에 저장 
+
+    Motor1_Duty = 0;         // DC모터1 속도 0 설정( 최대 = 100[%],  최소 = 0[%] )
+    DC_Motor1_Stop( );       // DC모터1 정지
+    Motor2_Duty = 0;         // DC모터2 속도 0 설정( 최대 = 100[%],  최소 = 0[%] )
+ 716:	10 92 61 01 	sts	0x0161, r1
+ 71a:	10 92 60 01 	sts	0x0160, r1
+    OCR1B = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+}
+
+void DC_Motor2_Stop( void )   // DC 모터2 정지 함수 
+{
+    PORTA &= ~0x02;      // 회전방향설정(정회전) :          DC모터2 B단자(-) = 0(Low) ( PA1 = 0 )    
+ 71e:	d9 98       	cbi	0x1b, 1	; 27
+    OCR1B = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터2 A단자(+) = PWM신호(OC1B(PB6))  
+ 720:	19 bc       	out	0x29, r1	; 41
+ 722:	18 bc       	out	0x28, r1	; 40
+    Motor2_Duty = 0;         // DC모터2 속도 0 설정( 최대 = 100[%],  최소 = 0[%] )
+    DC_Motor2_Stop( );       // DC모터2 정지
+
+    ////////////  Timer 2 설정  ( 10 msec 주기의 타이머2 오버플로 인터럽트 설정 )  ///////////////
+
+	Timer2_OVF_Int_Init();		// Timer2 Overflow interrupt Setting
+ 724:	0e 94 2e 01 	call	0x25c	; 0x25c <Timer2_OVF_Int_Init>
+    sei();                    	// 전역 인터럽트 허용
+ 728:	78 94       	sei
+ 72a:	c0 ea       	ldi	r28, 0xA0	; 160
+ 72c:	df e0       	ldi	r29, 0x0F	; 15
+
+    while (1) 
+    { 
+
+       cli();                             // 전역인터럽트 금지
+ 72e:	f8 94       	cli
+
+ 	   duty_1 = Motor1_Duty;              // DC모터1 duty 값을 변수 duty_1에 저장 
+ 730:	80 91 5e 01 	lds	r24, 0x015E
+ 734:	90 91 5f 01 	lds	r25, 0x015F
+ 	   duty_2 = Motor2_Duty;              // DC모터2 duty 값을 변수 duty_2에 저장 
+ 738:	20 91 60 01 	lds	r18, 0x0160
+ 73c:	30 91 61 01 	lds	r19, 0x0161
+
+       sei();                             // 전역인터럽트 허용
+ 740:	78 94       	sei
+
+       if( duty_1 == 0 && duty_2 == 0 )      // DC모터1, DC모터2 모두 정지상태이면 
+ 742:	89 2b       	or	r24, r25
+ 744:	b1 f4       	brne	.+44     	; 0x772 <main+0xb4>
+ 746:	23 2b       	or	r18, r19
+ 748:	51 f4       	brne	.+20     	; 0x75e <main+0xa0>
+       {  
+          LcdCommand( ALLCLR );              // LCD 화면 지우기
+ 74a:	81 e0       	ldi	r24, 0x01	; 1
+ 74c:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	      LcdMove(0, 0);                     // LCD에 쓸 데이터 초기 위치 설정 (0행, 0열) 
+ 750:	80 e0       	ldi	r24, 0x00	; 0
+ 752:	60 e0       	ldi	r22, 0x00	; 0
+ 754:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+          LcdPuts( "Motor1 : Stop" );        // DC모터1 정지상태 메시지 디스플레이  
+ 758:	8e e1       	ldi	r24, 0x1E	; 30
+ 75a:	91 e0       	ldi	r25, 0x01	; 1
+ 75c:	15 c0       	rjmp	.+42     	; 0x788 <main+0xca>
+          LcdPuts( "Motor2 : Stop" );        // DC모터2 정지상태 메시지 디스플레이 
+       }
+
+       else if( duty_1 == 0 && duty_2 != 0 )    // DC모터1 정지상태, DC모터2 회전상태이면 
+       {  
+          LcdCommand( ALLCLR );                 // LCD 화면 지우기
+ 75e:	81 e0       	ldi	r24, 0x01	; 1
+ 760:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	      LcdMove(0, 0);                        // LCD에 쓸 데이터 초기 위치 설정 (0행, 0열) 
+ 764:	80 e0       	ldi	r24, 0x00	; 0
+ 766:	60 e0       	ldi	r22, 0x00	; 0
+ 768:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+          LcdPuts( "Motor1 : Stop" );           // DC모터1 정지상태 메시지 디스플레이  
+ 76c:	8e e1       	ldi	r24, 0x1E	; 30
+ 76e:	91 e0       	ldi	r25, 0x01	; 1
+ 770:	1d c0       	rjmp	.+58     	; 0x7ac <main+0xee>
+	      LcdMove(1, 0);                        // LCD에 쓸 데이터 초기 위치 설정 (1행, 0열) 
+          LcdPuts( "Motor2 : Run" );            // DC모터2 회전상태 메시지 디스플레이 
+       }
+
+       else if( duty_1 != 0 && duty_2 == 0 )    // DC모터1 회전상태, DC모터2 정지상태이면 
+ 772:	23 2b       	or	r18, r19
+ 774:	91 f4       	brne	.+36     	; 0x79a <main+0xdc>
+       {  
+          LcdCommand( ALLCLR );                 // LCD 화면 지우기
+ 776:	81 e0       	ldi	r24, 0x01	; 1
+ 778:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	      LcdMove(0, 0);                        // LCD에 쓸 데이터 초기 위치 설정 (0행, 0열) 
+ 77c:	80 e0       	ldi	r24, 0x00	; 0
+ 77e:	60 e0       	ldi	r22, 0x00	; 0
+ 780:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+          LcdPuts( "Motor1 : Run" );            // DC모터1 회전상태 메시지 디스플레이  
+ 784:	87 e4       	ldi	r24, 0x47	; 71
+ 786:	91 e0       	ldi	r25, 0x01	; 1
+ 788:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+	      LcdMove(1, 0);                        // LCD에 쓸 데이터 초기 위치 설정 (1행, 0열) 
+ 78c:	81 e0       	ldi	r24, 0x01	; 1
+ 78e:	60 e0       	ldi	r22, 0x00	; 0
+ 790:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+          LcdPuts( "Motor2 : Stop" );           // DC모터2 정지상태 메시지 디스플레이 
+ 794:	8c e2       	ldi	r24, 0x2C	; 44
+ 796:	91 e0       	ldi	r25, 0x01	; 1
+ 798:	11 c0       	rjmp	.+34     	; 0x7bc <main+0xfe>
+       }
+
+       else if( duty_1 != 0 && duty_2 != 0 )    // DC모터1, DC모터2 모두 회전상태이면 
+       {  
+          LcdCommand( ALLCLR );                 // LCD 화면 지우기
+ 79a:	81 e0       	ldi	r24, 0x01	; 1
+ 79c:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	      LcdMove(0, 0);                        // LCD에 쓸 데이터 초기 위치 설정 (0행, 0열) 
+ 7a0:	80 e0       	ldi	r24, 0x00	; 0
+ 7a2:	60 e0       	ldi	r22, 0x00	; 0
+ 7a4:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+          LcdPuts( "Motor1 : Run" );            // DC모터1 회전상태 메시지 디스플레이  
+ 7a8:	87 e4       	ldi	r24, 0x47	; 71
+ 7aa:	91 e0       	ldi	r25, 0x01	; 1
+ 7ac:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+	      LcdMove(1, 0);                        // LCD에 쓸 데이터 초기 위치 설정 (1행, 0열) 
+ 7b0:	81 e0       	ldi	r24, 0x01	; 1
+ 7b2:	60 e0       	ldi	r22, 0x00	; 0
+ 7b4:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+          LcdPuts( "Motor2 : Run" );            // DC모터2 회전상태 메시지 디스플레이 
+ 7b8:	8a e3       	ldi	r24, 0x3A	; 58
+ 7ba:	91 e0       	ldi	r25, 0x01	; 1
+ 7bc:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+ 7c0:	82 e3       	ldi	r24, 0x32	; 50
+ 7c2:	90 e0       	ldi	r25, 0x00	; 0
+ 7c4:	fe 01       	movw	r30, r28
+ 7c6:	31 97       	sbiw	r30, 0x01	; 1
+ 7c8:	f1 f7       	brne	.-4      	; 0x7c6 <main+0x108>
+    return  ret_val ;
+}
+
+void msec_delay(int n)           // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1msec 시간 지연을 n회 반복
+ 7ca:	01 97       	sbiw	r24, 0x01	; 1
+ 7cc:	09 f4       	brne	.+2      	; 0x7d0 <main+0x112>
+ 7ce:	af cf       	rjmp	.-162    	; 0x72e <main+0x70>
+ 7d0:	f9 cf       	rjmp	.-14     	; 0x7c4 <main+0x106>
+
+000007d2 <__divmodhi4>:
+ 7d2:	97 fb       	bst	r25, 7
+ 7d4:	09 2e       	mov	r0, r25
+ 7d6:	07 26       	eor	r0, r23
+ 7d8:	0a d0       	rcall	.+20     	; 0x7ee <__divmodhi4_neg1>
+ 7da:	77 fd       	sbrc	r23, 7
+ 7dc:	04 d0       	rcall	.+8      	; 0x7e6 <__divmodhi4_neg2>
+ 7de:	0c d0       	rcall	.+24     	; 0x7f8 <__udivmodhi4>
+ 7e0:	06 d0       	rcall	.+12     	; 0x7ee <__divmodhi4_neg1>
+ 7e2:	00 20       	and	r0, r0
+ 7e4:	1a f4       	brpl	.+6      	; 0x7ec <__divmodhi4_exit>
+
+000007e6 <__divmodhi4_neg2>:
+ 7e6:	70 95       	com	r23
+ 7e8:	61 95       	neg	r22
+ 7ea:	7f 4f       	sbci	r23, 0xFF	; 255
+
+000007ec <__divmodhi4_exit>:
+ 7ec:	08 95       	ret
+
+000007ee <__divmodhi4_neg1>:
+ 7ee:	f6 f7       	brtc	.-4      	; 0x7ec <__divmodhi4_exit>
+ 7f0:	90 95       	com	r25
+ 7f2:	81 95       	neg	r24
+ 7f4:	9f 4f       	sbci	r25, 0xFF	; 255
+ 7f6:	08 95       	ret
+
+000007f8 <__udivmodhi4>:
+ 7f8:	aa 1b       	sub	r26, r26
+ 7fa:	bb 1b       	sub	r27, r27
+ 7fc:	51 e1       	ldi	r21, 0x11	; 17
+ 7fe:	07 c0       	rjmp	.+14     	; 0x80e <__udivmodhi4_ep>
+
+00000800 <__udivmodhi4_loop>:
+ 800:	aa 1f       	adc	r26, r26
+ 802:	bb 1f       	adc	r27, r27
+ 804:	a6 17       	cp	r26, r22
+ 806:	b7 07       	cpc	r27, r23
+ 808:	10 f0       	brcs	.+4      	; 0x80e <__udivmodhi4_ep>
+ 80a:	a6 1b       	sub	r26, r22
+ 80c:	b7 0b       	sbc	r27, r23
+
+0000080e <__udivmodhi4_ep>:
+ 80e:	88 1f       	adc	r24, r24
+ 810:	99 1f       	adc	r25, r25
+ 812:	5a 95       	dec	r21
+ 814:	a9 f7       	brne	.-22     	; 0x800 <__udivmodhi4_loop>
+ 816:	80 95       	com	r24
+ 818:	90 95       	com	r25
+ 81a:	bc 01       	movw	r22, r24
+ 81c:	cd 01       	movw	r24, r26
+ 81e:	08 95       	ret
+
+00000820 <_exit>:
+ 820:	f8 94       	cli
+
+00000822 <__stop_program>:
+ 822:	ff cf       	rjmp	.-2      	; 0x822 <__stop_program>

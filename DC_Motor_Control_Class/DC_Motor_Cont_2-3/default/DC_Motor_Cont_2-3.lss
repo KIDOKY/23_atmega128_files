@@ -1,0 +1,1343 @@
+
+DC_Motor_Cont_2-3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000046  00800100  000006d8  0000076c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000006d8  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000011  00800146  00800146  000007b2  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  000007b2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000150  00000000  00000000  000007f2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000ce2  00000000  00000000  00000942  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000424  00000000  00000000  00001624  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000892  00000000  00000000  00001a48  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000160  00000000  00000000  000022dc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000002ce  00000000  00000000  0000243c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000053d  00000000  00000000  0000270a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000060  00000000  00000000  00002c47  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e8 ed       	ldi	r30, 0xD8	; 216
+  a0:	f6 e0       	ldi	r31, 0x06	; 6
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a6 34       	cpi	r26, 0x46	; 70
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a6 e4       	ldi	r26, 0x46	; 70
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a7 35       	cpi	r26, 0x57	; 87
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 62 02 	call	0x4c4	; 0x4c4 <main>
+  c6:	0c 94 6a 03 	jmp	0x6d4	; 0x6d4 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <LcdPutchar>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+  ce:	95 e3       	ldi	r25, 0x35	; 53
+  d0:	29 2f       	mov	r18, r25
+  d2:	2a 95       	dec	r18
+  d4:	f1 f7       	brne	.-4      	; 0xd2 <LcdPutchar+0x4>
+
+static void write_data(char ch)
+{
+	unsigned char temp;
+
+	temp = (ch & 0xF0) | 0x05;
+  d6:	29 2f       	mov	r18, r25
+  d8:	2a 95       	dec	r18
+  da:	f1 f7       	brne	.-4      	; 0xd8 <LcdPutchar+0xa>
+  dc:	29 2f       	mov	r18, r25
+  de:	2a 95       	dec	r18
+  e0:	f1 f7       	brne	.-4      	; 0xde <LcdPutchar+0x10>
+  e2:	29 2f       	mov	r18, r25
+  e4:	2a 95       	dec	r18
+  e6:	f1 f7       	brne	.-4      	; 0xe4 <LcdPutchar+0x16>
+  e8:	9a 95       	dec	r25
+  ea:	f1 f7       	brne	.-4      	; 0xe8 <LcdPutchar+0x1a>
+  ec:	98 2f       	mov	r25, r24
+  ee:	90 7f       	andi	r25, 0xF0	; 240
+  f0:	95 60       	ori	r25, 0x05	; 5
+
+	LCD_PORT = temp;
+  f2:	95 bb       	out	0x15, r25	; 21
+	LCD_PORT = temp & ~0x04;
+  f4:	9b 7f       	andi	r25, 0xFB	; 251
+  f6:	95 bb       	out	0x15, r25	; 21
+
+	temp = (ch<<4) | 0x05;
+  f8:	82 95       	swap	r24
+  fa:	80 7f       	andi	r24, 0xF0	; 240
+  fc:	85 60       	ori	r24, 0x05	; 5
+
+	LCD_PORT = temp;
+  fe:	85 bb       	out	0x15, r24	; 21
+	LCD_PORT = temp & ~0x04;
+ 100:	8b 7f       	andi	r24, 0xFB	; 251
+ 102:	85 bb       	out	0x15, r24	; 21
+
+void LcdPutchar(char ch)
+{
+	checkbusy();
+	write_data(ch);
+}
+ 104:	08 95       	ret
+
+00000106 <LcdPuts>:
+
+void LcdPuts(char* str)
+{
+ 106:	cf 93       	push	r28
+ 108:	df 93       	push	r29
+ 10a:	ec 01       	movw	r28, r24
+ 10c:	03 c0       	rjmp	.+6      	; 0x114 <LcdPuts+0xe>
+   while(*str)
+  {
+   LcdPutchar(*str);
+ 10e:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+   str++;
+ 112:	21 96       	adiw	r28, 0x01	; 1
+	write_data(ch);
+}
+
+void LcdPuts(char* str)
+{
+   while(*str)
+ 114:	88 81       	ld	r24, Y
+ 116:	88 23       	and	r24, r24
+ 118:	d1 f7       	brne	.-12     	; 0x10e <LcdPuts+0x8>
+  {
+   LcdPutchar(*str);
+   str++;
+  }
+}
+ 11a:	df 91       	pop	r29
+ 11c:	cf 91       	pop	r28
+ 11e:	08 95       	ret
+
+00000120 <write_command>:
+
+static void write_command(char command)
+
+{
+  char temp;
+  temp = (command & 0xF0)|0x04;
+ 120:	98 2f       	mov	r25, r24
+ 122:	90 7f       	andi	r25, 0xF0	; 240
+ 124:	94 60       	ori	r25, 0x04	; 4
+
+LCD_PORT = temp;
+ 126:	95 bb       	out	0x15, r25	; 21
+LCD_PORT = temp & ~0x04;
+ 128:	9b 7f       	andi	r25, 0xFB	; 251
+ 12a:	95 bb       	out	0x15, r25	; 21
+
+temp = (command << 4) | 0x04;
+ 12c:	82 95       	swap	r24
+ 12e:	80 7f       	andi	r24, 0xF0	; 240
+ 130:	84 60       	ori	r24, 0x04	; 4
+
+LCD_PORT = temp;
+ 132:	85 bb       	out	0x15, r24	; 21
+LCD_PORT = temp & ~0x04;
+ 134:	8b 7f       	andi	r24, 0xFB	; 251
+ 136:	85 bb       	out	0x15, r24	; 21
+ 138:	85 e0       	ldi	r24, 0x05	; 5
+ 13a:	8a 95       	dec	r24
+ 13c:	f1 f7       	brne	.-4      	; 0x13a <write_command+0x1a>
+_delay_us(1);
+}
+ 13e:	08 95       	ret
+
+00000140 <LcdCommand>:
+	LcdCommand(ENTMOD);
+
+	LcdCommand(DISP_ON);
+}
+void LcdCommand(char command)
+{
+ 140:	1f 93       	push	r17
+ 142:	18 2f       	mov	r17, r24
+ 144:	85 e3       	ldi	r24, 0x35	; 53
+ 146:	98 2f       	mov	r25, r24
+ 148:	9a 95       	dec	r25
+ 14a:	f1 f7       	brne	.-4      	; 0x148 <LcdCommand+0x8>
+	checkbusy();
+	write_command(command);
+ 14c:	98 2f       	mov	r25, r24
+ 14e:	9a 95       	dec	r25
+ 150:	f1 f7       	brne	.-4      	; 0x14e <LcdCommand+0xe>
+ 152:	98 2f       	mov	r25, r24
+ 154:	9a 95       	dec	r25
+ 156:	f1 f7       	brne	.-4      	; 0x154 <LcdCommand+0x14>
+ 158:	98 2f       	mov	r25, r24
+ 15a:	9a 95       	dec	r25
+ 15c:	f1 f7       	brne	.-4      	; 0x15a <LcdCommand+0x1a>
+ 15e:	8a 95       	dec	r24
+ 160:	f1 f7       	brne	.-4      	; 0x15e <LcdCommand+0x1e>
+ 162:	81 2f       	mov	r24, r17
+ 164:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+	if(command==ALLCLR || command==HOME)
+ 168:	11 50       	subi	r17, 0x01	; 1
+ 16a:	12 30       	cpi	r17, 0x02	; 2
+ 16c:	20 f4       	brcc	.+8      	; 0x176 <LcdCommand+0x36>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 16e:	80 e4       	ldi	r24, 0x40	; 64
+ 170:	9f e1       	ldi	r25, 0x1F	; 31
+ 172:	01 97       	sbiw	r24, 0x01	; 1
+ 174:	f1 f7       	brne	.-4      	; 0x172 <LcdCommand+0x32>
+		_delay_ms(2);
+}
+ 176:	1f 91       	pop	r17
+ 178:	08 95       	ret
+
+0000017a <LcdNewchar>:
+  LcdCommand(pos);
+}
+
+
+void LcdNewchar(char ch, char font[])
+{
+ 17a:	0f 93       	push	r16
+ 17c:	1f 93       	push	r17
+ 17e:	cf 93       	push	r28
+ 180:	df 93       	push	r29
+ 182:	8b 01       	movw	r16, r22
+ int i;
+
+ ch <<=3;
+ 184:	88 0f       	add	r24, r24
+ 186:	88 0f       	add	r24, r24
+ 188:	88 0f       	add	r24, r24
+ ch|= 0x40;
+
+ LcdCommand(ch);
+ 18a:	80 64       	ori	r24, 0x40	; 64
+ 18c:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+ 190:	c0 e0       	ldi	r28, 0x00	; 0
+ 192:	d0 e0       	ldi	r29, 0x00	; 0
+
+ for(i=0;i<8;i++)
+    LcdPutchar(font[i]);
+ 194:	f8 01       	movw	r30, r16
+ 196:	ec 0f       	add	r30, r28
+ 198:	fd 1f       	adc	r31, r29
+ 19a:	80 81       	ld	r24, Z
+ 19c:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+ ch <<=3;
+ ch|= 0x40;
+
+ LcdCommand(ch);
+
+ for(i=0;i<8;i++)
+ 1a0:	21 96       	adiw	r28, 0x01	; 1
+ 1a2:	c8 30       	cpi	r28, 0x08	; 8
+ 1a4:	d1 05       	cpc	r29, r1
+ 1a6:	b1 f7       	brne	.-20     	; 0x194 <LcdNewchar+0x1a>
+    LcdPutchar(font[i]);
+}
+ 1a8:	df 91       	pop	r29
+ 1aa:	cf 91       	pop	r28
+ 1ac:	1f 91       	pop	r17
+ 1ae:	0f 91       	pop	r16
+ 1b0:	08 95       	ret
+
+000001b2 <LcdMove>:
+
+{ 
+
+//  pos = (line << 6) + pos; 
+
+	if(line == 0 )       pos = 0x00 + pos ;
+ 1b2:	88 23       	and	r24, r24
+ 1b4:	49 f0       	breq	.+18     	; 0x1c8 <LcdMove+0x16>
+	else if( line == 1 ) pos = 0x40 + pos ;
+ 1b6:	81 30       	cpi	r24, 0x01	; 1
+ 1b8:	11 f4       	brne	.+4      	; 0x1be <LcdMove+0xc>
+ 1ba:	60 5c       	subi	r22, 0xC0	; 192
+ 1bc:	05 c0       	rjmp	.+10     	; 0x1c8 <LcdMove+0x16>
+	else if( line == 2 ) pos = 0x10 + pos ;
+ 1be:	82 30       	cpi	r24, 0x02	; 2
+ 1c0:	11 f4       	brne	.+4      	; 0x1c6 <LcdMove+0x14>
+ 1c2:	60 5f       	subi	r22, 0xF0	; 240
+ 1c4:	01 c0       	rjmp	.+2      	; 0x1c8 <LcdMove+0x16>
+	else                 pos = 0x50 + pos ;
+ 1c6:	60 5b       	subi	r22, 0xB0	; 176
+
+  pos |= 0x80;
+ 
+  LcdCommand(pos);
+ 1c8:	86 2f       	mov	r24, r22
+ 1ca:	80 68       	ori	r24, 0x80	; 128
+ 1cc:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 1d0:	08 95       	ret
+
+000001d2 <LcdInit>:
+static void write_command(char command);
+static void write_data(char ch);
+
+void LcdInit(void)
+{
+	LCD_DDR = 0xff;
+ 1d2:	8f ef       	ldi	r24, 0xFF	; 255
+ 1d4:	84 bb       	out	0x14, r24	; 20
+ 1d6:	80 e6       	ldi	r24, 0x60	; 96
+ 1d8:	9a ee       	ldi	r25, 0xEA	; 234
+ 1da:	01 97       	sbiw	r24, 0x01	; 1
+ 1dc:	f1 f7       	brne	.-4      	; 0x1da <LcdInit+0x8>
+	_delay_ms(15);
+	write_command(0x30);
+ 1de:	80 e3       	ldi	r24, 0x30	; 48
+ 1e0:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1e4:	80 e2       	ldi	r24, 0x20	; 32
+ 1e6:	9e e4       	ldi	r25, 0x4E	; 78
+ 1e8:	01 97       	sbiw	r24, 0x01	; 1
+ 1ea:	f1 f7       	brne	.-4      	; 0x1e8 <LcdInit+0x16>
+	_delay_ms(5);
+	write_command(0x30);
+ 1ec:	80 e3       	ldi	r24, 0x30	; 48
+ 1ee:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+ 1f2:	80 ea       	ldi	r24, 0xA0	; 160
+ 1f4:	9f e0       	ldi	r25, 0x0F	; 15
+ 1f6:	01 97       	sbiw	r24, 0x01	; 1
+ 1f8:	f1 f7       	brne	.-4      	; 0x1f6 <LcdInit+0x24>
+	_delay_ms(1);
+	write_command(0x32);
+ 1fa:	82 e3       	ldi	r24, 0x32	; 50
+ 1fc:	0e 94 90 00 	call	0x120	; 0x120 <write_command>
+
+	LcdCommand(FUNSET);
+ 200:	88 e2       	ldi	r24, 0x28	; 40
+ 202:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(DISP_OFF);
+ 206:	88 e0       	ldi	r24, 0x08	; 8
+ 208:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ALLCLR);
+ 20c:	81 e0       	ldi	r24, 0x01	; 1
+ 20e:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+	LcdCommand(ENTMOD);
+ 212:	86 e0       	ldi	r24, 0x06	; 6
+ 214:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+
+	LcdCommand(DISP_ON);
+ 218:	8c e0       	ldi	r24, 0x0C	; 12
+ 21a:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+}
+ 21e:	08 95       	ret
+
+00000220 <DC_Motor1_Run_Fwd>:
+
+
+////////////////////////////////////////////////////////////////
+
+void DC_Motor1_Run_Fwd( short duty )   // DC 모터1 정회전 함수 
+{
+ 220:	9c 01       	movw	r18, r24
+    if( duty > Duty1_Max )     duty = Duty1_Max; // duty 범위를 벗어나면 Duty1_Max로 설정 
+ 222:	80 91 44 01 	lds	r24, 0x0144
+ 226:	90 91 45 01 	lds	r25, 0x0145
+ 22a:	82 17       	cp	r24, r18
+ 22c:	93 07       	cpc	r25, r19
+ 22e:	24 f4       	brge	.+8      	; 0x238 <DC_Motor1_Run_Fwd+0x18>
+ 230:	20 91 44 01 	lds	r18, 0x0144
+ 234:	30 91 45 01 	lds	r19, 0x0145
+    duty = ( duty*PWM_Period )/Duty1_Max;        // %단위의 duty 값을 실제 레지스터(OCR1A) 설정 값으로 변환
+ 238:	80 91 4e 01 	lds	r24, 0x014E
+ 23c:	90 91 4f 01 	lds	r25, 0x014F
+ 240:	60 91 44 01 	lds	r22, 0x0144
+ 244:	70 91 45 01 	lds	r23, 0x0145
+
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :   DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 248:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = duty;        // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 24a:	ac 01       	movw	r20, r24
+ 24c:	24 9f       	mul	r18, r20
+ 24e:	c0 01       	movw	r24, r0
+ 250:	25 9f       	mul	r18, r21
+ 252:	90 0d       	add	r25, r0
+ 254:	34 9f       	mul	r19, r20
+ 256:	90 0d       	add	r25, r0
+ 258:	11 24       	eor	r1, r1
+ 25a:	0e 94 57 03 	call	0x6ae	; 0x6ae <__divmodhi4>
+ 25e:	7b bd       	out	0x2b, r23	; 43
+ 260:	6a bd       	out	0x2a, r22	; 42
+}
+ 262:	08 95       	ret
+
+00000264 <DC_Motor1_Run_Rev>:
+
+void DC_Motor1_Run_Rev( short duty )   // DC 모터1 역회전 함수 
+{
+ 264:	ac 01       	movw	r20, r24
+    if( duty > Duty1_Max )     duty = Duty1_Max;  // duty 범위를 벗어나면 Duty1_Max로 설정 
+ 266:	80 91 44 01 	lds	r24, 0x0144
+ 26a:	90 91 45 01 	lds	r25, 0x0145
+ 26e:	84 17       	cp	r24, r20
+ 270:	95 07       	cpc	r25, r21
+ 272:	24 f4       	brge	.+8      	; 0x27c <DC_Motor1_Run_Rev+0x18>
+ 274:	40 91 44 01 	lds	r20, 0x0144
+ 278:	50 91 45 01 	lds	r21, 0x0145
+    duty = ( duty*PWM_Period )/Duty1_Max;         // %단위의 duty 값을 실제 레지스터(OCR1A) 설정 값으로 변환
+ 27c:	80 91 4e 01 	lds	r24, 0x014E
+ 280:	90 91 4f 01 	lds	r25, 0x014F
+ 284:	60 91 44 01 	lds	r22, 0x0144
+ 288:	70 91 45 01 	lds	r23, 0x0145
+
+    PORTA |= 0x01;               // 회전방향설정(역회전) :   DC모터1 B단자(-) = 1(High) ( PA0 = 1 )    
+ 28c:	d8 9a       	sbi	0x1b, 0	; 27
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 28e:	20 91 4e 01 	lds	r18, 0x014E
+ 292:	30 91 4f 01 	lds	r19, 0x014F
+ 296:	fc 01       	movw	r30, r24
+ 298:	4e 9f       	mul	r20, r30
+ 29a:	c0 01       	movw	r24, r0
+ 29c:	4f 9f       	mul	r20, r31
+ 29e:	90 0d       	add	r25, r0
+ 2a0:	5e 9f       	mul	r21, r30
+ 2a2:	90 0d       	add	r25, r0
+ 2a4:	11 24       	eor	r1, r1
+ 2a6:	0e 94 57 03 	call	0x6ae	; 0x6ae <__divmodhi4>
+ 2aa:	26 1b       	sub	r18, r22
+ 2ac:	37 0b       	sbc	r19, r23
+ 2ae:	3b bd       	out	0x2b, r19	; 43
+ 2b0:	2a bd       	out	0x2a, r18	; 42
+}
+ 2b2:	08 95       	ret
+
+000002b4 <DC_Motor1_Stop>:
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 2b4:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 2b6:	1b bc       	out	0x2b, r1	; 43
+ 2b8:	1a bc       	out	0x2a, r1	; 42
+}
+ 2ba:	08 95       	ret
+
+000002bc <DC_Motor1_PWM>:
+
+void DC_Motor1_PWM( short duty )   // DC 모터1 PWM 구동 함수  
+{
+ 2bc:	9c 01       	movw	r18, r24
+   if ( duty > Duty1_Max )       duty = Duty1_Max;    // duty가 양의 최대법위 보다 크면 Duty1_Max로 설정 
+ 2be:	80 91 44 01 	lds	r24, 0x0144
+ 2c2:	90 91 45 01 	lds	r25, 0x0145
+ 2c6:	82 17       	cp	r24, r18
+ 2c8:	93 07       	cpc	r25, r19
+ 2ca:	2c f4       	brge	.+10     	; 0x2d6 <DC_Motor1_PWM+0x1a>
+ 2cc:	20 91 44 01 	lds	r18, 0x0144
+ 2d0:	30 91 45 01 	lds	r19, 0x0145
+ 2d4:	12 c0       	rjmp	.+36     	; 0x2fa <DC_Motor1_PWM+0x3e>
+   else if( duty < -Duty1_Max )  duty = -Duty1_Max;   // duty가 음의 최소범위 보다 작으면 -Duty1_Max로 설정 
+ 2d6:	80 91 44 01 	lds	r24, 0x0144
+ 2da:	90 91 45 01 	lds	r25, 0x0145
+ 2de:	90 95       	com	r25
+ 2e0:	81 95       	neg	r24
+ 2e2:	9f 4f       	sbci	r25, 0xFF	; 255
+ 2e4:	28 17       	cp	r18, r24
+ 2e6:	39 07       	cpc	r19, r25
+ 2e8:	44 f4       	brge	.+16     	; 0x2fa <DC_Motor1_PWM+0x3e>
+ 2ea:	80 91 44 01 	lds	r24, 0x0144
+ 2ee:	90 91 45 01 	lds	r25, 0x0145
+ 2f2:	22 27       	eor	r18, r18
+ 2f4:	33 27       	eor	r19, r19
+ 2f6:	28 1b       	sub	r18, r24
+ 2f8:	39 0b       	sbc	r19, r25
+
+   if( duty > 0 )          DC_Motor1_Run_Fwd( duty );
+ 2fa:	12 16       	cp	r1, r18
+ 2fc:	13 06       	cpc	r1, r19
+ 2fe:	24 f4       	brge	.+8      	; 0x308 <DC_Motor1_PWM+0x4c>
+ 300:	c9 01       	movw	r24, r18
+ 302:	0e 94 10 01 	call	0x220	; 0x220 <DC_Motor1_Run_Fwd>
+ 306:	08 95       	ret
+   else if( duty == 0 )    DC_Motor1_Stop();
+ 308:	21 15       	cp	r18, r1
+ 30a:	31 05       	cpc	r19, r1
+ 30c:	21 f4       	brne	.+8      	; 0x316 <DC_Motor1_PWM+0x5a>
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+}
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 30e:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 310:	1b bc       	out	0x2b, r1	; 43
+ 312:	1a bc       	out	0x2a, r1	; 42
+ 314:	08 95       	ret
+   if ( duty > Duty1_Max )       duty = Duty1_Max;    // duty가 양의 최대법위 보다 크면 Duty1_Max로 설정 
+   else if( duty < -Duty1_Max )  duty = -Duty1_Max;   // duty가 음의 최소범위 보다 작으면 -Duty1_Max로 설정 
+
+   if( duty > 0 )          DC_Motor1_Run_Fwd( duty );
+   else if( duty == 0 )    DC_Motor1_Stop();
+   else if( duty < 0 )     DC_Motor1_Run_Rev( -duty );
+ 316:	88 27       	eor	r24, r24
+ 318:	99 27       	eor	r25, r25
+ 31a:	82 1b       	sub	r24, r18
+ 31c:	93 0b       	sbc	r25, r19
+ 31e:	0e 94 32 01 	call	0x264	; 0x264 <DC_Motor1_Run_Rev>
+ 322:	08 95       	ret
+
+00000324 <key_scan>:
+unsigned char key_scan(void)  // Key_Input( ) 함수에서 호출하는 내부 함수. 실제로 어느 HW 입력포트에 연결된 
+{                              // push 스위치가 눌러졌는지 체크(스캔)하는 함수 임. 
+                               // key와 관련된 HW 변경 시 (key를 다른 입력포트에 연결할 때) 반드시 수정해야함.
+    unsigned char   in = 0 ;
+    
+    if (       ( ~PINA  & 0x10  ) == 0x10  )        in = KEY1 ; 	  //   Key1 (PA4) 이 눌러지면    	
+ 324:	cc 99       	sbic	0x19, 4	; 25
+ 326:	02 c0       	rjmp	.+4      	; 0x32c <key_scan+0x8>
+ 328:	81 e0       	ldi	r24, 0x01	; 1
+ 32a:	08 95       	ret
+    else if (  ( ~PINA  & 0x20  ) == 0x20  )        in = KEY2 ; 	  //   Key2 (PA5) 가 눌러지면   		    		 
+ 32c:	cd 99       	sbic	0x19, 5	; 25
+ 32e:	02 c0       	rjmp	.+4      	; 0x334 <key_scan+0x10>
+ 330:	82 e0       	ldi	r24, 0x02	; 2
+ 332:	08 95       	ret
+    else if (  ( ~PINB  & 0x01  ) == 0x01  )        in = KEY3 ; 	  //   Key3 (PB0) 가 눌러지면     	 
+ 334:	b0 9b       	sbis	0x16, 0	; 22
+ 336:	02 c0       	rjmp	.+4      	; 0x33c <key_scan+0x18>
+ 338:	80 e0       	ldi	r24, 0x00	; 0
+ 33a:	08 95       	ret
+ 33c:	83 e0       	ldi	r24, 0x03	; 3
+    else                                             in = NO_KEY;   //	Key가 눌러지지 않으면 
+    
+    return   in ;
+    
+}
+ 33e:	08 95       	ret
+
+00000340 <Key_Input>:
+ 
+
+/////////////////////////////////////   
+                                                           
+unsigned char Key_Input(void)   // 함수 호출시 새롭게 눌러진 key 값을 리턴함(채터링 방지 기능포함.)
+{                      // 눌러진 key가 없을 시 0(NO_KEY) 이 리턴됨. 한번 호출시 마다 50 msec 이상 시간이 소요. 
+ 340:	1f 93       	push	r17
+ 342:	cf 93       	push	r28
+ 344:	df 93       	push	r29
+    static unsigned char pin = NO_KEY; 
+    unsigned char in, in1;
+
+    in = key_scan();             // key 입력 읽기 
+ 346:	0e 94 92 01 	call	0x324	; 0x324 <key_scan>
+ 34a:	18 2f       	mov	r17, r24
+ 34c:	c0 ea       	ldi	r28, 0xA0	; 160
+ 34e:	df e0       	ldi	r29, 0x0F	; 15
+ 350:	82 e3       	ldi	r24, 0x32	; 50
+ 352:	90 e0       	ldi	r25, 0x00	; 0
+ 354:	fe 01       	movw	r30, r28
+ 356:	31 97       	sbiw	r30, 0x01	; 1
+ 358:	f1 f7       	brne	.-4      	; 0x356 <Key_Input+0x16>
+}
+
+
+void msec_delay(int n)           // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1msec 시간 지연을 n회 반복
+ 35a:	01 97       	sbiw	r24, 0x01	; 1
+ 35c:	d9 f7       	brne	.-10     	; 0x354 <Key_Input+0x14>
+
+    in = key_scan();             // key 입력 읽기 
+    while(1)                     // key 입력이 안정화될때까지 기다림
+    {
+        msec_delay(50);         // 디바운싱 시간 지연     
+        in1 = key_scan();        // key 입력 읽기     
+ 35e:	0e 94 92 01 	call	0x324	; 0x324 <key_scan>
+        if( in == in1 ) break;
+ 362:	18 17       	cp	r17, r24
+ 364:	11 f0       	breq	.+4      	; 0x36a <Key_Input+0x2a>
+ 366:	18 2f       	mov	r17, r24
+ 368:	f3 cf       	rjmp	.-26     	; 0x350 <Key_Input+0x10>
+        in = in1;
+    }
+    if( !( in & 0xFF ) )    // key가 눌려지지 않고 있으면  0 ( NO_KEY) 리턴
+ 36a:	11 23       	and	r17, r17
+ 36c:	19 f4       	brne	.+6      	; 0x374 <Key_Input+0x34>
+    {	
+        pin= NO_KEY;				
+ 36e:	10 92 4d 01 	sts	0x014D, r1
+ 372:	08 c0       	rjmp	.+16     	; 0x384 <Key_Input+0x44>
+        return NO_KEY;
+    }
+    if( pin == in )         // 동일한 key가 계속 눌려지고 있으면  0 ( NO_KEY) 리턴
+ 374:	80 91 4d 01 	lds	r24, 0x014D
+ 378:	81 17       	cp	r24, r17
+ 37a:	11 f4       	brne	.+4      	; 0x380 <Key_Input+0x40>
+ 37c:	10 e0       	ldi	r17, 0x00	; 0
+ 37e:	02 c0       	rjmp	.+4      	; 0x384 <Key_Input+0x44>
+    {
+        return NO_KEY;  
+    }
+    pin = in;
+ 380:	10 93 4d 01 	sts	0x014D, r17
+
+    return  in;
+}
+ 384:	81 2f       	mov	r24, r17
+ 386:	df 91       	pop	r29
+ 388:	cf 91       	pop	r28
+ 38a:	1f 91       	pop	r17
+ 38c:	08 95       	ret
+
+0000038e <Time_Delay_Polling>:
+unsigned char Time_Delay_Polling( unsigned short d_time )  // 시간경과 체크함수(폴링방식)
+{
+    static unsigned short  curr_delay = 0; 
+    unsigned char  ret_val = 0;
+
+    curr_delay++ ;  
+ 38e:	20 91 4b 01 	lds	r18, 0x014B
+ 392:	30 91 4c 01 	lds	r19, 0x014C
+ 396:	2f 5f       	subi	r18, 0xFF	; 255
+ 398:	3f 4f       	sbci	r19, 0xFF	; 255
+ 39a:	30 93 4c 01 	sts	0x014C, r19
+ 39e:	20 93 4b 01 	sts	0x014B, r18
+    if( curr_delay >= d_time )   // 50msec * d_time 경과 후 
+ 3a2:	28 17       	cp	r18, r24
+ 3a4:	39 07       	cpc	r19, r25
+ 3a6:	10 f4       	brcc	.+4      	; 0x3ac <Time_Delay_Polling+0x1e>
+ 3a8:	80 e0       	ldi	r24, 0x00	; 0
+ 3aa:	08 95       	ret
+    {
+       ret_val = 1; 
+       curr_delay = 0 ;
+ 3ac:	10 92 4c 01 	sts	0x014C, r1
+ 3b0:	10 92 4b 01 	sts	0x014B, r1
+ 3b4:	81 e0       	ldi	r24, 0x01	; 1
+    } 
+    return  ret_val ;
+}
+ 3b6:	08 95       	ret
+
+000003b8 <HexToDec>:
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+}
+
+void HexToDec( unsigned short num, unsigned short radix)   // num으로 넘어온 16진수 형태의 데이터를 10진수로 
+{       //  변환하여 각각의 자릿수를 전역변수 배열 cnumber[0](1자리) - cnumber[4](10000자리)에 저장하는 함수. 
+ 3b8:	0f 93       	push	r16
+ 3ba:	1f 93       	push	r17
+ 3bc:	cf 93       	push	r28
+ 3be:	df 93       	push	r29
+ 3c0:	9c 01       	movw	r18, r24
+ 3c2:	8b 01       	movw	r16, r22
+	int j ;
+
+	for(j=0; j<5 ; j++) cnumber[j] = 0 ;
+ 3c4:	10 92 46 01 	sts	0x0146, r1
+ 3c8:	10 92 47 01 	sts	0x0147, r1
+ 3cc:	10 92 48 01 	sts	0x0148, r1
+ 3d0:	10 92 49 01 	sts	0x0149, r1
+ 3d4:	10 92 4a 01 	sts	0x014A, r1
+ 3d8:	c0 e0       	ldi	r28, 0x00	; 0
+ 3da:	d0 e0       	ldi	r29, 0x00	; 0
+	j=0;
+	do
+	{
+		cnumber[j++] = num % radix ; 
+ 3dc:	c9 01       	movw	r24, r18
+ 3de:	b8 01       	movw	r22, r16
+ 3e0:	0e 94 43 03 	call	0x686	; 0x686 <__udivmodhi4>
+ 3e4:	fe 01       	movw	r30, r28
+ 3e6:	ea 5b       	subi	r30, 0xBA	; 186
+ 3e8:	fe 4f       	sbci	r31, 0xFE	; 254
+ 3ea:	80 83       	st	Z, r24
+ 3ec:	21 96       	adiw	r28, 0x01	; 1
+		num /= radix; 
+ 3ee:	c9 01       	movw	r24, r18
+ 3f0:	b8 01       	movw	r22, r16
+ 3f2:	0e 94 43 03 	call	0x686	; 0x686 <__udivmodhi4>
+ 3f6:	9b 01       	movw	r18, r22
+	} while(num);
+ 3f8:	61 15       	cp	r22, r1
+ 3fa:	71 05       	cpc	r23, r1
+ 3fc:	79 f7       	brne	.-34     	; 0x3dc <HexToDec+0x24>
+} 
+ 3fe:	df 91       	pop	r29
+ 400:	cf 91       	pop	r28
+ 402:	1f 91       	pop	r17
+ 404:	0f 91       	pop	r16
+ 406:	08 95       	ret
+
+00000408 <NumToAsc>:
+
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 408:	8a 30       	cpi	r24, 0x0A	; 10
+ 40a:	10 f4       	brcc	.+4      	; 0x410 <NumToAsc+0x8>
+ 40c:	80 5d       	subi	r24, 0xD0	; 208
+ 40e:	08 95       	ret
+	else          Num += 0x37; 
+ 410:	89 5c       	subi	r24, 0xC9	; 201
+
+	return Num ;
+}
+ 412:	08 95       	ret
+
+00000414 <msec_delay>:
+ 414:	20 ea       	ldi	r18, 0xA0	; 160
+ 416:	3f e0       	ldi	r19, 0x0F	; 15
+ 418:	04 c0       	rjmp	.+8      	; 0x422 <msec_delay+0xe>
+ 41a:	f9 01       	movw	r30, r18
+ 41c:	31 97       	sbiw	r30, 0x01	; 1
+ 41e:	f1 f7       	brne	.-4      	; 0x41c <msec_delay+0x8>
+
+
+void msec_delay(int n)           // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1msec 시간 지연을 n회 반복
+ 420:	01 97       	sbiw	r24, 0x01	; 1
+ 422:	18 16       	cp	r1, r24
+ 424:	19 06       	cpc	r1, r25
+ 426:	cc f3       	brlt	.-14     	; 0x41a <msec_delay+0x6>
+		_delay_ms(1);		// 1msec 시간 지연
+}
+ 428:	08 95       	ret
+
+0000042a <usec_delay>:
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 42a:	35 e0       	ldi	r19, 0x05	; 5
+ 42c:	04 c0       	rjmp	.+8      	; 0x436 <usec_delay+0xc>
+ 42e:	23 2f       	mov	r18, r19
+ 430:	2a 95       	dec	r18
+ 432:	f1 f7       	brne	.-4      	; 0x430 <usec_delay+0x6>
+void usec_delay(int n)            // n usec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1usec 시간 지연을 n회 반복
+ 434:	01 97       	sbiw	r24, 0x01	; 1
+ 436:	18 16       	cp	r1, r24
+ 438:	19 06       	cpc	r1, r25
+ 43a:	cc f3       	brlt	.-14     	; 0x42e <usec_delay+0x4>
+		_delay_us(1);		
+}
+ 43c:	08 95       	ret
+
+0000043e <Display_Number_LCD>:
+}
+
+//////////////////////////////////////////
+
+void Display_Number_LCD( unsigned short num, unsigned char digit ) //부호없는 정수형변수(num)을 10진수 형태로 
+{                                                       // 정해진 자릿수(digit) 만큼 LCD 에 디스플레이 하는 함수 
+ 43e:	1f 93       	push	r17
+ 440:	16 2f       	mov	r17, r22
+      HexToDec( num, 10); //10진수로 변환
+ 442:	6a e0       	ldi	r22, 0x0A	; 10
+ 444:	70 e0       	ldi	r23, 0x00	; 0
+ 446:	0e 94 dc 01 	call	0x3b8	; 0x3b8 <HexToDec>
+
+      if( digit < 1 )     digit = 1 ;
+ 44a:	11 23       	and	r17, r17
+ 44c:	81 f1       	breq	.+96     	; 0x4ae <Display_Number_LCD+0x70>
+      if( digit > 5 )     digit = 5 ;
+ 44e:	16 30       	cpi	r17, 0x06	; 6
+ 450:	10 f0       	brcs	.+4      	; 0x456 <Display_Number_LCD+0x18>
+ 452:	15 e0       	ldi	r17, 0x05	; 5
+ 454:	02 c0       	rjmp	.+4      	; 0x45a <Display_Number_LCD+0x1c>
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 456:	15 30       	cpi	r17, 0x05	; 5
+ 458:	49 f4       	brne	.+18     	; 0x46c <Display_Number_LCD+0x2e>
+ 45a:	80 91 4a 01 	lds	r24, 0x014A
+} 
+
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 45e:	8a 30       	cpi	r24, 0x0A	; 10
+ 460:	10 f4       	brcc	.+4      	; 0x466 <Display_Number_LCD+0x28>
+ 462:	80 5d       	subi	r24, 0xD0	; 208
+ 464:	01 c0       	rjmp	.+2      	; 0x468 <Display_Number_LCD+0x2a>
+	else          Num += 0x37; 
+ 466:	89 5c       	subi	r24, 0xC9	; 201
+      HexToDec( num, 10); //10진수로 변환
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+ 468:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+ 46c:	14 30       	cpi	r17, 0x04	; 4
+ 46e:	48 f0       	brcs	.+18     	; 0x482 <Display_Number_LCD+0x44>
+ 470:	80 91 49 01 	lds	r24, 0x0149
+} 
+
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 474:	8a 30       	cpi	r24, 0x0A	; 10
+ 476:	10 f4       	brcc	.+4      	; 0x47c <Display_Number_LCD+0x3e>
+ 478:	80 5d       	subi	r24, 0xD0	; 208
+ 47a:	01 c0       	rjmp	.+2      	; 0x47e <Display_Number_LCD+0x40>
+	else          Num += 0x37; 
+ 47c:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+ 47e:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 482:	13 30       	cpi	r17, 0x03	; 3
+ 484:	48 f0       	brcs	.+18     	; 0x498 <Display_Number_LCD+0x5a>
+ 486:	80 91 48 01 	lds	r24, 0x0148
+} 
+
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 48a:	8a 30       	cpi	r24, 0x0A	; 10
+ 48c:	10 f4       	brcc	.+4      	; 0x492 <Display_Number_LCD+0x54>
+ 48e:	80 5d       	subi	r24, 0xD0	; 208
+ 490:	01 c0       	rjmp	.+2      	; 0x494 <Display_Number_LCD+0x56>
+	else          Num += 0x37; 
+ 492:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit < 1 )     digit = 1 ;
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+ 494:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 498:	11 30       	cpi	r17, 0x01	; 1
+ 49a:	49 f0       	breq	.+18     	; 0x4ae <Display_Number_LCD+0x70>
+ 49c:	80 91 47 01 	lds	r24, 0x0147
+} 
+
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 4a0:	8a 30       	cpi	r24, 0x0A	; 10
+ 4a2:	10 f4       	brcc	.+4      	; 0x4a8 <Display_Number_LCD+0x6a>
+ 4a4:	80 5d       	subi	r24, 0xD0	; 208
+ 4a6:	01 c0       	rjmp	.+2      	; 0x4aa <Display_Number_LCD+0x6c>
+	else          Num += 0x37; 
+ 4a8:	89 5c       	subi	r24, 0xC9	; 201
+      if( digit > 5 )     digit = 5 ;
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+ 4aa:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 4ae:	80 91 46 01 	lds	r24, 0x0146
+} 
+
+
+char NumToAsc( unsigned char Num )   // Num으로 넘어온 16진수 1자리 숫자를 문자데이터(ASCII 코드)로 
+{                                        // 변환하여 리턴하는 함수
+	if( Num <10 ) Num += 0x30; 
+ 4b2:	8a 30       	cpi	r24, 0x0A	; 10
+ 4b4:	10 f4       	brcc	.+4      	; 0x4ba <Display_Number_LCD+0x7c>
+ 4b6:	80 5d       	subi	r24, 0xD0	; 208
+ 4b8:	01 c0       	rjmp	.+2      	; 0x4bc <Display_Number_LCD+0x7e>
+	else          Num += 0x37; 
+ 4ba:	89 5c       	subi	r24, 0xC9	; 201
+
+      if( digit >= 5)  LcdPutchar(NumToAsc(cnumber[4]));    // 10000자리 디스필레이 
+      if( digit >= 4)  LcdPutchar(NumToAsc(cnumber[3]));    // 1000자리 디스필레이
+      if( digit >= 3)  LcdPutchar(NumToAsc(cnumber[2]));    // 100자리 디스필레이 
+      if( digit >= 2)  LcdPutchar(NumToAsc(cnumber[1]));    // 10자리 디스필레이
+      if( digit >= 1)  LcdPutchar(NumToAsc(cnumber[0]));    // 1자리 디스플레이
+ 4bc:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+}
+ 4c0:	1f 91       	pop	r17
+ 4c2:	08 95       	ret
+
+000004c4 <main>:
+static volatile unsigned short  curr_delay = 0;    // 시간경과 체크함수에서 사용되는 카운터 변수 
+static volatile unsigned char  DC_Motor1_Direction=0, Operating_Sequence=0, Key_cnt=0;
+
+
+int main() 
+{   
+ 4c4:	1f 93       	push	r17
+    unsigned char   Key_Data = 0;
+
+    LcdInit();                     // LCd 초기화 함수 
+ 4c6:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <LcdInit>
+    LcdMove(0,0);                 // LCD에 쓸 데이터 초기 위치 설정( 0행 0열)
+ 4ca:	80 e0       	ldi	r24, 0x00	; 0
+ 4cc:	60 e0       	ldi	r22, 0x00	; 0
+ 4ce:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+    LcdPuts("DC Motor Control");  // LCD에 DC모터제어 메시지 디스플레이 
+ 4d2:	80 e0       	ldi	r24, 0x00	; 0
+ 4d4:	91 e0       	ldi	r25, 0x01	; 1
+ 4d6:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+    LcdMove(1,0);                 // LCD에 쓸 데이터 초기 위치 설정( 1행 0열)   
+ 4da:	81 e0       	ldi	r24, 0x01	; 1
+ 4dc:	60 e0       	ldi	r22, 0x00	; 0
+ 4de:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+    LcdPuts("Test Program");      // LCD에 DC모터제어 메시지 디스플레이
+ 4e2:	81 e1       	ldi	r24, 0x11	; 17
+ 4e4:	91 e0       	ldi	r25, 0x01	; 1
+ 4e6:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+ 4ea:	80 ed       	ldi	r24, 0xD0	; 208
+ 4ec:	97 e0       	ldi	r25, 0x07	; 7
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 4ee:	20 ea       	ldi	r18, 0xA0	; 160
+ 4f0:	3f e0       	ldi	r19, 0x0F	; 15
+ 4f2:	f9 01       	movw	r30, r18
+ 4f4:	31 97       	sbiw	r30, 0x01	; 1
+ 4f6:	f1 f7       	brne	.-4      	; 0x4f4 <main+0x30>
+}
+
+
+void msec_delay(int n)           // n msec 만큼의 시간지연 발생 함수 
+{	
+	for(; n>0; n--)		// 1msec 시간 지연을 n회 반복
+ 4f8:	01 97       	sbiw	r24, 0x01	; 1
+ 4fa:	d9 f7       	brne	.-10     	; 0x4f2 <main+0x2e>
+    msec_delay(2000);            // 2초(2000msec) 시간지연
+
+   ////////  Key 5개 사용을 위한 HW 관련 레지스터 설정  ////////////
+   //  입력/출력 포트 설정 	   (교재 pp75-76 레지스터그림, 표6.1 참조)
+
+    DDRA &= ~0x30;      // Key1(PA4), Key2(PA5): 입력포트로 설정 
+ 4fc:	8a b3       	in	r24, 0x1a	; 26
+ 4fe:	8f 7c       	andi	r24, 0xCF	; 207
+ 500:	8a bb       	out	0x1a, r24	; 26
+                           // 입력포트 설정.  DDRA = 0b**00 ****, DDRA = DDRA & ~0b1111 0000(~0xF0)
+    PORTA |= 0x30;       // Key1(PA4), Key2(PA5), Key3(PA6), Key4(PA7)  : 내부풀업사용모드로 설정  
+ 502:	8b b3       	in	r24, 0x1b	; 27
+ 504:	80 63       	ori	r24, 0x30	; 48
+ 506:	8b bb       	out	0x1b, r24	; 27
+                           // PORTA = 0b**11 ****, PORTA = PORTA | 0b1111 0000( 0xF0 )
+
+    DDRB &= ~0x01;      // Key3(PB0) : 입력포트로 설정   
+ 508:	b8 98       	cbi	0x17, 0	; 23
+                           // 입력포트 설정.  DDRB = 0b**** ***0, DDRB = DDRB & ~0b0000 0001(~0x01)
+    PORTB |= 0x01;       // Key3(PB0)  : 내부풀업사용모드로 설정  
+ 50a:	c0 9a       	sbi	0x18, 0	; 24
+   // (주의):  Key 입력포트 설정을 변경하면 key_scan() 함수도 변경해야함. key_scan() 함수 변경 내용을 확인할 것. 
+
+    ////////  DC모터 1개 구동을 위한 HW 관련 레지스터 설정  ////////////
+    //  입력/출력 포트 설정 	   (교재 pp75-76 레지스터그림, 표6.1 참조)
+
+    DDRA |= 0x01;       // DC모터1 방향제어포트(PA0), DC모터2 방향제어포트(PA1) : 출력포트로 설정   
+ 50c:	d0 9a       	sbi	0x1a, 0	; 26
+                        // DDRA = 0b**** **11, DDRA = DDRA | 0b0000 0001( 0x03 )
+
+    DDRB |= 0x20;       // DC모터1 속도제어 PWM포트(OC1A/PB5): 
+ 50e:	bd 9a       	sbi	0x17, 5	; 23
+                        // 출력포트로 설정   
+                        // DDRB = 0b**1* ****, DDRB = DDRB | 0b0110 0000( 0x60 )
+
+    DDRA |= 0x04;       // LED1(DC모터1 동작상태표시)(PA2) : 출력포트로 설정                          
+ 510:	d2 9a       	sbi	0x1a, 2	; 26
+
+    ////////  Timer1 설정( DC모터1 PWM신호(OC1A/PB5) 발생 )   //////////// 
+    ///////   PWM신호 주파수 = 5kHz (주기 = 200usec )  //////////////////////
+    ///////   교재 P238-245(레지스터 그림과 표12.2, 표12.4, 표12.5) 참조    
+
+    TCCR1A &= ~0x41;     // Fast PWM: 비교일치시 OC1A(PB5)), OC1B(PB6)핀을 0으로하고 TOP에서 1을 출력
+ 512:	8f b5       	in	r24, 0x2f	; 47
+ 514:	8e 7b       	andi	r24, 0xBE	; 190
+ 516:	8f bd       	out	0x2f, r24	; 47
+                         // (표12.2 참조),   Fast PWM ( mode 14 ) 설정 (표12.4 참조)
+                         // TCCR1A = 0b10** **10 
+                         // TCCR1A = TCCR1A & ~0b0100 0001(~0x41 )  
+    TCCR1A |= 0x82;      // TCCR1A = TCCR1A |   0b1000 0010( 0x82 )  
+ 518:	8f b5       	in	r24, 0x2f	; 47
+ 51a:	82 68       	ori	r24, 0x82	; 130
+ 51c:	8f bd       	out	0x2f, r24	; 47
+
+    TCCR1B &= ~0x04;     // 64분주 타이머1 시작(내부클럭 주기=64/(16*10^6Hz)=4usec ), Fast PWM(mode 14)설정
+ 51e:	8e b5       	in	r24, 0x2e	; 46
+ 520:	8b 7f       	andi	r24, 0xFB	; 251
+ 522:	8e bd       	out	0x2e, r24	; 46
+                         // (표12.4 - 표12.5 참조)
+                         // TCCR1B = 0b***1 1011   
+                         // TCCR1B = TCCR1B & ~0b0000 0100(~0x04 )  
+    TCCR1B |= 0x1B;      // TCCR1B = TCCR1B |   0b0001 1011( 0x1B )  
+ 524:	8e b5       	in	r24, 0x2e	; 46
+ 526:	8b 61       	ori	r24, 0x1B	; 27
+ 528:	8e bd       	out	0x2e, r24	; 46
+
+    ICR1 = 50;           // PWM 주기(주파수) 설정( 주기= 50*4usec = 200usec, 주파수 = 1/(200usec) = 5kHz )
+ 52a:	82 e3       	ldi	r24, 0x32	; 50
+ 52c:	90 e0       	ldi	r25, 0x00	; 0
+ 52e:	97 bd       	out	0x27, r25	; 39
+ 530:	86 bd       	out	0x26, r24	; 38
+    PWM_Period = ICR1;   // PWM 신호 주기를 전역변수에 저장 
+ 532:	86 b5       	in	r24, 0x26	; 38
+ 534:	97 b5       	in	r25, 0x27	; 39
+ 536:	90 93 4f 01 	sts	0x014F, r25
+ 53a:	80 93 4e 01 	sts	0x014E, r24
+
+    Motor1_Duty = 0;         // DC모터1 속도 0 설정( 최대 = 100[%],  최소 = 0[%] )
+ 53e:	10 92 51 01 	sts	0x0151, r1
+ 542:	10 92 50 01 	sts	0x0150, r1
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+}
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 546:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 548:	1b bc       	out	0x2b, r1	; 43
+ 54a:	1a bc       	out	0x2a, r1	; 42
+                                                 	// PORTA = 0b**** *0**,   PORTA = PORTA & ~0b0000 0100( ~0x04 )
+       	}   // End of  if( Operating_Sequence = RUN_MODE )
+
+		else if( Operating_Sequence == STOP_MODE )  // 모터가 정지모드 시  
+    	{         
+     		DC_Motor1_Direction = STOP;   // DC모터1 정지상태 
+ 54c:	12 e0       	ldi	r17, 0x02	; 2
+    DC_Motor1_Stop( );       // DC모터1 정지
+
+    while (1) 
+    { 
+
+       Key_Data = Key_Input( );           // 함수 Key_Input( )호출. 어떤 Key를 누르는지 체크  
+ 54e:	0e 94 a0 01 	call	0x340	; 0x340 <Key_Input>
+
+       if( Key_Data == KEY1 )             // Key 1을 누르면
+ 552:	81 30       	cpi	r24, 0x01	; 1
+ 554:	c9 f4       	brne	.+50     	; 0x588 <main+0xc4>
+       {  
+ 	       Motor1_Duty += 5;                                          // DC모터1 duty 값을 5씩 증가 
+ 556:	80 91 50 01 	lds	r24, 0x0150
+ 55a:	90 91 51 01 	lds	r25, 0x0151
+ 55e:	05 96       	adiw	r24, 0x05	; 5
+ 560:	90 93 51 01 	sts	0x0151, r25
+ 564:	80 93 50 01 	sts	0x0150, r24
+           if( Motor1_Duty > Duty1_Max )  Motor1_Duty = Duty1_Max;    // 최대 범위를 벗어나면 Duty1_Max로 설정 
+ 568:	20 91 50 01 	lds	r18, 0x0150
+ 56c:	30 91 51 01 	lds	r19, 0x0151
+ 570:	80 91 44 01 	lds	r24, 0x0144
+ 574:	90 91 45 01 	lds	r25, 0x0145
+ 578:	82 17       	cp	r24, r18
+ 57a:	93 07       	cpc	r25, r19
+ 57c:	ec f5       	brge	.+122    	; 0x5f8 <main+0x134>
+ 57e:	80 91 44 01 	lds	r24, 0x0144
+ 582:	90 91 45 01 	lds	r25, 0x0145
+ 586:	1a c0       	rjmp	.+52     	; 0x5bc <main+0xf8>
+       }
+
+       else if( Key_Data == KEY2 )        // Key 2를 누르면
+ 588:	82 30       	cpi	r24, 0x02	; 2
+ 58a:	e9 f4       	brne	.+58     	; 0x5c6 <main+0x102>
+       {  
+            Motor1_Duty -= 5;                                        // DC모터1 duty 값을 5씩 감소
+ 58c:	80 91 50 01 	lds	r24, 0x0150
+ 590:	90 91 51 01 	lds	r25, 0x0151
+ 594:	05 97       	sbiw	r24, 0x05	; 5
+ 596:	90 93 51 01 	sts	0x0151, r25
+ 59a:	80 93 50 01 	sts	0x0150, r24
+            if( Motor1_Duty < Duty1_Min )  Motor1_Duty = Duty1_Min;   // 최소 범위를 벗어나면 Duty1_Min으로 설정 
+ 59e:	20 91 50 01 	lds	r18, 0x0150
+ 5a2:	30 91 51 01 	lds	r19, 0x0151
+ 5a6:	80 91 52 01 	lds	r24, 0x0152
+ 5aa:	90 91 53 01 	lds	r25, 0x0153
+ 5ae:	28 17       	cp	r18, r24
+ 5b0:	39 07       	cpc	r19, r25
+ 5b2:	14 f5       	brge	.+68     	; 0x5f8 <main+0x134>
+ 5b4:	80 91 52 01 	lds	r24, 0x0152
+ 5b8:	90 91 53 01 	lds	r25, 0x0153
+ 5bc:	90 93 51 01 	sts	0x0151, r25
+ 5c0:	80 93 50 01 	sts	0x0150, r24
+ 5c4:	19 c0       	rjmp	.+50     	; 0x5f8 <main+0x134>
+       }
+
+       else if( Key_Data == KEY3 )        // Key 3를 누르면
+ 5c6:	83 30       	cpi	r24, 0x03	; 3
+ 5c8:	b9 f4       	brne	.+46     	; 0x5f8 <main+0x134>
+       {  
+           Key_cnt++;   
+ 5ca:	80 91 54 01 	lds	r24, 0x0154
+ 5ce:	8f 5f       	subi	r24, 0xFF	; 255
+ 5d0:	80 93 54 01 	sts	0x0154, r24
+           if( Key_cnt >= 2 ) Key_cnt = 0; 
+ 5d4:	80 91 54 01 	lds	r24, 0x0154
+ 5d8:	82 30       	cpi	r24, 0x02	; 2
+ 5da:	10 f0       	brcs	.+4      	; 0x5e0 <main+0x11c>
+ 5dc:	10 92 54 01 	sts	0x0154, r1
+
+           if( Key_cnt == 0 ) Operating_Sequence = STOP_MODE;  // Key3가 짝수번 눌러지면 모터 정지모드 
+ 5e0:	80 91 54 01 	lds	r24, 0x0154
+ 5e4:	88 23       	and	r24, r24
+ 5e6:	11 f4       	brne	.+4      	; 0x5ec <main+0x128>
+ 5e8:	10 92 55 01 	sts	0x0155, r1
+           if( Key_cnt == 1 ) Operating_Sequence = RUN_MODE;   // Key3가 홀수번 눌러지면 모터 회전모드 
+ 5ec:	80 91 54 01 	lds	r24, 0x0154
+ 5f0:	81 30       	cpi	r24, 0x01	; 1
+ 5f2:	11 f4       	brne	.+4      	; 0x5f8 <main+0x134>
+ 5f4:	80 93 55 01 	sts	0x0155, r24
+
+       }	 //End of else if( Key_Data == KEY3 )
+
+		 ///////  DC모터1 동작 ////////////
+
+  		if( Operating_Sequence == RUN_MODE )
+ 5f8:	80 91 55 01 	lds	r24, 0x0155
+ 5fc:	81 30       	cpi	r24, 0x01	; 1
+ 5fe:	51 f4       	brne	.+20     	; 0x614 <main+0x150>
+  		{
+      
+          	 	DC_Motor1_Direction = FORWARD;      // DC모터1 정방향 회전상태 
+ 600:	10 92 56 01 	sts	0x0156, r1
+             	DC_Motor1_Run_Fwd( Motor1_Duty );   // DC 모터1 정회전(PWM구동) 함수(2초동안 정회전) 
+ 604:	80 91 50 01 	lds	r24, 0x0150
+ 608:	90 91 51 01 	lds	r25, 0x0151
+ 60c:	0e 94 10 01 	call	0x220	; 0x220 <DC_Motor1_Run_Fwd>
+            	PORTA &=  ~0x04;                    // LED1 ON ( PA2 = 0 ) : DC모터1 회전상태 표시
+ 610:	da 98       	cbi	0x1b, 2	; 27
+ 612:	0a c0       	rjmp	.+20     	; 0x628 <main+0x164>
+                                                 	// PORTA = 0b**** *0**,   PORTA = PORTA & ~0b0000 0100( ~0x04 )
+       	}   // End of  if( Operating_Sequence = RUN_MODE )
+
+		else if( Operating_Sequence == STOP_MODE )  // 모터가 정지모드 시  
+ 614:	80 91 55 01 	lds	r24, 0x0155
+ 618:	88 23       	and	r24, r24
+ 61a:	31 f4       	brne	.+12     	; 0x628 <main+0x164>
+    	{         
+     		DC_Motor1_Direction = STOP;   // DC모터1 정지상태 
+ 61c:	10 93 56 01 	sts	0x0156, r17
+    OCR1A = PWM_Period - duty;   // 회전속도(PWM Duty)설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+}
+
+void DC_Motor1_Stop( void )   // DC 모터1 정지 함수 
+{
+    PORTA &= ~0x01;      // 회전방향설정(정회전) :          DC모터1 B단자(-) = 0(Low) ( PA0 = 0 )    
+ 620:	d8 98       	cbi	0x1b, 0	; 27
+    OCR1A = 0;           // 회전속도 0(PWM Duty = 0) 설정 : DC모터1 A단자(+) = PWM신호(OC1A(PB5))  
+ 622:	1b bc       	out	0x2b, r1	; 43
+ 624:	1a bc       	out	0x2a, r1	; 42
+
+		else if( Operating_Sequence == STOP_MODE )  // 모터가 정지모드 시  
+    	{         
+     		DC_Motor1_Direction = STOP;   // DC모터1 정지상태 
+        	DC_Motor1_Stop( );            // DC 모터1 정지(PWM구동) 함수 호출 
+        	PORTA |=  0x04;               // LED1 OFF ( PA2 = 1 ) : DC모터1 정지상태 표시
+ 626:	da 9a       	sbi	0x1b, 2	; 27
+                                          // PORTA = 0b**** *1**,   PORTA = PORTA | 0b0000 0100( 0x04 )
+		}	//End of else if( Operating_Sequence = STOP_MODE )
+
+       ///////  LCD에 모터1 동작상태 디스플레이  ///////////
+
+       LcdCommand( ALLCLR );              // LCD 화면 지우기
+ 628:	81 e0       	ldi	r24, 0x01	; 1
+ 62a:	0e 94 a0 00 	call	0x140	; 0x140 <LcdCommand>
+
+       if( Operating_Sequence == STOP_MODE )   // 모터 정지 모드 이면 
+ 62e:	80 91 55 01 	lds	r24, 0x0155
+ 632:	88 23       	and	r24, r24
+ 634:	41 f4       	brne	.+16     	; 0x646 <main+0x182>
+       {
+	      LcdMove(0, 0);                  // LCD에 쓸 데이터 초기 위치 설정 (0행, 0열) 
+ 636:	60 e0       	ldi	r22, 0x00	; 0
+ 638:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+          LcdPuts( "Stop Mode!!" );       // 정지모드 메시지 디스플레이   
+ 63c:	8e e1       	ldi	r24, 0x1E	; 30
+ 63e:	91 e0       	ldi	r25, 0x01	; 1
+ 640:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+ 644:	84 cf       	rjmp	.-248    	; 0x54e <main+0x8a>
+       } 
+
+       else if( Operating_Sequence == RUN_MODE )      // 모터 회전 모드(동작시퀀스 실행) 이면 
+ 646:	80 91 55 01 	lds	r24, 0x0155
+ 64a:	81 30       	cpi	r24, 0x01	; 1
+ 64c:	09 f0       	breq	.+2      	; 0x650 <main+0x18c>
+ 64e:	7f cf       	rjmp	.-258    	; 0x54e <main+0x8a>
+       { 
+
+		      LcdMove(0, 0);						  //LCD에 쓸 데이터 초기 위치 설정 (0행, 0열)
+ 650:	80 e0       	ldi	r24, 0x00	; 0
+ 652:	60 e0       	ldi	r22, 0x00	; 0
+ 654:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+              LcdPuts( " Run Mode!! " );              // 모터1 정방향 회전 메시지 디스플레이 
+ 658:	8a e2       	ldi	r24, 0x2A	; 42
+ 65a:	91 e0       	ldi	r25, 0x01	; 1
+ 65c:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+			  LcdMove(1, 0);						  //LCD에 쓸 데이터 초기 위치 설정 (1행, 0열)
+ 660:	81 e0       	ldi	r24, 0x01	; 1
+ 662:	60 e0       	ldi	r22, 0x00	; 0
+ 664:	0e 94 d9 00 	call	0x1b2	; 0x1b2 <LcdMove>
+			  LcdPuts( "Motor Duty= " );              // 모터1 정방향 회전 메시지 디스플레이 
+ 668:	87 e3       	ldi	r24, 0x37	; 55
+ 66a:	91 e0       	ldi	r25, 0x01	; 1
+ 66c:	0e 94 83 00 	call	0x106	; 0x106 <LcdPuts>
+              Display_Number_LCD( Motor1_Duty, 3 );   // 모터1 속도(Duty) 3자리 디스플레이
+ 670:	80 91 50 01 	lds	r24, 0x0150
+ 674:	90 91 51 01 	lds	r25, 0x0151
+ 678:	63 e0       	ldi	r22, 0x03	; 3
+ 67a:	0e 94 1f 02 	call	0x43e	; 0x43e <Display_Number_LCD>
+              LcdPutchar( '%' );                      // 문자 % 디스플레이 
+ 67e:	85 e2       	ldi	r24, 0x25	; 37
+ 680:	0e 94 67 00 	call	0xce	; 0xce <LcdPutchar>
+ 684:	64 cf       	rjmp	.-312    	; 0x54e <main+0x8a>
+
+00000686 <__udivmodhi4>:
+ 686:	aa 1b       	sub	r26, r26
+ 688:	bb 1b       	sub	r27, r27
+ 68a:	51 e1       	ldi	r21, 0x11	; 17
+ 68c:	07 c0       	rjmp	.+14     	; 0x69c <__udivmodhi4_ep>
+
+0000068e <__udivmodhi4_loop>:
+ 68e:	aa 1f       	adc	r26, r26
+ 690:	bb 1f       	adc	r27, r27
+ 692:	a6 17       	cp	r26, r22
+ 694:	b7 07       	cpc	r27, r23
+ 696:	10 f0       	brcs	.+4      	; 0x69c <__udivmodhi4_ep>
+ 698:	a6 1b       	sub	r26, r22
+ 69a:	b7 0b       	sbc	r27, r23
+
+0000069c <__udivmodhi4_ep>:
+ 69c:	88 1f       	adc	r24, r24
+ 69e:	99 1f       	adc	r25, r25
+ 6a0:	5a 95       	dec	r21
+ 6a2:	a9 f7       	brne	.-22     	; 0x68e <__udivmodhi4_loop>
+ 6a4:	80 95       	com	r24
+ 6a6:	90 95       	com	r25
+ 6a8:	bc 01       	movw	r22, r24
+ 6aa:	cd 01       	movw	r24, r26
+ 6ac:	08 95       	ret
+
+000006ae <__divmodhi4>:
+ 6ae:	97 fb       	bst	r25, 7
+ 6b0:	09 2e       	mov	r0, r25
+ 6b2:	07 26       	eor	r0, r23
+ 6b4:	0a d0       	rcall	.+20     	; 0x6ca <__divmodhi4_neg1>
+ 6b6:	77 fd       	sbrc	r23, 7
+ 6b8:	04 d0       	rcall	.+8      	; 0x6c2 <__divmodhi4_neg2>
+ 6ba:	e5 df       	rcall	.-54     	; 0x686 <__udivmodhi4>
+ 6bc:	06 d0       	rcall	.+12     	; 0x6ca <__divmodhi4_neg1>
+ 6be:	00 20       	and	r0, r0
+ 6c0:	1a f4       	brpl	.+6      	; 0x6c8 <__divmodhi4_exit>
+
+000006c2 <__divmodhi4_neg2>:
+ 6c2:	70 95       	com	r23
+ 6c4:	61 95       	neg	r22
+ 6c6:	7f 4f       	sbci	r23, 0xFF	; 255
+
+000006c8 <__divmodhi4_exit>:
+ 6c8:	08 95       	ret
+
+000006ca <__divmodhi4_neg1>:
+ 6ca:	f6 f7       	brtc	.-4      	; 0x6c8 <__divmodhi4_exit>
+ 6cc:	90 95       	com	r25
+ 6ce:	81 95       	neg	r24
+ 6d0:	9f 4f       	sbci	r25, 0xFF	; 255
+ 6d2:	08 95       	ret
+
+000006d4 <_exit>:
+ 6d4:	f8 94       	cli
+
+000006d6 <__stop_program>:
+ 6d6:	ff cf       	rjmp	.-2      	; 0x6d6 <__stop_program>
